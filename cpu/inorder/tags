@@ -1,0 +1,1671 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AGEN	pipeline_traits.5stage.hh	/^       AGEN,$/;"	e	enum:ThePipeline::ResourceList
+AGEN	pipeline_traits.9stage.hh	/^       AGEN,$/;"	e	enum:ThePipeline::ResourceList
+AGEN	pipeline_traits.9stage.smt2.hh	/^       AGEN,$/;"	e	enum:ThePipeline::ResourceList
+AGEN	pipeline_traits.hh	/^       AGEN,$/;"	e	enum:ThePipeline::ResourceId
+AGENUnit	resources/agen_unit.cc	/^AGENUnit::AGENUnit(std::string res_name, int res_id, int res_width,$/;"	f	class:AGENUnit
+AGENUnit	resources/agen_unit.hh	/^class AGENUnit : public Resource {$/;"	c
+ActivateNextReadyThread	cpu.hh	/^        ActivateNextReadyThread,$/;"	e	enum:InOrderCPU::CPUEventType
+ActivateNextReadyThread_Pri	cpu.hh	/^        ActivateNextReadyThread_Pri    = Event::CPU_Tick_Pri + 10$/;"	e	enum:InOrderCPU::CPUEventPri
+ActivateThread	cpu.hh	/^        ActivateThread,$/;"	e	enum:InOrderCPU::CPUEventType
+Active	pipeline_stage.hh	/^        Active,$/;"	e	enum:PipelineStage::StageStatus
+AssignNextPC	resources/fetch_seq_unit.hh	/^        AssignNextPC,$/;"	e	enum:FetchSeqUnit::Command
+AtCommit	inorder_dyn_inst.hh	/^        AtCommit,                \/\/\/ Instruction has reached commit$/;"	e	enum:InOrderDynInst::Status
+BPLookup	resources/bpred_unit.cc	/^BPredUnit::BPLookup(Addr inst_PC, void * &bp_history)$/;"	f	class:BPredUnit
+BPSquash	resources/bpred_unit.cc	/^BPredUnit::BPSquash(void *bp_history)$/;"	f	class:BPredUnit
+BPUncond	resources/bpred_unit.cc	/^BPredUnit::BPUncond(void * &bp_history)$/;"	f	class:BPredUnit
+BPUpdate	resources/bpred_unit.cc	/^BPredUnit::BPUpdate(Addr inst_PC, bool taken, void *bp_history, bool squashed)$/;"	f	class:BPredUnit
+BPred	pipeline_traits.5stage.hh	/^       BPred,$/;"	e	enum:ThePipeline::ResourceList
+BPred	pipeline_traits.9stage.hh	/^       BPred,$/;"	e	enum:ThePipeline::ResourceList
+BPred	pipeline_traits.9stage.smt2.hh	/^       BPred,$/;"	e	enum:ThePipeline::ResourceList
+BPred	pipeline_traits.hh	/^       BPred,$/;"	e	enum:ThePipeline::ResourceId
+BPredUnit	resources/bpred_unit.cc	/^BPredUnit::BPredUnit(Resource *_res, ThePipeline::Params *params)$/;"	f	class:BPredUnit
+BPredUnit	resources/bpred_unit.hh	/^class BPredUnit$/;"	c
+BTB	resources/bpred_unit.hh	/^    DefaultBTB BTB;$/;"	m	class:BPredUnit
+BTBCorrect	resources/bpred_unit.hh	/^    Stats::Scalar BTBCorrect;$/;"	m	class:BPredUnit
+BTBEntries	InOrderCPU.py	/^    BTBEntries = Param.Unsigned(4096, "Number of BTB entries")$/;"	v	class:InOrderCPU
+BTBEntries	params.hh	/^    unsigned BTBEntries;$/;"	m	class:InOrderParams
+BTBHitPct	resources/bpred_unit.hh	/^    Stats::Formula BTBHitPct;$/;"	m	class:BPredUnit
+BTBHits	resources/bpred_unit.hh	/^    Stats::Scalar BTBHits;$/;"	m	class:BPredUnit
+BTBLookup	resources/bpred_unit.hh	/^    TheISA::PCState BTBLookup(Addr instPC)$/;"	f	class:BPredUnit
+BTBLookups	resources/bpred_unit.hh	/^    Stats::Scalar BTBLookups;$/;"	m	class:BPredUnit
+BTBTagSize	InOrderCPU.py	/^    BTBTagSize = Param.Unsigned(16, "Size of the BTB tags, in bits")$/;"	v	class:InOrderCPU
+BTBTagSize	params.hh	/^    unsigned BTBTagSize;$/;"	m	class:InOrderParams
+BTBUpdate	resources/bpred_unit.hh	/^    void BTBUpdate(Addr instPC, const TheISA::PCState &targetPC)$/;"	f	class:BPredUnit
+BTBValid	resources/bpred_unit.hh	/^    bool BTBValid(Addr &inst_PC)$/;"	f	class:BPredUnit
+BackEndStartStage	pipeline_traits.5stage.hh	/^    const unsigned BackEndStartStage = 2;$/;"	m	namespace:ThePipeline
+BackEndStartStage	pipeline_traits.9stage.hh	/^    const unsigned BackEndStartStage = 3;$/;"	m	namespace:ThePipeline
+BackEndStartStage	pipeline_traits.9stage.smt2.hh	/^    const unsigned BackEndStartStage = 3;$/;"	m	namespace:ThePipeline
+BackEndStartStage	pipeline_traits.hh	/^    const unsigned BackEndStartStage = 2;$/;"	m	namespace:ThePipeline
+BaseCPU	InOrderCPU.py	/^from BaseCPU import BaseCPU$/;"	i
+Blocked	cpu.hh	/^        Blocked,$/;"	e	enum:InOrderCPU::Status
+Blocked	pipeline_stage.hh	/^        Blocked,$/;"	e	enum:PipelineStage::ThreadStatus
+BlockingInst	inorder_dyn_inst.hh	/^        BlockingInst,            \/\/\/ Is a blocking instruction$/;"	e	enum:InOrderDynInst::Status
+BranchPredictor	resources/branch_predictor.cc	/^BranchPredictor::BranchPredictor(std::string res_name, int res_id,$/;"	f	class:BranchPredictor
+BranchPredictor	resources/branch_predictor.hh	/^class BranchPredictor : public Resource {$/;"	c
+CPUEvent	cpu.cc	/^InOrderCPU::CPUEvent::CPUEvent(InOrderCPU *_cpu, CPUEventType e_type,$/;"	f	class:InOrderCPU::CPUEvent
+CPUEvent	cpu.hh	/^    class CPUEvent : public Event$/;"	c	class:InOrderCPU
+CPUEventPri	cpu.hh	/^    enum CPUEventPri {$/;"	g	class:InOrderCPU
+CPUEventType	cpu.hh	/^    enum CPUEventType {$/;"	g	class:InOrderCPU
+CPU_INORDER_REG_DEP_MAP_HH	reg_dep_map.hh	/^#define CPU_INORDER_REG_DEP_MAP_HH$/;"	d
+CPU_INORDER_RESOURCE_LIST_HH	resources/resource_list.hh	/^#define CPU_INORDER_RESOURCE_LIST_HH$/;"	d
+CachePort	cpu.cc	/^InOrderCPU::CachePort::CachePort(CacheUnit *_cacheUnit,$/;"	f	class:InOrderCPU::CachePort
+CachePort	cpu.hh	/^    class CachePort : public CpuPort$/;"	c	class:InOrderCPU
+CacheReqPacket	resources/cache_unit.hh	/^    CacheReqPacket(CacheRequest *_req,$/;"	f	class:CacheReqPacket
+CacheReqPacket	resources/cache_unit.hh	/^class CacheReqPacket : public Packet$/;"	c
+CacheReqPktPtr	resources/cache_unit.hh	/^typedef CacheReqPacket* CacheReqPktPtr;$/;"	t
+CacheReqPtr	resource.hh	/^typedef CacheRequest* CacheReqPtr;$/;"	t
+CacheRequest	resources/cache_unit.hh	/^    CacheRequest(CacheUnit *cres)$/;"	f	class:CacheRequest
+CacheRequest	resources/cache_unit.hh	/^class CacheRequest : public ResourceRequest$/;"	c
+CacheUnit	resources/cache_unit.cc	/^CacheUnit::CacheUnit(string res_name, int res_id, int res_width,$/;"	f	class:CacheUnit
+CacheUnit	resources/cache_unit.hh	/^class CacheUnit : public Resource$/;"	c
+CacheUnitEvent	resources/cache_unit.cc	/^CacheUnitEvent::CacheUnitEvent()$/;"	f	class:CacheUnitEvent
+CacheUnitEvent	resources/cache_unit.hh	/^class CacheUnitEvent : public ResourceEvent {$/;"	c
+CanCommit	inorder_dyn_inst.hh	/^        CanCommit,               \/\/\/ Instruction can commit$/;"	e	enum:InOrderDynInst::Status
+CanIssue	inorder_dyn_inst.hh	/^        CanIssue,                \/\/\/ Instruction can issue and execute$/;"	e	enum:InOrderDynInst::Status
+CheckFault	resources/graduation_unit.hh	/^        CheckFault,$/;"	e	enum:GraduationUnit::Command
+Command	resources/agen_unit.hh	/^    enum Command {$/;"	g	class:AGENUnit
+Command	resources/branch_predictor.hh	/^    enum Command {$/;"	g	class:BranchPredictor
+Command	resources/cache_unit.hh	/^    enum Command {$/;"	g	class:CacheUnit
+Command	resources/decode_unit.hh	/^    enum Command {$/;"	g	class:DecodeUnit
+Command	resources/execution_unit.hh	/^    enum Command {$/;"	g	class:ExecutionUnit
+Command	resources/fetch_seq_unit.hh	/^    enum Command {$/;"	g	class:FetchSeqUnit
+Command	resources/fetch_unit.hh	/^    enum Command {$/;"	g	class:FetchUnit
+Command	resources/graduation_unit.hh	/^    enum Command {$/;"	g	class:GraduationUnit
+Command	resources/inst_buffer.hh	/^    enum Command {$/;"	g	class:InstBuffer
+Command	resources/mult_div_unit.hh	/^    enum Command {$/;"	g	class:MultDivUnit
+Command	resources/use_def.hh	/^    enum Command {$/;"	g	class:UseDefUnit
+Committed	inorder_dyn_inst.hh	/^        Committed,               \/\/\/ Instruction has committed$/;"	e	enum:InOrderDynInst::Status
+CompleteFetch	resources/fetch_unit.hh	/^        CompleteFetch$/;"	e	enum:FetchUnit::Command
+CompleteReadData	resources/cache_unit.hh	/^        CompleteReadData,$/;"	e	enum:CacheUnit::Command
+CompleteSecondSplitRead	resources/cache_unit.hh	/^        CompleteSecondSplitRead,$/;"	e	enum:CacheUnit::Command
+CompleteSecondSplitWrite	resources/cache_unit.hh	/^        CompleteSecondSplitWrite$/;"	e	enum:CacheUnit::Command
+CompleteWriteData	resources/cache_unit.hh	/^        CompleteWriteData,$/;"	e	enum:CacheUnit::Command
+Completed	inorder_dyn_inst.hh	/^        Completed,               \/\/\/ Instruction has completed$/;"	e	enum:InOrderDynInst::Status
+DCache	pipeline_traits.5stage.hh	/^       DCache,$/;"	e	enum:ThePipeline::ResourceList
+DCache	pipeline_traits.9stage.hh	/^       DCache,$/;"	e	enum:ThePipeline::ResourceList
+DCache	pipeline_traits.9stage.smt2.hh	/^       DCache,$/;"	e	enum:ThePipeline::ResourceList
+DCache	pipeline_traits.hh	/^       DCache,$/;"	e	enum:ThePipeline::ResourceId
+DTLB	pipeline_traits.5stage.hh	/^       DTLB,$/;"	e	enum:ThePipeline::ResourceList
+DTLB	pipeline_traits.9stage.hh	/^       DTLB,$/;"	e	enum:ThePipeline::ResourceList
+DTLB	pipeline_traits.9stage.smt2.hh	/^       DTLB,$/;"	e	enum:ThePipeline::ResourceList
+DataReadLookup	resources/tlb_unit.hh	/^        DataReadLookup,$/;"	e	enum:TLBUnit::TLBCommand
+DataWriteLookup	resources/tlb_unit.hh	/^        DataWriteLookup$/;"	e	enum:TLBUnit::TLBCommand
+DeactivateThread	cpu.hh	/^        DeactivateThread,$/;"	e	enum:InOrderCPU::CPUEventType
+Decode	pipeline_traits.5stage.hh	/^       Decode,$/;"	e	enum:ThePipeline::ResourceList
+Decode	pipeline_traits.9stage.hh	/^       Decode,$/;"	e	enum:ThePipeline::ResourceList
+Decode	pipeline_traits.9stage.smt2.hh	/^       Decode,$/;"	e	enum:ThePipeline::ResourceList
+Decode	pipeline_traits.hh	/^       Decode,$/;"	e	enum:ThePipeline::ResourceId
+DecodeInst	resources/decode_unit.hh	/^        DecodeInst$/;"	e	enum:DecodeUnit::Command
+DecodeUnit	resources/decode_unit.cc	/^DecodeUnit::DecodeUnit(std::string res_name, int res_id, int res_width,$/;"	f	class:DecodeUnit
+DecodeUnit	resources/decode_unit.hh	/^class DecodeUnit : public Resource {$/;"	c
+Default	resource_pool.hh	/^        Default$/;"	e	enum:ResourcePool::ResPoolEventType
+DepMap	reg_dep_map.hh	/^    typedef std::vector<std::list<DynInstPtr> > DepMap;$/;"	t	class:RegDepMap
+Double	inorder_dyn_inst.hh	/^        Double$/;"	e	enum:InOrderDynInst::ResultType
+DynInstPtr	cpu.hh	/^    typedef ThePipeline::DynInstPtr DynInstPtr;$/;"	t	class:InOrderCPU
+DynInstPtr	inorder_dyn_inst.hh	/^    typedef RefCountingPtr<InOrderDynInst> DynInstPtr;$/;"	t	class:InOrderDynInst
+DynInstPtr	pipeline_stage.hh	/^    typedef ThePipeline::DynInstPtr DynInstPtr;$/;"	t	class:PipelineStage
+DynInstPtr	pipeline_traits.5stage.hh	/^    typedef RefCountingPtr<InOrderDynInst> DynInstPtr;$/;"	t	namespace:ThePipeline
+DynInstPtr	pipeline_traits.9stage.hh	/^    typedef RefCountingPtr<InOrderDynInst> DynInstPtr;$/;"	t	namespace:ThePipeline
+DynInstPtr	pipeline_traits.9stage.smt2.hh	/^    typedef RefCountingPtr<InOrderDynInst> DynInstPtr;$/;"	t	namespace:ThePipeline
+DynInstPtr	pipeline_traits.hh	/^    typedef RefCountingPtr<InOrderDynInst> DynInstPtr;$/;"	t	namespace:ThePipeline
+DynInstPtr	reg_dep_map.hh	/^    typedef ThePipeline::DynInstPtr DynInstPtr;$/;"	t	class:RegDepMap
+DynInstPtr	resource.hh	/^    typedef ThePipeline::DynInstPtr DynInstPtr;$/;"	t	class:Resource
+DynInstPtr	resource.hh	/^    typedef ThePipeline::DynInstPtr DynInstPtr;$/;"	t	class:ResourceRequest
+DynInstPtr	resource_pool.hh	/^    typedef InOrderDynInst::DynInstPtr DynInstPtr;$/;"	t	class:ResourcePool
+DynInstPtr	resources/agen_unit.hh	/^    typedef InOrderDynInst::DynInstPtr DynInstPtr;$/;"	t	class:AGENUnit
+DynInstPtr	resources/branch_predictor.hh	/^    typedef ThePipeline::DynInstPtr DynInstPtr;$/;"	t	class:BranchPredictor
+DynInstPtr	resources/cache_unit.hh	/^    typedef ThePipeline::DynInstPtr DynInstPtr;$/;"	t	class:CacheUnit
+DynInstPtr	resources/decode_unit.hh	/^    typedef ThePipeline::DynInstPtr DynInstPtr;$/;"	t	class:DecodeUnit
+DynInstPtr	resources/execution_unit.hh	/^    typedef ThePipeline::DynInstPtr DynInstPtr;$/;"	t	class:ExecutionUnit
+DynInstPtr	resources/fetch_seq_unit.hh	/^    typedef ThePipeline::DynInstPtr DynInstPtr;$/;"	t	class:FetchSeqUnit
+DynInstPtr	resources/fetch_unit.hh	/^    typedef ThePipeline::DynInstPtr DynInstPtr;$/;"	t	class:FetchUnit
+DynInstPtr	resources/graduation_unit.hh	/^    typedef ThePipeline::DynInstPtr DynInstPtr;$/;"	t	class:GraduationUnit
+DynInstPtr	resources/inst_buffer.hh	/^    typedef ThePipeline::DynInstPtr DynInstPtr;$/;"	t	class:InstBuffer
+DynInstPtr	resources/mem_dep_unit.hh	/^    typedef ThePipeline::DynInstPtr DynInstPtr;$/;"	t	class:MemDepUnit
+DynInstPtr	resources/mult_div_unit.hh	/^    typedef ThePipeline::DynInstPtr DynInstPtr;$/;"	t	class:MultDivUnit
+DynInstPtr	resources/tlb_unit.hh	/^    typedef ThePipeline::DynInstPtr DynInstPtr;$/;"	t	class:TLBUnit
+DynInstPtr	resources/tlb_unit.hh	/^    typedef ThePipeline::DynInstPtr DynInstPtr;$/;"	t	class:TLBUnitRequest
+DynInstPtr	resources/use_def.hh	/^        typedef ThePipeline::DynInstPtr DynInstPtr;$/;"	t	class:UseDefUnit::UseDefRequest
+DynInstPtr	resources/use_def.hh	/^    typedef ThePipeline::DynInstPtr DynInstPtr;$/;"	t	class:UseDefUnit
+EndMultDiv	resources/mult_div_unit.hh	/^        EndMultDiv,$/;"	e	enum:MultDivUnit::Command
+ExecUnit	pipeline_traits.5stage.hh	/^       ExecUnit,$/;"	e	enum:ThePipeline::ResourceList
+ExecUnit	pipeline_traits.9stage.hh	/^       ExecUnit,$/;"	e	enum:ThePipeline::ResourceList
+ExecUnit	pipeline_traits.9stage.smt2.hh	/^       ExecUnit,$/;"	e	enum:ThePipeline::ResourceList
+ExecUnit	pipeline_traits.hh	/^       ExecUnit,$/;"	e	enum:ThePipeline::ResourceId
+ExecuteInst	resources/execution_unit.hh	/^        ExecuteInst$/;"	e	enum:ExecutionUnit::Command
+Executed	inorder_dyn_inst.hh	/^        Executed,                \/\/\/ Instruction has executed$/;"	e	enum:InOrderDynInst::Status
+ExecutionUnit	resources/execution_unit.cc	/^ExecutionUnit::ExecutionUnit(string res_name, int res_id, int res_width,$/;"	f	class:ExecutionUnit
+ExecutionUnit	resources/execution_unit.hh	/^class ExecutionUnit : public Resource {$/;"	c
+ExtMachInst	inorder_dyn_inst.hh	/^    typedef TheISA::ExtMachInst ExtMachInst;$/;"	t	class:InOrderDynInst
+ExtMachInst	resources/fetch_unit.hh	/^    typedef TheISA::ExtMachInst ExtMachInst;$/;"	t	class:FetchUnit
+FetchBlock	resources/fetch_unit.hh	/^        FetchBlock(int _asid, Addr _addr)$/;"	f	struct:FetchUnit::FetchBlock
+FetchBlock	resources/fetch_unit.hh	/^    struct FetchBlock {$/;"	s	class:FetchUnit
+FetchBuff	pipeline_traits.5stage.hh	/^       FetchBuff,$/;"	e	enum:ThePipeline::ResourceList
+FetchBuff	pipeline_traits.9stage.hh	/^       FetchBuff,$/;"	e	enum:ThePipeline::ResourceList
+FetchBuff	pipeline_traits.9stage.smt2.hh	/^       FetchBuff,$/;"	e	enum:ThePipeline::ResourceList
+FetchBuff	pipeline_traits.hh	/^       FetchBuff,$/;"	e	enum:ThePipeline::ResourceId
+FetchBuff2	pipeline_traits.5stage.hh	/^       FetchBuff2$/;"	e	enum:ThePipeline::ResourceList
+FetchBuff2	pipeline_traits.9stage.hh	/^       FetchBuff2$/;"	e	enum:ThePipeline::ResourceList
+FetchBuff2	pipeline_traits.9stage.smt2.hh	/^       FetchBuff2$/;"	e	enum:ThePipeline::ResourceList
+FetchBuff2	pipeline_traits.hh	/^       FetchBuff2$/;"	e	enum:ThePipeline::ResourceId
+FetchLookup	resources/tlb_unit.hh	/^        FetchLookup,$/;"	e	enum:TLBUnit::TLBCommand
+FetchPriority	first_stage.hh	/^    enum FetchPriority {$/;"	g	class:FirstStage
+FetchSeq	pipeline_traits.5stage.hh	/^       FetchSeq = 0,$/;"	e	enum:ThePipeline::ResourceList
+FetchSeq	pipeline_traits.9stage.hh	/^       FetchSeq = 0,$/;"	e	enum:ThePipeline::ResourceList
+FetchSeq	pipeline_traits.9stage.smt2.hh	/^       FetchSeq = 0,$/;"	e	enum:ThePipeline::ResourceList
+FetchSeq	pipeline_traits.hh	/^       FetchSeq = 0,$/;"	e	enum:ThePipeline::ResourceId
+FetchSeqEvent	resources/fetch_seq_unit.cc	/^FetchSeqUnit::FetchSeqEvent::FetchSeqEvent()$/;"	f	class:FetchSeqUnit::FetchSeqEvent
+FetchSeqEvent	resources/fetch_seq_unit.hh	/^    class FetchSeqEvent : public ResourceEvent {$/;"	c	class:FetchSeqUnit
+FetchSeqUnit	resources/fetch_seq_unit.cc	/^FetchSeqUnit::FetchSeqUnit(std::string res_name, int res_id, int res_width,$/;"	f	class:FetchSeqUnit
+FetchSeqUnit	resources/fetch_seq_unit.hh	/^class FetchSeqUnit : public Resource {$/;"	c
+FetchUnit	resources/fetch_unit.cc	/^FetchUnit::FetchUnit(string res_name, int res_id, int res_width,$/;"	f	class:FetchUnit
+FetchUnit	resources/fetch_unit.hh	/^class FetchUnit : public CacheUnit$/;"	c
+FirstStage	first_stage.cc	/^FirstStage::FirstStage(Params *params, unsigned stage_num)$/;"	f	class:FirstStage
+FirstStage	first_stage.hh	/^class FirstStage : public PipelineStage {$/;"	c
+Float	inorder_dyn_inst.hh	/^        Float,$/;"	e	enum:InOrderDynInst::ResultType
+FloatBits	inorder_dyn_inst.hh	/^        FloatBits,$/;"	e	enum:InOrderDynInst::ResultType
+FloatReg	cpu.hh	/^    typedef TheISA::FloatReg FloatReg;$/;"	t	class:InOrderCPU
+FloatReg	inorder_dyn_inst.hh	/^    typedef TheISA::FloatReg FloatReg;$/;"	t	class:InOrderDynInst
+FloatRegBits	cpu.hh	/^    typedef TheISA::FloatRegBits FloatRegBits;$/;"	t	class:InOrderCPU
+FloatRegBits	inorder_dyn_inst.hh	/^    typedef TheISA::FloatRegBits FloatRegBits;$/;"	t	class:InOrderDynInst
+FloatType	cpu.hh	/^    enum RegType { IntType, FloatType, MiscType, NumRegTypes};$/;"	e	enum:InOrderCPU::RegType
+GenerateAddr	resources/agen_unit.hh	/^        GenerateAddr$/;"	e	enum:AGENUnit::Command
+Grad	pipeline_traits.5stage.hh	/^       Grad,$/;"	e	enum:ThePipeline::ResourceList
+Grad	pipeline_traits.9stage.hh	/^       Grad,$/;"	e	enum:ThePipeline::ResourceList
+Grad	pipeline_traits.9stage.smt2.hh	/^       Grad,$/;"	e	enum:ThePipeline::ResourceList
+Grad	pipeline_traits.hh	/^       Grad,$/;"	e	enum:ThePipeline::ResourceId
+GraduateInst	resources/graduation_unit.hh	/^        GraduateInst$/;"	e	enum:GraduationUnit::Command
+GraduationUnit	resources/graduation_unit.cc	/^GraduationUnit::GraduationUnit(std::string res_name, int res_id, int res_width,$/;"	f	class:GraduationUnit
+GraduationUnit	resources/graduation_unit.hh	/^class GraduationUnit : public Resource {$/;"	c
+HaltThread	cpu.hh	/^        HaltThread,$/;"	e	enum:InOrderCPU::CPUEventType
+Halted	cpu.hh	/^        Halted,$/;"	e	enum:InOrderCPU::Status
+History	resources/bpred_unit.hh	/^    typedef std::list<PredictorHistory> History;$/;"	t	class:BPredUnit
+HistoryIt	resources/bpred_unit.hh	/^    typedef History::iterator HistoryIt;$/;"	t	class:BPredUnit
+ICache	pipeline_traits.5stage.hh	/^       ICache,$/;"	e	enum:ThePipeline::ResourceList
+ICache	pipeline_traits.9stage.hh	/^       ICache,$/;"	e	enum:ThePipeline::ResourceList
+ICache	pipeline_traits.9stage.smt2.hh	/^       ICache,$/;"	e	enum:ThePipeline::ResourceList
+ICache	pipeline_traits.hh	/^       ICache,$/;"	e	enum:ThePipeline::ResourceId
+INST_CONTROL	cpu.hh	/^    static const uint8_t INST_CONTROL                       = 23;$/;"	m	class:InOrderCPU
+INST_DEST_REGS	cpu.hh	/^    static const uint8_t INST_DEST_REGS                     = 18;$/;"	m	class:InOrderCPU
+INST_LOAD	cpu.hh	/^    static const uint8_t INST_LOAD                          = 25;$/;"	m	class:InOrderCPU
+INST_NONSPEC	cpu.hh	/^    static const uint8_t INST_NONSPEC                       = 22;$/;"	m	class:InOrderCPU
+INST_OPCLASS	cpu.hh	/^    static const uint8_t INST_OPCLASS                       = 26;$/;"	m	class:InOrderCPU
+INST_SPLIT_DATA	cpu.hh	/^    static const uint8_t INST_SPLIT_DATA                    = 13;$/;"	m	class:InOrderCPU
+INST_SRC_REGS	cpu.hh	/^    static const uint8_t INST_SRC_REGS                      = 14;$/;"	m	class:InOrderCPU
+INST_STORE	cpu.hh	/^    static const uint8_t INST_STORE                         = 24;$/;"	m	class:InOrderCPU
+ITLB	pipeline_traits.5stage.hh	/^       ITLB,$/;"	e	enum:ThePipeline::ResourceList
+ITLB	pipeline_traits.9stage.hh	/^       ITLB,$/;"	e	enum:ThePipeline::ResourceList
+ITLB	pipeline_traits.9stage.smt2.hh	/^       ITLB,$/;"	e	enum:ThePipeline::ResourceList
+Idle	cpu.hh	/^        Idle,$/;"	e	enum:InOrderCPU::Status
+Idle	pipeline_stage.hh	/^        Idle,$/;"	e	enum:PipelineStage::ThreadStatus
+InOrderCPU	InOrderCPU.py	/^class InOrderCPU(BaseCPU):$/;"	c
+InOrderCPU	cpu.cc	/^InOrderCPU::InOrderCPU(Params *params)$/;"	f	class:InOrderCPU
+InOrderCPU	cpu.hh	/^class InOrderCPU : public BaseCPU$/;"	c
+InOrderCPU_Pri	cpu.hh	/^        InOrderCPU_Pri                 = Event::CPU_Tick_Pri,$/;"	e	enum:InOrderCPU::CPUEventPri
+InOrderDynInst	inorder_dyn_inst.cc	/^InOrderDynInst::InOrderDynInst(InOrderCPU *cpu,$/;"	f	class:InOrderDynInst
+InOrderDynInst	inorder_dyn_inst.hh	/^class InOrderDynInst : public RefCounted$/;"	c
+InOrderParams	params.hh	/^class InOrderParams : public BaseCPU::Params$/;"	c
+InOrderPriority	resource.hh	/^    enum InOrderPriority {$/;"	g	class:ResourceEvent
+InOrderThreadContext	thread_context.hh	/^    InOrderThreadContext() { }$/;"	f	class:InOrderThreadContext
+InOrderThreadContext	thread_context.hh	/^class InOrderThreadContext : public ThreadContext$/;"	c
+InOrderThreadState	thread_state.hh	/^    InOrderThreadState(InOrderCPU *_cpu, ThreadID _thread_num,$/;"	f	class:InOrderThreadState
+InOrderThreadState	thread_state.hh	/^class InOrderThreadState : public ThreadState {$/;"	c
+InOrderTrace	InOrderTrace.py	/^class InOrderTrace(InstTracer):$/;"	c
+InOrderTrace	inorder_trace.hh	/^    InOrderTrace(const InOrderTraceParams *p) : InstTracer(p)$/;"	f	class:Trace::InOrderTrace
+InOrderTrace	inorder_trace.hh	/^class InOrderTrace : public InstTracer$/;"	c	namespace:Trace
+InOrderTraceRecord	inorder_trace.hh	/^    InOrderTraceRecord(unsigned num_stages, bool _stage_tracing,$/;"	f	class:Trace::InOrderTraceRecord
+InOrderTraceRecord	inorder_trace.hh	/^class InOrderTraceRecord : public ExeTracerRecord$/;"	c	namespace:Trace
+Inactive	pipeline_stage.hh	/^        Inactive$/;"	e	enum:PipelineStage::StageStatus
+InitSecondSplitRead	resources/cache_unit.hh	/^        InitSecondSplitRead,$/;"	e	enum:CacheUnit::Command
+InitSecondSplitWrite	resources/cache_unit.hh	/^        InitSecondSplitWrite,$/;"	e	enum:CacheUnit::Command
+InitiateFetch	resources/fetch_unit.hh	/^        InitiateFetch,$/;"	e	enum:FetchUnit::Command
+InitiateReadData	resources/cache_unit.hh	/^        InitiateReadData,$/;"	e	enum:CacheUnit::Command
+InitiateWriteData	resources/cache_unit.hh	/^        InitiateWriteData,$/;"	e	enum:CacheUnit::Command
+InsertAddr	resources/inst_buffer.hh	/^        InsertAddr,$/;"	e	enum:InstBuffer::Command
+InsertInst	resources/inst_buffer.hh	/^        InsertInst,$/;"	e	enum:InstBuffer::Command
+InstBuffer	resources/inst_buffer.cc	/^InstBuffer::InstBuffer(string res_name, int res_id, int res_width,$/;"	f	class:InstBuffer
+InstBuffer	resources/inst_buffer.hh	/^class InstBuffer : public Resource {$/;"	c
+InstGraduated	resource_pool.hh	/^        InstGraduated = InOrderCPU::NumCPUEvents,$/;"	e	enum:ResourcePool::ResPoolEventType
+InstResult	inorder_dyn_inst.hh	/^        InstResult()$/;"	f	struct:InOrderDynInst::InstResult
+InstResult	inorder_dyn_inst.hh	/^    struct InstResult {$/;"	s	class:InOrderDynInst
+InstTracer	InOrderTrace.py	/^from InstTracer import InstTracer$/;"	i
+InstValue	inorder_dyn_inst.hh	/^        InstValue()$/;"	f	struct:InOrderDynInst::InstValue
+InstValue	inorder_dyn_inst.hh	/^    struct InstValue {$/;"	s	class:InOrderDynInst
+IntReg	cpu.hh	/^    typedef TheISA::IntReg IntReg;$/;"	t	class:InOrderCPU
+IntReg	inorder_dyn_inst.hh	/^    typedef TheISA::IntReg IntReg;$/;"	t	class:InOrderDynInst
+IntType	cpu.hh	/^    enum RegType { IntType, FloatType, MiscType, NumRegTypes};$/;"	e	enum:InOrderCPU::RegType
+Integer	inorder_dyn_inst.hh	/^        Integer,$/;"	e	enum:InOrderDynInst::ResultType
+InterStageStruct	comm.hh	/^struct InterStageStruct {$/;"	s
+IqEntry	inorder_dyn_inst.hh	/^        IqEntry,                 \/\/\/ Instruction is in the IQ$/;"	e	enum:InOrderDynInst::Status
+Issued	inorder_dyn_inst.hh	/^        Issued,                  \/\/\/ Instruction has issued$/;"	e	enum:InOrderDynInst::Status
+Kernel	thread_context.hh	/^namespace Kernel {$/;"	n
+ListIt	cpu.hh	/^    typedef std::list<DynInstPtr>::iterator ListIt;$/;"	t	class:InOrderCPU
+ListIt	inorder_dyn_inst.hh	/^    typedef std::list<DynInstPtr>::iterator ListIt;$/;"	t	class:InOrderDynInst
+ListIt	resources/fetch_seq_unit.hh	/^    typedef std::list<DynInstPtr>::iterator ListIt;$/;"	t	class:FetchSeqUnit
+Local	resources/bpred_unit.hh	/^        Local,$/;"	e	enum:BPredUnit::PredType
+LsqEntry	inorder_dyn_inst.hh	/^        LsqEntry,                \/\/\/ Instruction is in the LSQ$/;"	e	enum:InOrderDynInst::Status
+MDU	pipeline_traits.hh	/^       MDU,$/;"	e	enum:ThePipeline::ResourceId
+MDUEvent	resources/mult_div_unit.cc	/^MDUEvent::MDUEvent()$/;"	f	class:MDUEvent
+MDUEvent	resources/mult_div_unit.hh	/^class MDUEvent : public ResourceEvent$/;"	c
+MachInst	inorder_dyn_inst.hh	/^    typedef TheISA::MachInst MachInst;$/;"	t	class:InOrderDynInst
+MarkDestRegs	resources/use_def.hh	/^        MarkDestRegs$/;"	e	enum:UseDefUnit::Command
+MaxInstDestRegs	inorder_dyn_inst.hh	/^        MaxInstDestRegs = TheISA::MaxInstDestRegs       \/\/\/ Max dest regs$/;"	e	enum:InOrderDynInst::__anon2
+MaxInstSrcRegs	inorder_dyn_inst.hh	/^        MaxInstSrcRegs = TheISA::MaxInstSrcRegs,        \/\/\/ Max source regs$/;"	e	enum:InOrderDynInst::__anon2
+MaxThreads	pipeline_traits.5stage.hh	/^    const unsigned MaxThreads = 3;$/;"	m	namespace:ThePipeline
+MaxThreads	pipeline_traits.9stage.hh	/^    const unsigned MaxThreads = 3;$/;"	m	namespace:ThePipeline
+MaxThreads	pipeline_traits.9stage.smt2.hh	/^    const unsigned MaxThreads = 2;$/;"	m	namespace:ThePipeline
+MaxThreads	pipeline_traits.hh	/^    const ThreadID MaxThreads = 1;$/;"	m	namespace:ThePipeline
+MemAccessComplete	pipeline_stage.hh	/^        MemAccessComplete$/;"	e	enum:PipelineStage::ThreadStatus
+MemDepUnit	resources/mem_dep_unit.hh	/^class MemDepUnit : public Resource {$/;"	c
+MemWaitResponse	pipeline_stage.hh	/^        MemWaitResponse,$/;"	e	enum:PipelineStage::ThreadStatus
+MemWaitRetry	pipeline_stage.hh	/^        MemWaitRetry,$/;"	e	enum:PipelineStage::ThreadStatus
+MiscReg	cpu.hh	/^    typedef TheISA::MiscReg MiscReg;$/;"	t	class:InOrderCPU
+MiscReg	inorder_dyn_inst.hh	/^    typedef TheISA::MiscReg MiscReg;$/;"	t	class:InOrderDynInst
+MiscType	cpu.hh	/^    enum RegType { IntType, FloatType, MiscType, NumRegTypes};$/;"	e	enum:InOrderCPU::RegType
+MultDiv	resources/mult_div_unit.hh	/^        MultDiv$/;"	e	enum:MultDivUnit::Command
+MultDivUnit	resources/mult_div_unit.cc	/^MultDivUnit::MultDivUnit(string res_name, int res_id, int res_width,$/;"	f	class:MultDivUnit
+MultDivUnit	resources/mult_div_unit.hh	/^class MultDivUnit : public Resource {$/;"	c
+None	inorder_dyn_inst.hh	/^        None,$/;"	e	enum:InOrderDynInst::ResultType
+NumCPUEvents	cpu.hh	/^        NumCPUEvents$/;"	e	enum:InOrderCPU::CPUEventType
+NumRegTypes	cpu.hh	/^    enum RegType { IntType, FloatType, MiscType, NumRegTypes};$/;"	e	enum:InOrderCPU::RegType
+NumStages	pipeline_traits.5stage.hh	/^    const unsigned NumStages = 5;$/;"	m	namespace:ThePipeline
+NumStages	pipeline_traits.9stage.hh	/^    const unsigned NumStages = 9;$/;"	m	namespace:ThePipeline
+NumStages	pipeline_traits.9stage.smt2.hh	/^    const unsigned NumStages = 9;$/;"	m	namespace:ThePipeline
+NumStages	pipeline_traits.hh	/^    const unsigned NumStages = 5;$/;"	m	namespace:ThePipeline
+NumStatus	inorder_dyn_inst.hh	/^        NumStatus$/;"	e	enum:InOrderDynInst::Status
+Params	cpu.hh	/^    typedef ThePipeline::Params Params;$/;"	t	class:InOrderCPU
+Params	pipeline_stage.hh	/^    typedef ThePipeline::Params Params;$/;"	t	class:PipelineStage
+Params	pipeline_traits.5stage.hh	/^    typedef InOrderCPUParams Params;$/;"	t	namespace:ThePipeline
+Params	pipeline_traits.9stage.hh	/^    typedef InOrderCPUParams Params;$/;"	t	namespace:ThePipeline
+Params	pipeline_traits.9stage.smt2.hh	/^    typedef InOrderCPUParams Params;$/;"	t	namespace:ThePipeline
+Params	pipeline_traits.hh	/^    typedef InOrderCPUParams Params;$/;"	t	namespace:ThePipeline
+PhysRegIndex	inorder_dyn_inst.hh	/^    typedef short int PhysRegIndex;$/;"	t	class:InOrderDynInst
+PipelineStage	pipeline_stage.cc	/^PipelineStage::PipelineStage(Params *params, unsigned stage_num)$/;"	f	class:PipelineStage
+PipelineStage	pipeline_stage.hh	/^class PipelineStage$/;"	c
+PredType	resources/bpred_unit.hh	/^    enum PredType {$/;"	g	class:BPredUnit
+PredictBranch	resources/branch_predictor.hh	/^        PredictBranch,$/;"	e	enum:BranchPredictor::Command
+PredictorHistory	resources/bpred_unit.hh	/^        PredictorHistory(const InstSeqNum &seq_num,$/;"	f	struct:BPredUnit::PredictorHistory
+PredictorHistory	resources/bpred_unit.hh	/^    struct PredictorHistory {$/;"	s	class:BPredUnit
+RAS	resources/bpred_unit.hh	/^    ReturnAddrStack RAS[ThePipeline::MaxThreads];$/;"	m	class:BPredUnit
+RASIncorrect	resources/bpred_unit.hh	/^    Stats::Scalar RASIncorrect;$/;"	m	class:BPredUnit
+RASIndex	resources/bpred_unit.hh	/^        unsigned RASIndex;$/;"	m	struct:BPredUnit::PredictorHistory
+RASSize	InOrderCPU.py	/^    RASSize = Param.Unsigned(16, "RAS size")$/;"	v	class:InOrderCPU
+RASSize	params.hh	/^    unsigned RASSize;$/;"	m	class:InOrderParams
+RSkedIt	resource_sked.hh	/^    RSkedIt()$/;"	f	class:RSkedIt
+RSkedIt	resource_sked.hh	/^class RSkedIt$/;"	c
+RSkedPtr	inorder_dyn_inst.hh	/^    typedef ThePipeline::RSkedPtr RSkedPtr;$/;"	t	class:InOrderDynInst
+RSkedPtr	pipeline_traits.hh	/^    typedef ResourceSked* RSkedPtr;$/;"	t	namespace:ThePipeline
+ReadSrcReg	resources/use_def.hh	/^        ReadSrcReg,$/;"	e	enum:UseDefUnit::Command
+RecoverInst	inorder_dyn_inst.hh	/^        RecoverInst,             \/\/\/ Is a recover instruction$/;"	e	enum:InOrderDynInst::Status
+RegDepMap	reg_dep_map.cc	/^RegDepMap::RegDepMap(int size)$/;"	f	class:RegDepMap
+RegDepMap	reg_dep_map.hh	/^class RegDepMap$/;"	c
+RegDepMapEntry	inorder_dyn_inst.hh	/^        RegDepMapEntry,          \/\/\/ Instruction is entered onto the RegDepMap$/;"	e	enum:InOrderDynInst::Status
+RegIndex	cpu.hh	/^    typedef TheISA::RegIndex RegIndex;$/;"	t	class:InOrderCPU
+RegIndex	inorder_dyn_inst.hh	/^    typedef TheISA::RegIndex RegIndex;$/;"	t	class:InOrderDynInst
+RegIndex	reg_dep_map.hh	/^    typedef TheISA::RegIndex RegIndex;$/;"	t	class:RegDepMap
+RegIndex	resources/use_def.hh	/^    typedef TheISA::RegIndex RegIndex;$/;"	t	class:UseDefUnit
+RegManager	pipeline_traits.5stage.hh	/^       RegManager,$/;"	e	enum:ThePipeline::ResourceList
+RegManager	pipeline_traits.9stage.hh	/^       RegManager,$/;"	e	enum:ThePipeline::ResourceList
+RegManager	pipeline_traits.9stage.smt2.hh	/^       RegManager,$/;"	e	enum:ThePipeline::ResourceList
+RegManager	pipeline_traits.hh	/^       RegManager,$/;"	e	enum:ThePipeline::ResourceId
+RegType	cpu.hh	/^    enum RegType { IntType, FloatType, MiscType, NumRegTypes};$/;"	g	class:InOrderCPU
+RegType	reg_dep_map.hh	/^    typedef uint8_t RegType;$/;"	t	class:RegDepMap
+RemoveAddr	resources/inst_buffer.hh	/^        RemoveAddr,$/;"	e	enum:InstBuffer::Command
+RemoveInst	resources/inst_buffer.hh	/^        RemoveInst,$/;"	e	enum:InstBuffer::Command
+RemoveList	inorder_dyn_inst.hh	/^        RemoveList,               \/\/\/ Is Instruction on Remove List?$/;"	e	enum:InOrderDynInst::Status
+ResGrad_Pri	resource_pool.hh	/^        ResGrad_Pri,$/;"	e	enum:ResourcePool::ResPoolEventPri
+ResPoolEvent	resource_pool.9stage.cc	/^ResourcePool::ResPoolEvent::ResPoolEvent(ResourcePool *_resPool)$/;"	f	class:ResourcePool::ResPoolEvent
+ResPoolEvent	resource_pool.cc	/^ResourcePool::ResPoolEvent::ResPoolEvent(ResourcePool *_resPool,$/;"	f	class:ResourcePool::ResPoolEvent
+ResPoolEvent	resource_pool.hh	/^    class ResPoolEvent : public Event$/;"	c	class:ResourcePool
+ResPoolEventPri	resource_pool.hh	/^    enum ResPoolEventPri {$/;"	g	class:ResourcePool
+ResPoolEventType	resource_pool.hh	/^    enum ResPoolEventType {$/;"	g	class:ResourcePool
+ResPool_Pri	resource_pool.hh	/^        ResPool_Pri =  InOrderCPU::InOrderCPU_Pri - 5,$/;"	e	enum:ResourcePool::ResPoolEventPri
+ResReq	resource.hh	/^typedef ResourceRequest ResReq;$/;"	t
+ResReqPtr	resource.hh	/^typedef ResourceRequest* ResReqPtr;$/;"	t
+ResSchedule	pipeline_traits.5stage.hh	/^                                         entryCompare> ResSchedule;$/;"	t	namespace:ThePipeline
+ResSchedule	pipeline_traits.9stage.hh	/^                                         entryCompare> ResSchedule;$/;"	t	namespace:ThePipeline
+ResSchedule	pipeline_traits.9stage.smt2.hh	/^                                         entryCompare> ResSchedule;$/;"	t	namespace:ThePipeline
+ResSchedule	pipeline_traits.hh	/^    typedef ResourceSked ResSchedule;$/;"	t	namespace:ThePipeline
+ResSquash_Pri	resource_pool.hh	/^        ResSquash_Pri$/;"	e	enum:ResourcePool::ResPoolEventPri
+Resource	resource.cc	/^Resource::Resource(string res_name, int res_id, int res_width,$/;"	f	class:Resource
+Resource	resource.hh	/^class Resource {$/;"	c
+ResourceEvent	resource.cc	/^ResourceEvent::ResourceEvent()$/;"	f	class:ResourceEvent
+ResourceEvent	resource.cc	/^ResourceEvent::ResourceEvent(Resource *res, int slot_idx)$/;"	f	class:ResourceEvent
+ResourceEvent	resource.hh	/^class ResourceEvent : public Event$/;"	c
+ResourceId	pipeline_traits.hh	/^    enum ResourceId {$/;"	g	namespace:ThePipeline
+ResourceList	pipeline_traits.5stage.hh	/^    enum ResourceList {$/;"	g	namespace:ThePipeline
+ResourceList	pipeline_traits.9stage.hh	/^    enum ResourceList {$/;"	g	namespace:ThePipeline
+ResourceList	pipeline_traits.9stage.smt2.hh	/^    enum ResourceList {$/;"	g	namespace:ThePipeline
+ResourcePool	resource_pool.9stage.cc	/^ResourcePool::ResourcePool(InOrderCPU *_cpu, InOrderCPUParams *params)$/;"	f	class:ResourcePool
+ResourcePool	resource_pool.cc	/^ResourcePool::ResourcePool(InOrderCPU *_cpu, ThePipeline::Params *params)$/;"	f	class:ResourcePool
+ResourcePool	resource_pool.hh	/^class ResourcePool {$/;"	c
+ResourceRequest	resource.cc	/^ResourceRequest::ResourceRequest(Resource *_res)$/;"	f	class:ResourceRequest
+ResourceRequest	resource.hh	/^class ResourceRequest$/;"	c
+ResourceSked	resource_sked.cc	/^ResourceSked::ResourceSked()$/;"	f	class:ResourceSked
+ResourceSked	resource_sked.hh	/^class ResourceSked {$/;"	c
+Resource_Event_Pri	resource.hh	/^        Resource_Event_Pri = 45$/;"	e	enum:ResourceEvent::InOrderPriority
+ResultReady	inorder_dyn_inst.hh	/^        ResultReady,             \/\/\/ Instruction has its result$/;"	e	enum:InOrderDynInst::Status
+ResultType	inorder_dyn_inst.hh	/^    enum ResultType {$/;"	g	class:InOrderDynInst
+RobEntry	inorder_dyn_inst.hh	/^        RobEntry,                \/\/\/ Instruction is in the ROB$/;"	e	enum:InOrderDynInst::Status
+RoundRobin	first_stage.hh	/^        RoundRobin$/;"	e	enum:FirstStage::FetchPriority
+Running	cpu.hh	/^        Running,$/;"	e	enum:InOrderCPU::Status
+Running	pipeline_stage.hh	/^        Running,$/;"	e	enum:PipelineStage::ThreadStatus
+SMT	cpu.hh	/^        SMT,$/;"	e	enum:InOrderCPU::ThreadModel
+ScheduleEntry	pipeline_traits.5stage.hh	/^        ScheduleEntry(int stage_num, int _priority, int res_num, int _cmd = 0,$/;"	f	struct:ThePipeline::ScheduleEntry
+ScheduleEntry	pipeline_traits.5stage.hh	/^    struct ScheduleEntry {$/;"	s	namespace:ThePipeline
+ScheduleEntry	pipeline_traits.9stage.hh	/^        ScheduleEntry(int stage_num, int _priority, int res_num, int _cmd = 0,$/;"	f	struct:ThePipeline::ScheduleEntry
+ScheduleEntry	pipeline_traits.9stage.hh	/^    struct ScheduleEntry {$/;"	s	namespace:ThePipeline
+ScheduleEntry	pipeline_traits.9stage.smt2.hh	/^        ScheduleEntry(int stage_num, int _priority, int res_num, int _cmd = 0,$/;"	f	struct:ThePipeline::ScheduleEntry
+ScheduleEntry	pipeline_traits.9stage.smt2.hh	/^    struct ScheduleEntry {$/;"	s	namespace:ThePipeline
+ScheduleEntry	resource_sked.hh	/^    ScheduleEntry(int stage_num, int _priority, int res_num, int _cmd = 0,$/;"	f	class:ScheduleEntry
+ScheduleEntry	resource_sked.hh	/^class ScheduleEntry {$/;"	c
+ScheduleOrBypass	resources/inst_buffer.hh	/^        ScheduleOrBypass$/;"	e	enum:InstBuffer::Command
+SerializeAfter	inorder_dyn_inst.hh	/^        SerializeAfter,          \/\/\/ Needs to serialize instructions behind it$/;"	e	enum:InOrderDynInst::Status
+SerializeBefore	inorder_dyn_inst.hh	/^        SerializeBefore,         \/\/\/ Needs to serialize on$/;"	e	enum:InOrderDynInst::Status
+SerializeHandled	inorder_dyn_inst.hh	/^        SerializeHandled,        \/\/\/ Serialization has been handled$/;"	e	enum:InOrderDynInst::Status
+SimObject	InOrderTrace.py	/^from m5.SimObject import SimObject$/;"	i
+Single	cpu.hh	/^        Single,$/;"	e	enum:InOrderCPU::ThreadModel
+SingleThread	first_stage.hh	/^        SingleThread,$/;"	e	enum:FirstStage::FetchPriority
+SkedCacheIt	cpu.hh	/^    typedef m5::hash_map<SkedID, ThePipeline::RSkedPtr>::iterator SkedCacheIt;$/;"	t	class:InOrderCPU
+SkedID	cpu.hh	/^    typedef uint32_t SkedID;$/;"	t	class:InOrderCPU
+SkedIt	resource_sked.hh	/^    typedef std::list<ScheduleEntry*>::iterator SkedIt;$/;"	t	class:ResourceSked
+SquashAll	resource_pool.hh	/^        SquashAll,$/;"	e	enum:ResourcePool::ResPoolEventType
+SquashFromMemStall	cpu.hh	/^        SquashFromMemStall,$/;"	e	enum:InOrderCPU::CPUEventType
+Squashed	inorder_dyn_inst.hh	/^        Squashed,                \/\/\/ Instruction is squashed$/;"	e	enum:InOrderDynInst::Status
+SquashedInIQ	inorder_dyn_inst.hh	/^        SquashedInIQ,            \/\/\/ Instruction is squashed in the IQ$/;"	e	enum:InOrderDynInst::Status
+SquashedInLSQ	inorder_dyn_inst.hh	/^        SquashedInLSQ,           \/\/\/ Instruction is squashed in the LSQ$/;"	e	enum:InOrderDynInst::Status
+SquashedInROB	inorder_dyn_inst.hh	/^        SquashedInROB,           \/\/\/ Instruction is squashed in the ROB$/;"	e	enum:InOrderDynInst::Status
+Squashing	pipeline_stage.hh	/^        Squashing,$/;"	e	enum:PipelineStage::ThreadStatus
+StageComm	comm.hh	/^        StageComm()$/;"	f	struct:TimeStruct::StageComm
+StageComm	comm.hh	/^    struct StageComm {$/;"	s	struct:TimeStruct
+StageList	resource_sked.hh	/^    typedef std::vector<std::list<ScheduleEntry*> > StageList;$/;"	t	class:ResourceSked
+StageQueue	cpu.hh	/^    typedef TimeBuffer<InterStageStruct> StageQueue;$/;"	t	class:InOrderCPU
+StageScheduler	cpu.hh	/^        StageScheduler(ThePipeline::RSkedPtr _rsked, int stage_num)$/;"	f	class:InOrderCPU::StageScheduler
+StageScheduler	cpu.hh	/^    class StageScheduler {$/;"	c	class:InOrderCPU
+StageStatus	pipeline_stage.hh	/^    enum StageStatus {$/;"	g	class:PipelineStage
+StageWidth	pipeline_traits.5stage.hh	/^    const unsigned StageWidth = 1;$/;"	m	namespace:ThePipeline
+StageWidth	pipeline_traits.9stage.hh	/^    const unsigned StageWidth = 2;$/;"	m	namespace:ThePipeline
+StageWidth	pipeline_traits.9stage.smt2.hh	/^    const unsigned StageWidth = 1;$/;"	m	namespace:ThePipeline
+Stalls	pipeline_stage.hh	/^    struct Stalls {$/;"	s	class:PipelineStage
+StartMultDiv	resources/mult_div_unit.hh	/^        StartMultDiv,$/;"	e	enum:MultDivUnit::Command
+StartSquash	pipeline_stage.hh	/^        StartSquash,$/;"	e	enum:PipelineStage::ThreadStatus
+Status	cpu.hh	/^    enum Status {$/;"	g	class:InOrderCPU
+Status	inorder_dyn_inst.hh	/^    enum Status {$/;"	g	class:InOrderDynInst
+Status	thread_state.hh	/^    typedef ThreadContext::Status Status;$/;"	t	class:InOrderThreadState
+SuspendThread	cpu.hh	/^        SuspendThread,$/;"	e	enum:InOrderCPU::CPUEventType
+SwitchOnCacheMiss	cpu.hh	/^        SwitchOnCacheMiss$/;"	e	enum:InOrderCPU::ThreadModel
+SwitchedOut	cpu.hh	/^        SwitchedOut$/;"	e	enum:InOrderCPU::Status
+Syscall	cpu.hh	/^        Syscall,$/;"	e	enum:InOrderCPU::CPUEventType
+Syscall_Pri	cpu.hh	/^        Syscall_Pri                    = Event::CPU_Tick_Pri + 9,$/;"	e	enum:InOrderCPU::CPUEventPri
+TLBCommand	resources/tlb_unit.hh	/^    enum TLBCommand {$/;"	g	class:TLBUnit
+TLBUnit	resources/tlb_unit.cc	/^TLBUnit::TLBUnit(string res_name, int res_id, int res_width,$/;"	f	class:TLBUnit
+TLBUnit	resources/tlb_unit.hh	/^class TLBUnit : public Resource$/;"	c
+TLBUnitEvent	resources/tlb_unit.cc	/^TLBUnitEvent::TLBUnitEvent()$/;"	f	class:TLBUnitEvent
+TLBUnitEvent	resources/tlb_unit.hh	/^class TLBUnitEvent : public ResourceEvent {$/;"	c
+TLBUnitRequest	resources/tlb_unit.hh	/^    TLBUnitRequest(TLBUnit *res)$/;"	f	class:TLBUnitRequest
+TLBUnitRequest	resources/tlb_unit.hh	/^class TLBUnitRequest : public ResourceRequest {$/;"	c
+ThePipeline	pipeline_traits.5stage.cc	/^namespace ThePipeline {$/;"	n	file:
+ThePipeline	pipeline_traits.5stage.hh	/^namespace ThePipeline {$/;"	n
+ThePipeline	pipeline_traits.9stage.cc	/^namespace ThePipeline {$/;"	n	file:
+ThePipeline	pipeline_traits.9stage.hh	/^namespace ThePipeline {$/;"	n
+ThePipeline	pipeline_traits.9stage.smt2.cc	/^namespace ThePipeline {$/;"	n	file:
+ThePipeline	pipeline_traits.9stage.smt2.hh	/^namespace ThePipeline {$/;"	n
+ThePipeline	pipeline_traits.hh	/^namespace ThePipeline {$/;"	n
+Thread	cpu.hh	/^    typedef InOrderThreadState Thread;$/;"	t	class:InOrderCPU
+ThreadModel	InOrderCPU.py	/^class ThreadModel(Enum):$/;"	c
+ThreadModel	cpu.hh	/^    enum ThreadModel {$/;"	g	class:InOrderCPU
+ThreadStatus	pipeline_stage.hh	/^    enum ThreadStatus {$/;"	g	class:PipelineStage
+ThreadsyncWait	inorder_dyn_inst.hh	/^        ThreadsyncWait,          \/\/\/ Is a thread synchronization instruction$/;"	e	enum:InOrderDynInst::Status
+TickEvent	cpu.cc	/^InOrderCPU::TickEvent::TickEvent(InOrderCPU *c)$/;"	f	class:InOrderCPU::TickEvent
+TickEvent	cpu.hh	/^    class TickEvent : public Event$/;"	c	class:InOrderCPU
+TimeStruct	comm.hh	/^    TimeStruct()$/;"	f	struct:TimeStruct
+TimeStruct	comm.hh	/^struct TimeStruct {$/;"	s
+Tournament	resources/bpred_unit.hh	/^        Tournament$/;"	e	enum:BPredUnit::PredType
+Trace	inorder_trace.cc	/^namespace Trace {$/;"	n	file:
+Trace	inorder_trace.hh	/^namespace Trace {$/;"	n
+Trap	cpu.hh	/^        Trap,$/;"	e	enum:InOrderCPU::CPUEventType
+Unblocking	pipeline_stage.hh	/^        Unblocking,$/;"	e	enum:PipelineStage::ThreadStatus
+UpdateAfterContextSwitch	resource_pool.hh	/^        UpdateAfterContextSwitch,$/;"	e	enum:ResourcePool::ResPoolEventType
+UpdatePCs	cpu.hh	/^        UpdatePCs,$/;"	e	enum:InOrderCPU::CPUEventType
+UpdatePredictor	resources/branch_predictor.hh	/^        UpdatePredictor$/;"	e	enum:BranchPredictor::Command
+UpdateTargetPC	resources/fetch_seq_unit.hh	/^        UpdateTargetPC$/;"	e	enum:FetchSeqUnit::Command
+UseDefRequest	resources/use_def.hh	/^        UseDefRequest(UseDefUnit *res)$/;"	f	class:UseDefUnit::UseDefRequest
+UseDefRequest	resources/use_def.hh	/^    class UseDefRequest : public ResourceRequest {$/;"	c	class:UseDefUnit
+UseDefUnit	resources/use_def.cc	/^UseDefUnit::UseDefUnit(string res_name, int res_id, int res_width,$/;"	f	class:UseDefUnit
+UseDefUnit	resources/use_def.hh	/^class UseDefUnit : public Resource {$/;"	c
+WriteDestReg	resources/use_def.hh	/^        WriteDestReg,$/;"	e	enum:UseDefUnit::Command
+__CPU_INORDER_AGEN_UNIT_HH__	resources/agen_unit.hh	/^#define __CPU_INORDER_AGEN_UNIT_HH__$/;"	d
+__CPU_INORDER_BPRED_UNIT_HH__	resources/bpred_unit.hh	/^#define __CPU_INORDER_BPRED_UNIT_HH__$/;"	d
+__CPU_INORDER_BRANCH_PREDICTOR_HH__	resources/branch_predictor.hh	/^#define __CPU_INORDER_BRANCH_PREDICTOR_HH__$/;"	d
+__CPU_INORDER_CACHE_UNIT_HH__	resources/cache_unit.hh	/^#define __CPU_INORDER_CACHE_UNIT_HH__$/;"	d
+__CPU_INORDER_COMM_HH__	comm.hh	/^#define __CPU_INORDER_COMM_HH__$/;"	d
+__CPU_INORDER_CPU_HH__	cpu.hh	/^#define __CPU_INORDER_CPU_HH__$/;"	d
+__CPU_INORDER_DECODE_UNIT_HH__	resources/decode_unit.hh	/^#define __CPU_INORDER_DECODE_UNIT_HH__$/;"	d
+__CPU_INORDER_DYN_INST_HH__	inorder_dyn_inst.hh	/^#define __CPU_INORDER_DYN_INST_HH__$/;"	d
+__CPU_INORDER_EXECUTION_UNIT_HH__	resources/execution_unit.hh	/^#define __CPU_INORDER_EXECUTION_UNIT_HH__$/;"	d
+__CPU_INORDER_FETCH_SEQ_UNIT_HH__	resources/fetch_seq_unit.hh	/^#define __CPU_INORDER_FETCH_SEQ_UNIT_HH__$/;"	d
+__CPU_INORDER_FETCH_UNIT_HH__	resources/fetch_unit.hh	/^#define __CPU_INORDER_FETCH_UNIT_HH__$/;"	d
+__CPU_INORDER_FIRST_STAGE_HH__	first_stage.hh	/^#define __CPU_INORDER_FIRST_STAGE_HH__$/;"	d
+__CPU_INORDER_GRAD_UNIT_HH__	resources/graduation_unit.hh	/^#define __CPU_INORDER_GRAD_UNIT_HH__$/;"	d
+__CPU_INORDER_INORDER_TRACE_HH__	inorder_trace.hh	/^#define __CPU_INORDER_INORDER_TRACE_HH__$/;"	d
+__CPU_INORDER_INST_BUFF_UNIT_HH__	resources/inst_buffer.hh	/^#define __CPU_INORDER_INST_BUFF_UNIT_HH__$/;"	d
+__CPU_INORDER_MEM_DEP_UNIT_HH__	resources/mem_dep_unit.hh	/^#define __CPU_INORDER_MEM_DEP_UNIT_HH__$/;"	d
+__CPU_INORDER_MULT_DIV_UNIT_HH__	resources/mult_div_unit.hh	/^#define __CPU_INORDER_MULT_DIV_UNIT_HH__$/;"	d
+__CPU_INORDER_PARAMS_HH__	params.hh	/^#define __CPU_INORDER_PARAMS_HH__$/;"	d
+__CPU_INORDER_PIPELINE_IMPL_HH__	pipeline_traits.5stage.hh	/^#define __CPU_INORDER_PIPELINE_IMPL_HH__$/;"	d
+__CPU_INORDER_PIPELINE_IMPL_HH__	pipeline_traits.9stage.hh	/^#define __CPU_INORDER_PIPELINE_IMPL_HH__$/;"	d
+__CPU_INORDER_PIPELINE_IMPL_HH__	pipeline_traits.9stage.smt2.hh	/^#define __CPU_INORDER_PIPELINE_IMPL_HH__$/;"	d
+__CPU_INORDER_PIPELINE_IMPL_HH__	pipeline_traits.hh	/^#define __CPU_INORDER_PIPELINE_IMPL_HH__$/;"	d
+__CPU_INORDER_PIPELINE_STAGE_HH__	pipeline_stage.hh	/^#define __CPU_INORDER_PIPELINE_STAGE_HH__$/;"	d
+__CPU_INORDER_RESOURCE_HH__	resource.hh	/^#define __CPU_INORDER_RESOURCE_HH__$/;"	d
+__CPU_INORDER_RESOURCE_POOL_HH__	resource_pool.hh	/^#define __CPU_INORDER_RESOURCE_POOL_HH__$/;"	d
+__CPU_INORDER_RESOURCE_SKED_HH__	resource_sked.hh	/^#define __CPU_INORDER_RESOURCE_SKED_HH__$/;"	d
+__CPU_INORDER_THREAD_CONTEXT_HH__	thread_context.hh	/^#define __CPU_INORDER_THREAD_CONTEXT_HH__$/;"	d
+__CPU_INORDER_THREAD_STATE_HH__	thread_state.hh	/^#define __CPU_INORDER_THREAD_STATE_HH__$/;"	d
+__CPU_INORDER_TLB_UNIT_HH__	resources/tlb_unit.hh	/^#define __CPU_INORDER_TLB_UNIT_HH__$/;"	d
+__CPU_INORDER_USE_DEF_UNIT_HH__	resources/use_def.hh	/^#define __CPU_INORDER_USE_DEF_UNIT_HH__$/;"	d
+_destRegIdx	inorder_dyn_inst.hh	/^    PhysRegIndex _destRegIdx[MaxInstDestRegs];$/;"	m	class:InOrderDynInst
+_flatDestRegIdx	inorder_dyn_inst.hh	/^    TheISA::RegIndex _flatDestRegIdx[TheISA::MaxInstDestRegs];$/;"	m	class:InOrderDynInst
+_flatSrcRegIdx	inorder_dyn_inst.hh	/^    TheISA::RegIndex _flatSrcRegIdx[TheISA::MaxInstSrcRegs];$/;"	m	class:InOrderDynInst
+_prevDestRegIdx	inorder_dyn_inst.hh	/^    PhysRegIndex _prevDestRegIdx[MaxInstDestRegs];$/;"	m	class:InOrderDynInst
+_readySrcRegIdx	inorder_dyn_inst.hh	/^    bool _readySrcRegIdx[MaxInstSrcRegs];$/;"	m	class:InOrderDynInst
+_srcRegIdx	inorder_dyn_inst.hh	/^    PhysRegIndex _srcRegIdx[MaxInstSrcRegs];$/;"	m	class:InOrderDynInst
+_status	cpu.hh	/^    Status _status;$/;"	m	class:InOrderCPU
+_status	pipeline_stage.hh	/^    StageStatus _status;$/;"	m	class:PipelineStage
+_tlb	resources/cache_unit.hh	/^    TheISA::TLB *_tlb;$/;"	m	class:CacheUnit
+_tlb	resources/tlb_unit.hh	/^    TheISA::TLB *_tlb;$/;"	m	class:TLBUnit
+activate	thread_context.cc	/^InOrderThreadContext::activate(Cycles delay)$/;"	f	class:InOrderThreadContext
+activateAll	resource_pool.9stage.cc	/^ResourcePool::activateAll(ThreadID tid)$/;"	f	class:ResourcePool
+activateContext	cpu.cc	/^InOrderCPU::activateContext(ThreadID tid, Cycles delay)$/;"	f	class:InOrderCPU
+activateContext	thread_context.hh	/^    void activateContext(Cycles delay)$/;"	f	class:InOrderThreadContext
+activateNextReadyContext	cpu.cc	/^InOrderCPU::activateNextReadyContext(Cycles delay)$/;"	f	class:InOrderCPU
+activateNextReadyThread	cpu.cc	/^InOrderCPU::activateNextReadyThread()$/;"	f	class:InOrderCPU
+activateStage	cpu.hh	/^    void activateStage(const int idx)$/;"	f	class:InOrderCPU
+activateThread	cpu.cc	/^InOrderCPU::activateThread(ThreadID tid)$/;"	f	class:InOrderCPU
+activateThread	pipeline_stage.cc	/^PipelineStage::activateThread(ThreadID tid)$/;"	f	class:PipelineStage
+activateThread	resource.hh	/^    virtual void activateThread(ThreadID tid) { }$/;"	f	class:Resource
+activateThread	resource_pool.cc	/^ResourcePool::activateThread(ThreadID tid)$/;"	f	class:ResourcePool
+activateThread	resources/fetch_seq_unit.cc	/^FetchSeqUnit::activateThread(ThreadID tid)$/;"	f	class:FetchSeqUnit
+activateThreadInPipeline	cpu.cc	/^InOrderCPU::activateThreadInPipeline(ThreadID tid)$/;"	f	class:InOrderCPU
+activeThreadId	cpu.hh	/^    ThreadID activeThreadId() $/;"	f	class:InOrderCPU
+activeThreads	cpu.hh	/^    std::list<ThreadID> activeThreads;$/;"	m	class:InOrderCPU
+activeThreads	pipeline_stage.hh	/^    std::list<ThreadID> *activeThreads;$/;"	m	class:PipelineStage
+activity	InOrderCPU.py	/^    activity = Param.Unsigned(0, "Initial count")$/;"	v	class:InOrderCPU
+activity	cpu.hh	/^    Stats::Formula activity;$/;"	m	class:InOrderCPU
+activity	params.hh	/^    unsigned activity;$/;"	m	class:InOrderParams
+activityRec	cpu.hh	/^    ActivityRecorder activityRec;$/;"	m	class:InOrderCPU
+activityThisCycle	cpu.hh	/^    void activityThisCycle() { activityRec.activity(); }$/;"	f	class:InOrderCPU
+addInst	cpu.cc	/^InOrderCPU::addInst(DynInstPtr inst)$/;"	f	class:InOrderCPU
+addToRemoveList	cpu.cc	/^InOrderCPU::addToRemoveList(DynInstPtr inst)$/;"	f	class:InOrderCPU
+addToSkedCache	cpu.hh	/^    void addToSkedCache(DynInstPtr inst, ThePipeline::RSkedPtr inst_sked)$/;"	f	class:InOrderCPU
+addr	resources/fetch_unit.hh	/^        Addr addr;$/;"	m	struct:FetchUnit::FetchBlock
+addrList	resources/cache_unit.hh	/^    std::list<Addr> addrList[ThePipeline::MaxThreads];$/;"	m	class:CacheUnit
+addrMap	resources/cache_unit.hh	/^    m5::hash_map<Addr, InstSeqNum> addrMap[ThePipeline::MaxThreads];$/;"	m	class:CacheUnit
+agens	resources/agen_unit.hh	/^    Stats::Scalar agens;$/;"	m	class:AGENUnit
+archRegDepMap	cpu.hh	/^    RegDepMap archRegDepMap[ThePipeline::MaxThreads];$/;"	m	class:InOrderCPU
+asid	cpu.hh	/^    ThreadID asid[ThePipeline::MaxThreads];$/;"	m	class:InOrderCPU
+asid	inorder_dyn_inst.hh	/^    short asid;$/;"	m	class:InOrderDynInst
+asid	resources/fetch_unit.hh	/^        int asid;$/;"	m	struct:FetchUnit::FetchBlock
+availSlots	resource.hh	/^    std::vector<int> availSlots;$/;"	m	class:Resource
+backSked	inorder_dyn_inst.hh	/^    RSkedPtr backSked;$/;"	m	class:InOrderDynInst
+backSked_end	inorder_dyn_inst.hh	/^    RSkedIt backSked_end;$/;"	m	class:InOrderDynInst
+bdelayDoneSeqNum	pipeline_stage.hh	/^    Addr bdelayDoneSeqNum[ThePipeline::MaxThreads];$/;"	m	class:PipelineStage
+begin	resource_sked.cc	/^ResourceSked::begin()$/;"	f	class:ResourceSked
+block	pipeline_stage.cc	/^PipelineStage::block(ThreadID tid)$/;"	f	class:PipelineStage
+block	resources/fetch_unit.hh	/^        uint8_t *block;$/;"	m	struct:FetchUnit::FetchBlock
+blockDueToBuffer	pipeline_stage.cc	/^PipelineStage::blockDueToBuffer(ThreadID tid)$/;"	f	class:PipelineStage
+blocksInUse	resources/fetch_unit.cc	/^FetchUnit::blocksInUse()$/;"	f	class:FetchUnit
+bpHistory	resources/bpred_unit.hh	/^        void *bpHistory;$/;"	m	struct:BPredUnit::PredictorHistory
+branchPred	resources/branch_predictor.hh	/^    BPredUnit branchPred;$/;"	m	class:BranchPredictor
+branchTarget	inorder_dyn_inst.hh	/^    TheISA::PCState branchTarget() const$/;"	f	class:InOrderDynInst
+buildDataPacket	resources/cache_unit.cc	/^CacheUnit::buildDataPacket(CacheRequest *cache_req)$/;"	f	class:CacheUnit
+cacheBlkMask	resources/cache_unit.hh	/^    int cacheBlkMask;$/;"	m	class:CacheUnit
+cacheBlkSize	resources/cache_unit.hh	/^    int cacheBlkSize;$/;"	m	class:CacheUnit
+cacheBlockAlign	resources/cache_unit.hh	/^    Addr cacheBlockAlign(Addr addr)$/;"	f	class:CacheUnit
+cacheBlockAlignPC	resources/fetch_unit.hh	/^    Addr cacheBlockAlignPC(Addr addr)$/;"	f	class:FetchUnit
+cachePort	resources/cache_unit.hh	/^    MasterPort *cachePort;$/;"	m	class:CacheUnit
+cachePortBlocked	resources/cache_unit.hh	/^    bool cachePortBlocked;$/;"	m	class:CacheUnit
+cachePorts	InOrderCPU.py	/^    cachePorts = Param.Unsigned(2, "Cache Ports")$/;"	v	class:InOrderCPU
+cachePorts	params.hh	/^    unsigned cachePorts;$/;"	m	class:InOrderParams
+cacheReq	resources/cache_unit.hh	/^    CacheRequest *cacheReq;$/;"	m	class:CacheReqPacket
+cacheUnit	cpu.hh	/^        CacheUnit *cacheUnit;$/;"	m	class:InOrderCPU::CachePort
+calcEA	inorder_dyn_inst.cc	/^InOrderDynInst::calcEA()$/;"	f	class:InOrderDynInst
+canForward	reg_dep_map.cc	/^RegDepMap::canForward(uint8_t reg_type, unsigned reg_idx, DynInstPtr inst)$/;"	f	class:RegDepMap
+canRead	reg_dep_map.cc	/^RegDepMap::canRead(uint8_t reg_type, RegIndex idx, DynInstPtr inst)$/;"	f	class:RegDepMap
+canSendInstToStage	pipeline_stage.cc	/^PipelineStage::canSendInstToStage(unsigned stage_num)$/;"	f	class:PipelineStage
+canWrite	reg_dep_map.cc	/^RegDepMap::canWrite(uint8_t reg_type, RegIndex idx, DynInstPtr inst)$/;"	f	class:RegDepMap
+changeRegFileContext	thread_context.hh	/^    void changeRegFileContext(unsigned param,$/;"	f	class:InOrderThreadContext
+checkForInterrupts	cpu.cc	/^InOrderCPU::checkForInterrupts()$/;"	f	class:InOrderCPU
+checkSignalsAndUpdate	pipeline_stage.cc	/^PipelineStage::checkSignalsAndUpdate(ThreadID tid)$/;"	f	class:PipelineStage
+checkStall	pipeline_stage.cc	/^PipelineStage::checkStall(ThreadID tid) const$/;"	f	class:PipelineStage
+choiceCtrBits	InOrderCPU.py	/^    choiceCtrBits = Param.Unsigned(2, "Bits of choice counters")$/;"	v	class:InOrderCPU
+choiceCtrBits	params.hh	/^    unsigned choiceCtrBits;$/;"	m	class:InOrderParams
+choicePredictorSize	InOrderCPU.py	/^    choicePredictorSize = Param.Unsigned(8192, "Size of choice predictor")$/;"	v	class:InOrderCPU
+choicePredictorSize	params.hh	/^    unsigned choicePredictorSize;$/;"	m	class:InOrderParams
+cleanUpRemovedEvents	cpu.cc	/^InOrderCPU::cleanUpRemovedEvents()$/;"	f	class:InOrderCPU
+cleanUpRemovedInsts	cpu.cc	/^InOrderCPU::cleanUpRemovedInsts()$/;"	f	class:InOrderCPU
+clear	reg_dep_map.cc	/^RegDepMap::clear()$/;"	f	class:RegDepMap
+clearArchRegs	thread_context.cc	/^InOrderThreadContext::clearArchRegs()$/;"	f	class:InOrderThreadContext
+clearCanCommit	inorder_dyn_inst.hh	/^    void clearCanCommit() { status.reset(CanCommit); }$/;"	f	class:InOrderDynInst
+clearFetchBuffer	resources/fetch_unit.cc	/^FetchUnit::clearFetchBuffer()$/;"	f	class:FetchUnit
+clearRegDepEntry	inorder_dyn_inst.hh	/^    void clearRegDepEntry() { status.reset(RegDepMapEntry); }$/;"	f	class:InOrderDynInst
+clearRequest	resource.cc	/^ResourceRequest::clearRequest()$/;"	f	class:ResourceRequest
+clearRequest	resources/cache_unit.cc	/^CacheRequest::clearRequest()$/;"	f	class:CacheRequest
+clearSerializeAfter	inorder_dyn_inst.hh	/^    void clearSerializeAfter() { status.reset(SerializeAfter); }$/;"	f	class:InOrderDynInst
+clearSerializeBefore	inorder_dyn_inst.hh	/^    void clearSerializeBefore() { status.reset(SerializeBefore); }$/;"	f	class:InOrderDynInst
+cmd	pipeline_traits.5stage.hh	/^        unsigned cmd;$/;"	m	struct:ThePipeline::ScheduleEntry
+cmd	pipeline_traits.9stage.hh	/^        unsigned cmd;$/;"	m	struct:ThePipeline::ScheduleEntry
+cmd	pipeline_traits.9stage.smt2.hh	/^        unsigned cmd;$/;"	m	struct:ThePipeline::ScheduleEntry
+cmd	resource.hh	/^    unsigned cmd;$/;"	m	class:ResourceRequest
+cmd	resource_sked.hh	/^    unsigned cmd;$/;"	m	class:ScheduleEntry
+cnt	resources/fetch_unit.hh	/^        short cnt;$/;"	m	struct:FetchUnit::FetchBlock
+comBranches	cpu.hh	/^    Stats::Scalar comBranches;$/;"	m	class:InOrderCPU
+comFloats	cpu.hh	/^    Stats::Scalar comFloats;$/;"	m	class:InOrderCPU
+comInts	cpu.hh	/^    Stats::Scalar comInts;$/;"	m	class:InOrderCPU
+comLoads	cpu.hh	/^    Stats::Scalar comLoads;$/;"	m	class:InOrderCPU
+comNonSpec	cpu.hh	/^    Stats::Scalar comNonSpec;$/;"	m	class:InOrderCPU
+comNops	cpu.hh	/^    Stats::Scalar comNops;$/;"	m	class:InOrderCPU
+comStores	cpu.hh	/^    Stats::Scalar comStores;$/;"	m	class:InOrderCPU
+committedInsts	cpu.hh	/^    Stats::Vector committedInsts;$/;"	m	class:InOrderCPU
+committedOps	cpu.hh	/^    Stats::Vector committedOps;$/;"	m	class:InOrderCPU
+completeAcc	inorder_dyn_inst.cc	/^InOrderDynInst::completeAcc(Packet *pkt)$/;"	f	class:InOrderDynInst
+completed	resource.hh	/^    bool completed;$/;"	m	class:ResourceRequest
+condIncorrect	resources/bpred_unit.hh	/^    Stats::Scalar condIncorrect;$/;"	m	class:BPredUnit
+condPredicted	resources/bpred_unit.hh	/^    Stats::Scalar condPredicted;$/;"	m	class:BPredUnit
+contextId	cpu.hh	/^    contextId()$/;"	f	class:InOrderCPU
+contextId	inorder_dyn_inst.hh	/^    int contextId() { return thread->contextId(); }$/;"	f	class:InOrderDynInst
+contextId	thread_context.hh	/^    int contextId() { return thread->contextId(); }$/;"	f	class:InOrderThreadContext
+copyArchRegs	thread_context.cc	/^InOrderThreadContext::copyArchRegs(ThreadContext *src_tc)$/;"	f	class:InOrderThreadContext
+coreType	cpu.hh	/^    std::string coreType;$/;"	m	class:InOrderCPU
+cpi	cpu.hh	/^    Stats::Formula cpi;$/;"	m	class:InOrderCPU
+cpu	cpu.hh	/^        InOrderCPU *cpu;$/;"	m	class:InOrderCPU::CPUEvent
+cpu	cpu.hh	/^        InOrderCPU *cpu;$/;"	m	class:InOrderCPU::TickEvent
+cpu	inorder_dyn_inst.hh	/^    InOrderCPU *cpu;$/;"	m	class:InOrderDynInst
+cpu	pipeline_stage.hh	/^    InOrderCPU *cpu;$/;"	m	class:PipelineStage
+cpu	reg_dep_map.hh	/^    InOrderCPU *cpu;$/;"	m	class:RegDepMap
+cpu	resource.hh	/^    InOrderCPU *cpu;$/;"	m	class:Resource
+cpu	resource_pool.hh	/^    InOrderCPU *cpu;$/;"	m	class:ResourcePool
+cpu	thread_context.hh	/^    InOrderCPU *cpu;$/;"	m	class:InOrderThreadContext
+cpu	thread_state.hh	/^    InOrderCPU *cpu;$/;"	m	class:InOrderThreadState
+cpuEventNum	cpu.hh	/^    InstSeqNum cpuEventNum;$/;"	m	class:InOrderCPU
+cpuEventRemoveList	cpu.hh	/^    std::queue<Event*> cpuEventRemoveList;$/;"	m	class:InOrderCPU
+cpuEventType	cpu.hh	/^        CPUEventType cpuEventType;$/;"	m	class:InOrderCPU::CPUEvent
+cpuId	inorder_dyn_inst.cc	/^InOrderDynInst::cpuId()$/;"	f	class:InOrderDynInst
+cpuId	thread_context.hh	/^    int cpuId() { return cpu->cpuId(); }$/;"	f	class:InOrderThreadContext
+cpu_id	cpu.hh	/^    int cpu_id;$/;"	m	class:InOrderCPU
+cpu_params	cpu.hh	/^    Params *cpu_params;$/;"	m	class:InOrderCPU
+create	inorder_cpu_builder.cc	/^InOrderCPUParams::create()$/;"	f	class:InOrderCPUParams
+create	inorder_trace.cc	/^InOrderTraceParams::create()$/;"	f	class:InOrderTraceParams
+createBackEndSchedule	pipeline_traits.5stage.cc	/^bool createBackEndSchedule(DynInstPtr &inst)$/;"	f	namespace:ThePipeline
+createBackEndSchedule	pipeline_traits.9stage.cc	/^bool createBackEndSchedule(DynInstPtr &inst)$/;"	f	namespace:ThePipeline
+createBackEndSchedule	pipeline_traits.9stage.smt2.cc	/^bool createBackEndSchedule(DynInstPtr &inst)$/;"	f	namespace:ThePipeline
+createBackEndSked	cpu.cc	/^InOrderCPU::createBackEndSked(DynInstPtr inst)$/;"	f	class:InOrderCPU
+createFaultSked	cpu.cc	/^InOrderCPU::createFaultSked()$/;"	f	class:InOrderCPU
+createFrontEndSchedule	pipeline_traits.5stage.cc	/^void createFrontEndSchedule(DynInstPtr &inst)$/;"	f	namespace:ThePipeline
+createFrontEndSchedule	pipeline_traits.9stage.cc	/^void createFrontEndSchedule(DynInstPtr &inst)$/;"	f	namespace:ThePipeline
+createFrontEndSchedule	pipeline_traits.9stage.smt2.cc	/^void createFrontEndSchedule(DynInstPtr &inst)$/;"	f	namespace:ThePipeline
+createFrontEndSked	cpu.cc	/^InOrderCPU::createFrontEndSked()$/;"	f	class:InOrderCPU
+createMachInst	resources/fetch_unit.cc	/^FetchUnit::createMachInst(std::list<FetchBlock*>::iterator fetch_it,$/;"	f	class:FetchUnit
+curResSlot	inorder_dyn_inst.hh	/^    unsigned curResSlot;$/;"	m	class:InOrderDynInst
+curSkedEntry	inorder_dyn_inst.hh	/^    RSkedIt curSkedEntry;$/;"	m	class:InOrderDynInst
+curSkedEntry	resource_sked.hh	/^    SkedIt curSkedEntry;$/;"	m	class:ResourceSked
+curStage	resource_sked.hh	/^    int curStage;$/;"	m	class:RSkedIt
+curStage_end	resource_sked.hh	/^    ResourceSked::SkedIt curStage_end;$/;"	m	class:RSkedIt
+cxx_class	InOrderTrace.py	/^    cxx_class = 'Trace::InOrderTrace'$/;"	v	class:InOrderTrace
+dataMemPort	params.hh	/^    std::string dataMemPort;$/;"	m	class:InOrderParams
+dataMemReq	inorder_dyn_inst.hh	/^    RequestPtr dataMemReq;$/;"	m	class:InOrderDynInst
+dataPkt	resources/cache_unit.hh	/^    CacheReqPacket *dataPkt;$/;"	m	class:CacheRequest
+dataPort	cpu.hh	/^    CachePort dataPort;$/;"	m	class:InOrderCPU
+dataUnit	resource_pool.hh	/^    CacheUnit *dataUnit;$/;"	m	class:ResourcePool
+deactivateAll	resource_pool.9stage.cc	/^ResourcePool::deactivateAll(ThreadID tid)$/;"	f	class:ResourcePool
+deactivateContext	cpu.cc	/^InOrderCPU::deactivateContext(ThreadID tid, Cycles delay)$/;"	f	class:InOrderCPU
+deactivateStage	cpu.hh	/^    void deactivateStage(const int idx)$/;"	f	class:InOrderCPU
+deactivateThread	cpu.cc	/^InOrderCPU::deactivateThread(ThreadID tid)$/;"	f	class:InOrderCPU
+deactivateThread	resource.cc	/^Resource::deactivateThread(ThreadID tid)$/;"	f	class:Resource
+deactivateThread	resource_pool.cc	/^ResourcePool::deactivateThread(ThreadID tid)$/;"	f	class:ResourcePool
+deactivateThread	resources/fetch_seq_unit.cc	/^FetchSeqUnit::deactivateThread(ThreadID tid)$/;"	f	class:FetchSeqUnit
+deallocateContext	inorder_dyn_inst.cc	/^InOrderDynInst::deallocateContext(int thread_num)$/;"	f	class:InOrderDynInst
+deallocateContext	thread_context.hh	/^    void deallocateContext()$/;"	f	class:InOrderThreadContext
+decoder	resources/fetch_unit.hh	/^    TheISA::Decoder *decoder[ThePipeline::MaxThreads];$/;"	m	class:FetchUnit
+deferRegistration	cpu.hh	/^    bool deferRegistration;$/;"	m	class:InOrderCPU
+deferRegistration	params.hh	/^    unsigned deferRegistration;$/;"	m	class:InOrderParams
+deniedReq	resource.hh	/^    ResReqPtr deniedReq;$/;"	m	class:Resource
+description	cpu.cc	/^InOrderCPU::CPUEvent::description() const$/;"	f	class:InOrderCPU::CPUEvent
+description	cpu.cc	/^InOrderCPU::TickEvent::description() const$/;"	f	class:InOrderCPU::TickEvent
+description	resource.cc	/^ResourceEvent::description() const$/;"	f	class:ResourceEvent
+description	resource_pool.9stage.cc	/^ResourcePool::ResPoolEvent::description()$/;"	f	class:ResourcePool::ResPoolEvent
+description	resource_pool.cc	/^ResourcePool::ResPoolEvent::description() const$/;"	f	class:ResourcePool::ResPoolEvent
+destRegIdx	inorder_dyn_inst.hh	/^    RegIndex destRegIdx(int i) const { return staticInst->destRegIdx(i); }$/;"	f	class:InOrderDynInst
+div16Latency	InOrderCPU.py	/^    div16Latency = Param.Cycles(1, "Latency for 16-bit Divide Operations")$/;"	v	class:InOrderCPU
+div16Latency	params.hh	/^    Cycles div16Latency;$/;"	m	class:InOrderParams
+div16Latency	resources/mult_div_unit.hh	/^    Cycles div16Latency;$/;"	m	class:MultDivUnit
+div16RepeatRate	InOrderCPU.py	/^    div16RepeatRate = Param.Cycles(1, "Repeat Rate for 16-bit Divide Operations")$/;"	v	class:InOrderCPU
+div16RepeatRate	params.hh	/^    Cycles div16RepeatRate;$/;"	m	class:InOrderParams
+div16RepeatRate	resources/mult_div_unit.hh	/^    unsigned div16RepeatRate;$/;"	m	class:MultDivUnit
+div24Latency	InOrderCPU.py	/^    div24Latency = Param.Cycles(1, "Latency for 24-bit Divide Operations")$/;"	v	class:InOrderCPU
+div24Latency	params.hh	/^    Cycles div24Latency;$/;"	m	class:InOrderParams
+div24Latency	resources/mult_div_unit.hh	/^    Cycles div24Latency;$/;"	m	class:MultDivUnit
+div24RepeatRate	InOrderCPU.py	/^    div24RepeatRate = Param.Cycles(1, "Repeat Rate for 24-bit Divide Operations")$/;"	v	class:InOrderCPU
+div24RepeatRate	params.hh	/^    Cycles div24RepeatRate;$/;"	m	class:InOrderParams
+div24RepeatRate	resources/mult_div_unit.hh	/^    unsigned div24RepeatRate;$/;"	m	class:MultDivUnit
+div32Latency	InOrderCPU.py	/^    div32Latency = Param.Cycles(1, "Latency for 32-bit Divide Operations")$/;"	v	class:InOrderCPU
+div32Latency	params.hh	/^    Cycles div32Latency;$/;"	m	class:InOrderParams
+div32Latency	resources/mult_div_unit.hh	/^    Cycles div32Latency;$/;"	m	class:MultDivUnit
+div32RepeatRate	InOrderCPU.py	/^    div32RepeatRate = Param.Cycles(1, "Repeat Rate for 32-bit Divide Operations")$/;"	v	class:InOrderCPU
+div32RepeatRate	params.hh	/^    Cycles div32RepeatRate;$/;"	m	class:InOrderParams
+div32RepeatRate	resources/mult_div_unit.hh	/^    unsigned div32RepeatRate;$/;"	m	class:MultDivUnit
+div8Latency	InOrderCPU.py	/^    div8Latency = Param.Cycles(1, "Latency for 8-bit Divide Operations")$/;"	v	class:InOrderCPU
+div8Latency	params.hh	/^    Cycles div8Latency;$/;"	m	class:InOrderParams
+div8Latency	resources/mult_div_unit.hh	/^    Cycles div8Latency;$/;"	m	class:MultDivUnit
+div8RepeatRate	InOrderCPU.py	/^    div8RepeatRate = Param.Cycles(1, "Repeat Rate for 8-bit Divide Operations")$/;"	v	class:InOrderCPU
+div8RepeatRate	params.hh	/^    Cycles div8RepeatRate;$/;"	m	class:InOrderParams
+div8RepeatRate	resources/mult_div_unit.hh	/^    unsigned div8RepeatRate;$/;"	m	class:MultDivUnit
+divides	resources/mult_div_unit.hh	/^    Stats::Scalar divides;$/;"	m	class:MultDivUnit
+doCacheAccess	resource.hh	/^    virtual void doCacheAccess(DynInstPtr inst, uint64_t *write_result = NULL,$/;"	f	class:Resource
+doCacheAccess	resources/cache_unit.cc	/^CacheUnit::doCacheAccess(DynInstPtr inst, uint64_t *write_res,$/;"	f	class:CacheUnit
+doFetchAccess	resource.hh	/^    virtual Fault doFetchAccess(DynInstPtr inst)$/;"	f	class:Resource
+doTLBAccess	resources/cache_unit.cc	/^CacheUnit::doTLBAccess(DynInstPtr inst, CacheReqPtr cache_req, int acc_size,$/;"	f	class:CacheUnit
+done	resource.cc	/^ResourceRequest::done(bool completed)$/;"	f	class:ResourceRequest
+doneEACalc	inorder_dyn_inst.hh	/^    bool doneEACalc() { return eaCalcDone; }$/;"	f	class:InOrderDynInst
+doneInResource	resource.hh	/^    bool doneInResource;$/;"	m	class:ResourceRequest
+doneSeqNum	comm.hh	/^        InstSeqNum doneSeqNum;$/;"	m	struct:TimeStruct::StageComm
+doneTargCalc	inorder_dyn_inst.hh	/^    bool doneTargCalc() { return false; }$/;"	f	class:InOrderDynInst
+drainCount	cpu.hh	/^    int drainCount;$/;"	m	class:InOrderCPU
+dummyBufferInst	cpu.hh	/^    DynInstPtr dummyBufferInst;$/;"	m	class:InOrderCPU
+dummyBufferInst	pipeline_stage.hh	/^    DynInstPtr dummyBufferInst;$/;"	m	class:PipelineStage
+dummyInst	cpu.hh	/^    DynInstPtr dummyInst[ThePipeline::MaxThreads];$/;"	m	class:InOrderCPU
+dummyInst	resource_pool.hh	/^    DynInstPtr dummyInst[ThePipeline::MaxThreads];$/;"	m	class:ResourcePool
+dummyReq	cpu.hh	/^    ResourceRequest *dummyReq[ThePipeline::MaxThreads];$/;"	m	class:InOrderCPU
+dummyReqInst	cpu.hh	/^    DynInstPtr dummyReqInst;$/;"	m	class:InOrderCPU
+dummyTrapInst	cpu.hh	/^    DynInstPtr dummyTrapInst[ThePipeline::MaxThreads];$/;"	m	class:InOrderCPU
+dump	inorder_dyn_inst.cc	/^InOrderDynInst::dump()$/;"	f	class:InOrderDynInst
+dump	inorder_dyn_inst.cc	/^InOrderDynInst::dump(std::string &outstring)$/;"	f	class:InOrderDynInst
+dump	reg_dep_map.cc	/^RegDepMap::dump()$/;"	f	class:RegDepMap
+dump	resources/bpred_unit.cc	/^BPredUnit::dump()$/;"	f	class:BPredUnit
+dumpFuncProfile	thread_context.cc	/^InOrderThreadContext::dumpFuncProfile()$/;"	f	class:InOrderThreadContext
+dumpFuncProfile	thread_state.cc	/^InOrderThreadState::dumpFuncProfile()    $/;"	f	class:InOrderThreadState
+dumpInsts	cpu.cc	/^InOrderCPU::dumpInsts()$/;"	f	class:InOrderCPU
+dumpInsts	pipeline_stage.cc	/^PipelineStage::dumpInsts()$/;"	f	class:PipelineStage
+dumpTicks	inorder_trace.cc	/^Trace::InOrderTraceRecord::dumpTicks(std::ostream &outs)$/;"	f	class:Trace::Trace::InOrderTraceRecord
+eaCalcDone	inorder_dyn_inst.hh	/^    bool eaCalcDone;$/;"	m	class:InOrderDynInst
+eaSrcsReady	inorder_dyn_inst.hh	/^    bool eaSrcsReady()$/;"	f	class:InOrderDynInst
+effAddr	inorder_dyn_inst.hh	/^    Addr effAddr;$/;"	m	class:InOrderDynInst
+empty	resource_sked.cc	/^ResourceSked::empty()$/;"	f	class:ResourceSked
+end	resource_sked.cc	/^ResourceSked::end()$/;"	f	class:ResourceSked
+end	resource_sked.cc	/^ResourceSked::end(int stage_num)$/;"	f	class:ResourceSked
+endOfSkedIt	cpu.hh	/^    SkedCacheIt endOfSkedIt;$/;"	m	class:InOrderCPU
+entryCompare	pipeline_traits.5stage.hh	/^    struct entryCompare {$/;"	s	namespace:ThePipeline
+entryCompare	pipeline_traits.9stage.hh	/^    struct entryCompare {$/;"	s	namespace:ThePipeline
+entryCompare	pipeline_traits.9stage.smt2.hh	/^    struct entryCompare {$/;"	s	namespace:ThePipeline
+eventNames	cpu.cc	/^std::string InOrderCPU::eventNames[NumCPUEvents] =$/;"	m	class:InOrderCPU	file:
+eventNames	cpu.hh	/^    static std::string eventNames[NumCPUEvents];$/;"	m	class:InOrderCPU
+eventType	resource_pool.hh	/^        InOrderCPU::CPUEventType eventType;$/;"	m	class:ResourcePool::ResPoolEvent
+exeMulDiv	resources/mult_div_unit.cc	/^MultDivUnit::exeMulDiv(int slot_num)$/;"	f	class:MultDivUnit
+execute	inorder_dyn_inst.cc	/^InOrderDynInst::execute()$/;"	f	class:InOrderDynInst
+execute	resource.cc	/^Resource::execute(int slot_idx)$/;"	f	class:Resource
+execute	resources/agen_unit.cc	/^AGENUnit::execute(int slot_num)$/;"	f	class:AGENUnit
+execute	resources/branch_predictor.cc	/^BranchPredictor::execute(int slot_num)$/;"	f	class:BranchPredictor
+execute	resources/cache_unit.cc	/^CacheUnit::execute(int slot_num)$/;"	f	class:CacheUnit
+execute	resources/decode_unit.cc	/^DecodeUnit::execute(int slot_num)$/;"	f	class:DecodeUnit
+execute	resources/execution_unit.cc	/^ExecutionUnit::execute(int slot_num)$/;"	f	class:ExecutionUnit
+execute	resources/fetch_seq_unit.cc	/^FetchSeqUnit::execute(int slot_num)$/;"	f	class:FetchSeqUnit
+execute	resources/fetch_unit.cc	/^FetchUnit::execute(int slot_num)$/;"	f	class:FetchUnit
+execute	resources/graduation_unit.cc	/^GraduationUnit::execute(int slot_num)$/;"	f	class:GraduationUnit
+execute	resources/inst_buffer.cc	/^InstBuffer::execute(int slot_idx)$/;"	f	class:InstBuffer
+execute	resources/mult_div_unit.cc	/^MultDivUnit::execute(int slot_num)$/;"	f	class:MultDivUnit
+execute	resources/tlb_unit.cc	/^TLBUnit::execute(int slot_idx)$/;"	f	class:TLBUnit
+execute	resources/use_def.cc	/^UseDefUnit::execute(int slot_idx)$/;"	f	class:UseDefUnit
+executions	resources/execution_unit.hh	/^    Stats::Scalar executions;$/;"	m	class:ExecutionUnit
+f	cpu.hh	/^        FloatReg f[ThePipeline::MaxThreads][TheISA::NumFloatRegs];$/;"	m	union:InOrderCPU::__anon1
+f	inorder_dyn_inst.hh	/^            FloatReg f;$/;"	m	union:InOrderDynInst::InstValue::__anon3
+fault	cpu.hh	/^        Fault fault;$/;"	m	class:InOrderCPU::CPUEvent
+fault	inorder_dyn_inst.hh	/^    Fault fault;$/;"	m	class:InOrderDynInst
+faultSked	cpu.hh	/^    ThePipeline::RSkedPtr faultSked;$/;"	m	class:InOrderCPU
+fetchBuffSize	InOrderCPU.py	/^    fetchBuffSize = Param.Unsigned(4, "Fetch Buffer Size (Number of Cache Blocks Stored)")$/;"	v	class:InOrderCPU
+fetchBuffSize	resources/fetch_unit.hh	/^    int fetchBuffSize;$/;"	m	class:FetchUnit
+fetchBuffer	resources/fetch_unit.hh	/^    std::list<FetchBlock*> fetchBuffer;$/;"	m	class:FetchUnit
+fetchBufferFill	resources/cache_unit.hh	/^    bool fetchBufferFill;$/;"	m	class:CacheRequest
+fetchMemPort	params.hh	/^    std::string fetchMemPort;$/;"	m	class:InOrderParams
+fetchMemReq	inorder_dyn_inst.hh	/^    RequestPtr fetchMemReq;$/;"	m	class:InOrderDynInst
+fetchPolicy	first_stage.hh	/^    FetchPriority fetchPolicy;$/;"	m	class:FirstStage
+fetchPriorityList	cpu.hh	/^    std::list<ThreadID> fetchPriorityList;$/;"	m	class:InOrderCPU
+fetchPriorityList	first_stage.hh	/^    std::list<ThreadID> *fetchPriorityList;$/;"	m	class:FirstStage
+find	resource_sked.cc	/^ResourceSked::find(int stage_num, int cmd)$/;"	f	class:ResourceSked
+findBlock	resources/fetch_unit.cc	/^FetchUnit::findBlock(std::list<FetchBlock*> &fetch_blocks, int asid,$/;"	f	class:FetchUnit
+findInst	cpu.cc	/^InOrderCPU::findInst(InstSeqNum seq_num, ThreadID tid)$/;"	f	class:InOrderCPU
+findIterByCommand	resource_sked.cc	/^ResourceSked::findIterByCommand(ScheduleEntry* sked_entry, int stage_num,$/;"	f	class:ResourceSked
+findIterByPriority	resource_sked.cc	/^ResourceSked::findIterByPriority(ScheduleEntry* sked_entry, int stage_num)$/;"	f	class:ResourceSked
+findReplacementBlock	resources/fetch_unit.cc	/^FetchUnit::findReplacementBlock()$/;"	f	class:FetchUnit
+findRequest	resource.cc	/^Resource::findRequest(DynInstPtr inst)$/;"	f	class:Resource
+findRequest	resources/cache_unit.cc	/^CacheUnit::findRequest(DynInstPtr inst)$/;"	f	class:CacheUnit
+findRequest	resources/cache_unit.cc	/^CacheUnit::findRequest(DynInstPtr inst, int idx)$/;"	f	class:CacheUnit
+findRequest	resources/use_def.cc	/^UseDefUnit::findRequest(DynInstPtr inst)$/;"	f	class:UseDefUnit
+findSlot	resource.cc	/^Resource::findSlot(DynInstPtr inst)$/;"	f	class:Resource
+finishCacheUnitReq	resources/cache_unit.cc	/^CacheUnit::finishCacheUnitReq(DynInstPtr inst, CacheRequest *cache_req)$/;"	f	class:CacheUnit
+finishSkedEntry	inorder_dyn_inst.hh	/^    bool finishSkedEntry()$/;"	f	class:InOrderDynInst
+flattenDestReg	inorder_dyn_inst.hh	/^    void flattenDestReg(int idx, TheISA::RegIndex flattened_dest)$/;"	f	class:InOrderDynInst
+flattenFloatIndex	thread_context.hh	/^    int flattenFloatIndex(int reg)$/;"	f	class:InOrderThreadContext
+flattenIntIndex	thread_context.hh	/^    int flattenIntIndex(int reg)$/;"	f	class:InOrderThreadContext
+flattenRegIdx	cpu.cc	/^InOrderCPU::flattenRegIdx(RegIndex reg_idx, RegType &reg_type, ThreadID tid)$/;"	f	class:InOrderCPU
+flattenSrcReg	inorder_dyn_inst.hh	/^    void flattenSrcReg(int idx, TheISA::RegIndex flattened_src)$/;"	f	class:InOrderDynInst
+flattenedDestRegIdx	inorder_dyn_inst.hh	/^    TheISA::RegIndex flattenedDestRegIdx(int idx) const$/;"	f	class:InOrderDynInst
+flattenedSrcRegIdx	inorder_dyn_inst.hh	/^    TheISA::RegIndex flattenedSrcRegIdx(int idx) const$/;"	f	class:InOrderDynInst
+floatRegFileAccs	resources/use_def.hh	/^    Stats::Formula floatRegFileAccs;$/;"	m	class:UseDefUnit
+floatRegFileReads	resources/use_def.hh	/^    Stats::Scalar floatRegFileReads;$/;"	m	class:UseDefUnit
+floatRegFileWrites	resources/use_def.hh	/^    Stats::Scalar floatRegFileWrites;$/;"	m	class:UseDefUnit
+floatRegs	cpu.hh	/^    } floatRegs;$/;"	m	class:InOrderCPU	typeref:union:InOrderCPU::__anon1
+fpVal	inorder_dyn_inst.hh	/^        } fpVal;$/;"	m	struct:InOrderDynInst::InstValue	typeref:union:InOrderDynInst::InstValue::__anon3
+freeSlot	resource.cc	/^Resource::freeSlot(int slot_idx)$/;"	f	class:Resource
+freeSlot	resource.cc	/^ResourceRequest::freeSlot()$/;"	f	class:ResourceRequest
+fromNextStages	pipeline_stage.hh	/^    TimeBuffer<TimeStruct>::wire fromNextStages;$/;"	m	class:PipelineStage
+frontEndSked	cpu.hh	/^    ThePipeline::RSkedPtr frontEndSked;$/;"	m	class:InOrderCPU
+frontSked	inorder_dyn_inst.hh	/^    RSkedPtr frontSked;$/;"	m	class:InOrderDynInst
+frontSked_end	inorder_dyn_inst.hh	/^    RSkedIt frontSked_end;$/;"	m	class:InOrderDynInst
+genSkedID	cpu.hh	/^    inline SkedID genSkedID(DynInstPtr inst)$/;"	f	class:InOrderCPU
+getAndIncrementInstSeq	cpu.hh	/^    InstSeqNum getAndIncrementInstSeq(ThreadID tid)$/;"	f	class:InOrderCPU
+getCheckerCpuPtr	thread_context.hh	/^    CheckerCPU *getCheckerCpuPtr() { return NULL; }$/;"	f	class:InOrderThreadContext
+getCpuName	thread_context.hh	/^    std::string getCpuName() { return cpu->name(); }$/;"	f	class:InOrderThreadContext
+getCpuPtr	thread_context.hh	/^    BaseCPU *getCpuPtr() { return cpu; }$/;"	f	class:InOrderThreadContext
+getCurResSlot	inorder_dyn_inst.hh	/^    unsigned getCurResSlot() { return curResSlot; }$/;"	f	class:InOrderDynInst
+getDTBPtr	cpu.cc	/^InOrderCPU::getDTBPtr()$/;"	f	class:InOrderCPU
+getDTBPtr	thread_context.hh	/^    TheISA::TLB *getDTBPtr() { return cpu->getDTBPtr(); }$/;"	f	class:InOrderThreadContext
+getData	resource.hh	/^    virtual PacketDataPtr getData() { return NULL; }$/;"	f	class:ResourceRequest
+getData	resources/cache_unit.hh	/^    virtual PacketDataPtr getData()$/;"	f	class:CacheRequest
+getDataPort	cpu.hh	/^    virtual CpuPort &getDataPort() { return dataPort; }$/;"	f	class:InOrderCPU
+getDataUnit	resource_pool.hh	/^    CacheUnit *getDataUnit() const { return dataUnit; }$/;"	f	class:ResourcePool
+getDecoderPtr	cpu.cc	/^InOrderCPU::getDecoderPtr(unsigned tid)$/;"	f	class:InOrderCPU
+getDecoderPtr	thread_context.hh	/^    getDecoderPtr()$/;"	f	class:InOrderThreadContext
+getDestIdxNum	inorder_dyn_inst.hh	/^    int getDestIdxNum(PhysRegIndex dest_idx)$/;"	f	class:InOrderDynInst
+getDivOpSize	resources/mult_div_unit.cc	/^MultDivUnit::getDivOpSize(DynInstPtr inst)$/;"	f	class:MultDivUnit
+getEA	inorder_dyn_inst.hh	/^    const Addr &getEA() const { return instEffAddr; }$/;"	f	class:InOrderDynInst
+getFault	inorder_dyn_inst.hh	/^    Fault getFault() { return fault; }$/;"	f	class:InOrderDynInst
+getFetchingThread	first_stage.cc	/^FirstStage::getFetchingThread(FetchPriority &fetch_priority)$/;"	f	class:FirstStage
+getITBPtr	cpu.cc	/^InOrderCPU::getITBPtr()$/;"	f	class:InOrderCPU
+getITBPtr	thread_context.hh	/^    TheISA::TLB *getITBPtr() { return cpu->getITBPtr(); }$/;"	f	class:InOrderThreadContext
+getId	resource.hh	/^    int getId() { return id; }$/;"	f	class:Resource
+getInst	resource.hh	/^    DynInstPtr getInst() { return inst; }$/;"	f	class:ResourceRequest
+getInstListIt	inorder_dyn_inst.hh	/^    ListIt getInstListIt() { return instListIt; }$/;"	f	class:InOrderDynInst
+getInstPort	cpu.hh	/^    virtual CpuPort &getInstPort() { return instPort; }$/;"	f	class:InOrderCPU
+getInstRecord	inorder_trace.cc	/^InOrderTrace::getInstRecord(Tick when, ThreadContext *tc,$/;"	f	class:Trace::InOrderTrace
+getInstRecord	inorder_trace.cc	/^InOrderTrace::getInstRecord(unsigned num_stages, bool stage_tracing,$/;"	f	class:Trace::InOrderTrace
+getInstUnit	resource_pool.hh	/^    FetchUnit *getInstUnit() const { return instUnit; }$/;"	f	class:ResourcePool
+getIntResultPtr	inorder_dyn_inst.hh	/^    IntReg* getIntResultPtr(int idx) { return &instResult[idx].res.intVal; }$/;"	f	class:InOrderDynInst
+getIntSrcPtr	inorder_dyn_inst.hh	/^    TheISA::IntReg* getIntSrcPtr(int idx) { return &instSrc[idx].intVal; }$/;"	f	class:InOrderDynInst
+getInterrupts	cpu.cc	/^InOrderCPU::getInterrupts()$/;"	f	class:InOrderCPU
+getIt	resource_sked.hh	/^    ResourceSked::SkedIt getIt()$/;"	f	class:RSkedIt
+getKernelStats	thread_context.hh	/^    TheISA::Kernel::Statistics *getKernelStats()$/;"	f	class:InOrderThreadContext
+getLatency	resource.hh	/^    virtual Cycles getLatency(int slot_num) { return latency; }$/;"	f	class:Resource
+getMachInst	inorder_dyn_inst.hh	/^    ExtMachInst getMachInst() { return staticInst->machInst; }$/;"	f	class:InOrderDynInst
+getMemAddr	inorder_dyn_inst.hh	/^    Addr getMemAddr()$/;"	f	class:InOrderDynInst
+getMemProxy	thread_context.hh	/^    SETranslatingPortProxy &getMemProxy() { return thread->getMemProxy(); }$/;"	f	class:InOrderThreadContext
+getNextEventNum	cpu.hh	/^    InstSeqNum getNextEventNum()$/;"	f	class:InOrderCPU
+getNextPriority	pipeline_traits.5stage.cc	/^int getNextPriority(DynInstPtr &inst, int stage_num)$/;"	f	namespace:ThePipeline
+getNextPriority	pipeline_traits.9stage.cc	/^int getNextPriority(DynInstPtr &inst, int stage_num)$/;"	f	namespace:ThePipeline
+getNextPriority	pipeline_traits.9stage.smt2.cc	/^int getNextPriority(DynInstPtr &inst, int stage_num)$/;"	f	namespace:ThePipeline
+getNextStage	inorder_dyn_inst.hh	/^    int getNextStage() { return nextStage; }$/;"	f	class:InOrderDynInst
+getPhysProxy	thread_context.hh	/^    PortProxy &getPhysProxy() { return thread->getPhysProxy(); }$/;"	f	class:InOrderThreadContext
+getPipeStage	cpu.cc	/^InOrderCPU::getPipeStage(int stage_num)$/;"	f	class:InOrderCPU
+getProcessPtr	thread_context.hh	/^    Process *getProcessPtr() { return thread->getProcessPtr(); }$/;"	f	class:InOrderThreadContext
+getQuiesceEvent	thread_context.hh	/^    EndQuiesceEvent *getQuiesceEvent()$/;"	f	class:InOrderThreadContext
+getRegType	cpu.hh	/^    RegType inline getRegType(RegIndex reg_idx)$/;"	f	class:InOrderCPU
+getRequest	resource.cc	/^Resource::getRequest(DynInstPtr inst, int stage_num, int res_idx,$/;"	f	class:Resource
+getRequest	resources/cache_unit.cc	/^CacheUnit::getRequest(DynInstPtr inst, int stage_num, int res_idx,$/;"	f	class:CacheUnit
+getRequest	resources/fetch_unit.cc	/^FetchUnit::getRequest(DynInstPtr inst, int stage_num, int res_idx,$/;"	f	class:FetchUnit
+getRequest	resources/tlb_unit.cc	/^TLBUnit::getRequest(DynInstPtr _inst, int stage_num,$/;"	f	class:TLBUnit
+getRequest	resources/use_def.cc	/^UseDefUnit::getRequest(DynInstPtr inst, int stage_num, int res_idx,$/;"	f	class:UseDefUnit
+getResIdx	resource.hh	/^    int getResIdx() { return resIdx; }$/;"	f	class:ResourceRequest
+getResIdx	resource_pool.cc	/^ResourcePool::getResIdx(const ThePipeline::ResourceId &res_id)$/;"	f	class:ResourcePool
+getResource	resource_pool.hh	/^    Resource* getResource(int res_idx) { return resources[res_idx]; }$/;"	f	class:ResourcePool
+getSlot	resource.cc	/^Resource::getSlot(DynInstPtr inst)$/;"	f	class:Resource
+getSlot	resource.hh	/^    int getSlot() { return slotNum; }$/;"	f	class:ResourceRequest
+getSlot	resources/cache_unit.cc	/^CacheUnit::getSlot(DynInstPtr inst)$/;"	f	class:CacheUnit
+getSlot	resources/mult_div_unit.cc	/^MultDivUnit::getSlot(DynInstPtr inst)$/;"	f	class:MultDivUnit
+getSlot	resources/tlb_unit.cc	/^TLBUnit::getSlot(DynInstPtr inst)$/;"	f	class:TLBUnit
+getSrcIdxNum	inorder_dyn_inst.hh	/^    int getSrcIdxNum(PhysRegIndex src_idx)$/;"	f	class:InOrderDynInst
+getStageNum	resource.hh	/^    int getStageNum() { return stageNum; }$/;"	f	class:ResourceRequest
+getStages	resource_sked.hh	/^    StageList *getStages()$/;"	f	class:ResourceSked
+getSystemPtr	thread_context.hh	/^    System *getSystemPtr() { return cpu->system; }$/;"	f	class:InOrderThreadContext
+getTC	thread_state.hh	/^    ThreadContext *getTC() { return tc; }$/;"	f	class:InOrderThreadState
+getThreadNum	thread_context.hh	/^    int getThreadNum() { return thread->threadId(); }$/;"	f	class:InOrderThreadContext
+getTid	resource.hh	/^    ThreadID getTid() { return tid; }$/;"	f	class:ResourceRequest
+getVirtProxy	thread_context.cc	/^InOrderThreadContext::getVirtProxy()$/;"	f	class:InOrderThreadContext
+globalCtrBits	InOrderCPU.py	/^    globalCtrBits = Param.Unsigned(2, "Bits per counter")$/;"	v	class:InOrderCPU
+globalCtrBits	params.hh	/^    unsigned globalCtrBits;$/;"	m	class:InOrderParams
+globalHistoryBits	InOrderCPU.py	/^    globalHistoryBits = Param.Unsigned(13, "Bits of history")$/;"	v	class:InOrderCPU
+globalHistoryBits	params.hh	/^    unsigned globalHistoryBits;$/;"	m	class:InOrderParams
+globalPredictorSize	InOrderCPU.py	/^    globalPredictorSize = Param.Unsigned(8192, "Size of global predictor")$/;"	v	class:InOrderCPU
+globalPredictorSize	params.hh	/^    unsigned globalPredictorSize;$/;"	m	class:InOrderParams
+globalSeqNum	cpu.hh	/^    InstSeqNum globalSeqNum[ThePipeline::MaxThreads];$/;"	m	class:InOrderCPU
+gradObjects	resource_pool.hh	/^    std::vector<int> gradObjects;$/;"	m	class:ResourcePool
+halt	cpu.hh	/^    void halt() { panic("Halt not implemented!\\n"); }$/;"	f	class:InOrderCPU
+halt	thread_context.cc	/^InOrderThreadContext::halt(Cycles delay)$/;"	f	class:InOrderThreadContext
+haltContext	cpu.cc	/^InOrderCPU::haltContext(ThreadID tid)$/;"	f	class:InOrderCPU
+haltThread	cpu.cc	/^InOrderCPU::haltThread(ThreadID tid)$/;"	f	class:InOrderCPU
+haltedThreads	cpu.hh	/^    std::list<ThreadID> haltedThreads;$/;"	m	class:InOrderCPU
+hasSlot	resource.hh	/^    bool hasSlot()  { return slotNum >= 0; }     $/;"	f	class:ResourceRequest
+hasSlot	resources/cache_unit.hh	/^    bool hasSlot;$/;"	m	class:CacheReqPacket
+hwrei	cpu.cc	/^InOrderCPU::hwrei(ThreadID tid)$/;"	f	class:InOrderCPU
+hwrei	inorder_dyn_inst.cc	/^InOrderDynInst::hwrei()$/;"	f	class:InOrderDynInst
+i	cpu.hh	/^        FloatRegBits i[ThePipeline::MaxThreads][TheISA::NumFloatRegs];$/;"	m	union:InOrderCPU::__anon1
+i	inorder_dyn_inst.hh	/^            FloatRegBits i;$/;"	m	union:InOrderDynInst::InstValue::__anon3
+id	resource.hh	/^    int id;$/;"	m	class:Resource
+idle	pipeline_stage.hh	/^    bool idle;$/;"	m	class:PipelineStage
+idleCycles	cpu.hh	/^    Stats::Scalar idleCycles;$/;"	m	class:InOrderCPU
+idleCycles	pipeline_stage.hh	/^    Stats::Scalar idleCycles;$/;"	m	class:PipelineStage
+idx	pipeline_traits.5stage.hh	/^        unsigned idx;$/;"	m	struct:ThePipeline::ScheduleEntry
+idx	pipeline_traits.9stage.hh	/^        unsigned idx;$/;"	m	struct:ThePipeline::ScheduleEntry
+idx	pipeline_traits.9stage.smt2.hh	/^        unsigned idx;$/;"	m	struct:ThePipeline::ScheduleEntry
+idx	resource_sked.hh	/^    unsigned idx;$/;"	m	class:ScheduleEntry
+inFrontEnd	inorder_dyn_inst.hh	/^    bool inFrontEnd;$/;"	m	class:InOrderDynInst
+inSyscall	thread_state.hh	/^    bool inSyscall;$/;"	m	class:InOrderThreadState
+incrInstSeqNum	cpu.hh	/^    void incrInstSeqNum(ThreadID tid)$/;"	f	class:InOrderCPU
+init	cpu.cc	/^InOrderCPU::init()$/;"	f	class:InOrderCPU
+init	pipeline_stage.cc	/^PipelineStage::init(Params *params)$/;"	f	class:PipelineStage
+init	resource.cc	/^Resource::init()$/;"	f	class:Resource
+init	resource.cc	/^ResourceEvent::init(Resource *res, int slot_idx)$/;"	f	class:ResourceEvent
+init	resource_pool.9stage.cc	/^ResourcePool::init()$/;"	f	class:ResourcePool
+init	resource_pool.cc	/^ResourcePool::init()$/;"	f	class:ResourcePool
+init	resource_sked.cc	/^ResourceSked::init()$/;"	f	class:ResourceSked
+init	resource_sked.hh	/^    void init(ResourceSked* rsked)$/;"	f	class:RSkedIt
+init	resources/cache_unit.cc	/^CacheUnit::init()$/;"	f	class:CacheUnit
+init	resources/fetch_seq_unit.cc	/^FetchSeqUnit::init()$/;"	f	class:FetchSeqUnit
+init	resources/mult_div_unit.cc	/^MultDivUnit::init()$/;"	f	class:MultDivUnit
+init	resources/tlb_unit.cc	/^TLBUnit::init()$/;"	f	class:TLBUnit
+init	resources/use_def.cc	/^UseDefUnit::init()$/;"	f	class:UseDefUnit
+initMemProxies	thread_context.hh	/^    void initMemProxies(ThreadContext *tc)$/;"	f	class:InOrderThreadContext
+initSlots	resource.cc	/^Resource::initSlots()$/;"	f	class:Resource
+initVars	inorder_dyn_inst.cc	/^InOrderDynInst::initVars()$/;"	f	class:InOrderDynInst
+initiateAcc	inorder_dyn_inst.cc	/^InOrderDynInst::initiateAcc()$/;"	f	class:InOrderDynInst
+insert	reg_dep_map.cc	/^RegDepMap::insert(DynInstPtr inst)$/;"	f	class:RegDepMap
+insert	reg_dep_map.cc	/^RegDepMap::insert(uint8_t reg_type, RegIndex idx, DynInstPtr inst)$/;"	f	class:RegDepMap
+insert	resources/inst_buffer.cc	/^InstBuffer::insert(DynInstPtr inst)$/;"	f	class:InstBuffer
+inst	cpu.hh	/^        DynInstPtr inst;$/;"	m	class:InOrderCPU::CPUEvent
+inst	resource.hh	/^    DynInstPtr inst;$/;"	m	class:ResourceRequest
+inst	resource_pool.hh	/^        DynInstPtr inst;$/;"	m	class:ResourcePool::ResPoolEvent
+instAddr	cpu.hh	/^    Addr instAddr(ThreadID tid) { return pc[tid].instAddr(); }$/;"	f	class:InOrderCPU
+instAddr	inorder_dyn_inst.hh	/^    const Addr instAddr() { return pc.instAddr(); }$/;"	f	class:InOrderDynInst
+instAddr	thread_context.hh	/^    Addr instAddr()$/;"	f	class:InOrderThreadContext
+instDone	cpu.cc	/^InOrderCPU::instDone(DynInstPtr inst, ThreadID tid)$/;"	f	class:InOrderCPU
+instEffAddr	inorder_dyn_inst.hh	/^    Addr instEffAddr;$/;"	m	class:InOrderDynInst
+instGraduated	resource.hh	/^    virtual void instGraduated(InstSeqNum seq_num, ThreadID tid) { }$/;"	f	class:Resource
+instGraduated	resource_pool.9stage.cc	/^ResourcePool::instGraduated(InstSeqNum seq_num, ThreadID tid)$/;"	f	class:ResourcePool
+instGraduated	resource_pool.cc	/^ResourcePool::instGraduated(InstSeqNum seq_num, ThreadID tid)$/;"	f	class:ResourcePool
+instGraduated	resources/branch_predictor.cc	/^BranchPredictor::instGraduated(InstSeqNum seq_num, ThreadID tid)$/;"	f	class:BranchPredictor
+instIdx	resources/cache_unit.hh	/^    int instIdx;    $/;"	m	class:CacheRequest
+instIdx	resources/cache_unit.hh	/^    int instIdx;$/;"	m	class:CacheReqPacket
+instList	cpu.hh	/^    std::list<DynInstPtr> instList[ThePipeline::MaxThreads];$/;"	m	class:InOrderCPU
+instList	resources/inst_buffer.hh	/^    std::list<DynInstPtr> instList;$/;"	m	class:InstBuffer
+instList	resources/tlb_unit.hh	/^    std::list<DynInstPtr> instList;$/;"	m	class:TLBUnit
+instListIt	inorder_dyn_inst.hh	/^    ListIt instListIt;$/;"	m	class:InOrderDynInst
+instName	inorder_dyn_inst.hh	/^    std::string instName()$/;"	f	class:InOrderDynInst
+instPort	cpu.hh	/^    CachePort instPort;$/;"	m	class:InOrderCPU
+instResult	inorder_dyn_inst.hh	/^    InstResult instResult[MaxInstDestRegs];$/;"	m	class:InOrderDynInst
+instShiftAmt	InOrderCPU.py	/^    instShiftAmt = Param.Unsigned(2, "Number of bits to shift instructions by")$/;"	v	class:InOrderCPU
+instShiftAmt	params.hh	/^    unsigned instShiftAmt;$/;"	m	class:InOrderParams
+instSize	resources/bpred_unit.hh	/^    int instSize;$/;"	m	class:BPredUnit
+instSize	resources/branch_predictor.hh	/^    int instSize;$/;"	m	class:BranchPredictor
+instSize	resources/fetch_seq_unit.hh	/^    unsigned instSize;$/;"	m	class:FetchSeqUnit
+instSize	resources/fetch_unit.hh	/^    int instSize;$/;"	m	class:FetchUnit
+instSrc	inorder_dyn_inst.hh	/^    InstValue instSrc[MaxInstSrcRegs];$/;"	m	class:InOrderDynInst
+instUnit	resource_pool.hh	/^    FetchUnit *instUnit;$/;"	m	class:ResourcePool
+instcount	inorder_dyn_inst.cc	/^int InOrderDynInst::instcount = 0;$/;"	m	class:InOrderDynInst	file:
+instcount	inorder_dyn_inst.hh	/^    static int instcount;$/;"	m	class:InOrderDynInst
+insts	comm.hh	/^    std::vector<ThePipeline::DynInstPtr> insts;$/;"	m	struct:InterStageStruct
+instsBypassed	resources/inst_buffer.hh	/^    Stats::Scalar instsBypassed;$/;"	m	class:InstBuffer
+instsPerCtxtSwitch	cpu.hh	/^    Stats::Average instsPerCtxtSwitch;    $/;"	m	class:InOrderCPU
+instsPerSwitch	cpu.hh	/^    unsigned instsPerSwitch;    $/;"	m	class:InOrderCPU
+instsProcessed	pipeline_stage.hh	/^    unsigned instsProcessed;    $/;"	m	class:PipelineStage
+intRegFileAccs	resources/use_def.hh	/^    Stats::Formula intRegFileAccs;$/;"	m	class:UseDefUnit
+intRegFileReads	resources/use_def.hh	/^    Stats::Scalar intRegFileReads;$/;"	m	class:UseDefUnit
+intRegFileWrites	resources/use_def.hh	/^    Stats::Scalar intRegFileWrites;$/;"	m	class:UseDefUnit
+intRegs	cpu.hh	/^    TheISA::IntReg intRegs[ThePipeline::MaxThreads][TheISA::NumIntRegs];$/;"	m	class:InOrderCPU
+intVal	inorder_dyn_inst.hh	/^        IntReg intVal;$/;"	m	struct:InOrderDynInst::InstValue
+interStageBuffSize	pipeline_traits.5stage.hh	/^    static const unsigned interStageBuffSize[] = {$/;"	m	namespace:ThePipeline
+interStageBuffSize	pipeline_traits.9stage.hh	/^    static const unsigned interStageBuffSize[NumStages] = {$/;"	m	namespace:ThePipeline
+interStageBuffSize	pipeline_traits.9stage.smt2.hh	/^    static const unsigned interStageBuffSize[NumStages] = {$/;"	m	namespace:ThePipeline
+ipc	cpu.hh	/^    Stats::Formula ipc;$/;"	m	class:InOrderCPU
+is2ndSplit	resources/cache_unit.hh	/^    bool is2ndSplit() $/;"	f	class:CacheRequest
+isAtCommit	inorder_dyn_inst.hh	/^    bool isAtCommit() { return status[AtCommit]; }$/;"	f	class:InOrderDynInst
+isBlocked	pipeline_stage.cc	/^PipelineStage::isBlocked(ThreadID tid)$/;"	f	class:PipelineStage
+isCall	inorder_dyn_inst.hh	/^    bool isCall()         const { return staticInst->isCall(); }$/;"	f	class:InOrderDynInst
+isCommitted	inorder_dyn_inst.hh	/^    bool isCommitted() const { return status[Committed]; }$/;"	f	class:InOrderDynInst
+isCompleted	inorder_dyn_inst.hh	/^    bool isCompleted() const { return status[Completed]; }$/;"	f	class:InOrderDynInst
+isCompleted	resource.hh	/^    bool isCompleted() { return completed; }$/;"	f	class:ResourceRequest
+isCondCtrl	inorder_dyn_inst.hh	/^    bool isCondCtrl()     const { return staticInst->isCondCtrl(); }$/;"	f	class:InOrderDynInst
+isCondDelaySlot	inorder_dyn_inst.hh	/^    bool isCondDelaySlot() const { return staticInst->isCondDelaySlot(); }$/;"	f	class:InOrderDynInst
+isControl	inorder_dyn_inst.hh	/^    bool isControl()      const { return staticInst->isControl(); }$/;"	f	class:InOrderDynInst
+isDataPrefetch	inorder_dyn_inst.hh	/^    bool isDataPrefetch() const { return staticInst->isDataPrefetch(); }$/;"	f	class:InOrderDynInst
+isDirectCtrl	inorder_dyn_inst.hh	/^    bool isDirectCtrl()   const { return staticInst->isDirectCtrl(); }$/;"	f	class:InOrderDynInst
+isExecuted	inorder_dyn_inst.hh	/^    bool isExecuted() const { return status[Executed]; }$/;"	f	class:InOrderDynInst
+isFloating	inorder_dyn_inst.hh	/^    bool isFloating()     const { return staticInst->isFloating(); }$/;"	f	class:InOrderDynInst
+isIndirectCtrl	inorder_dyn_inst.hh	/^    bool isIndirectCtrl() const { return staticInst->isIndirectCtrl(); }$/;"	f	class:InOrderDynInst
+isInstPrefetch	inorder_dyn_inst.hh	/^    bool isInstPrefetch() const { return staticInst->isInstPrefetch(); }$/;"	f	class:InOrderDynInst
+isInteger	inorder_dyn_inst.hh	/^    bool isInteger()      const { return staticInst->isInteger(); }$/;"	f	class:InOrderDynInst
+isIprAccess	inorder_dyn_inst.hh	/^    bool isIprAccess() const { return staticInst->isIprAccess(); }$/;"	f	class:InOrderDynInst
+isIssued	inorder_dyn_inst.hh	/^    bool isIssued() const { return status[Issued]; }$/;"	f	class:InOrderDynInst
+isLastMicroop	inorder_dyn_inst.hh	/^    bool isLastMicroop() const { return staticInst->isLastMicroop(); }$/;"	f	class:InOrderDynInst
+isLoad	inorder_dyn_inst.hh	/^    bool isLoad()         const { return staticInst->isLoad(); }$/;"	f	class:InOrderDynInst
+isMemAccComplete	resources/cache_unit.hh	/^    bool isMemAccComplete() { return memAccComplete; }$/;"	f	class:CacheRequest
+isMemAccPending	resources/cache_unit.hh	/^    bool isMemAccPending() { return memAccPending; }$/;"	f	class:CacheRequest
+isMemBarrier	inorder_dyn_inst.hh	/^    bool isMemBarrier()   const { return staticInst->isMemBarrier(); }$/;"	f	class:InOrderDynInst
+isMemRef	inorder_dyn_inst.hh	/^    bool isMemRef()       const { return staticInst->isMemRef(); }$/;"	f	class:InOrderDynInst
+isMemStall	resource.hh	/^    bool isMemStall() { return memStall; }$/;"	f	class:ResourceRequest
+isMicroop	inorder_dyn_inst.hh	/^    bool isMicroop() const { return staticInst->isMicroop(); }$/;"	f	class:InOrderDynInst
+isNonSpeculative	inorder_dyn_inst.hh	/^    bool isNonSpeculative() const { return staticInst->isNonSpeculative(); }$/;"	f	class:InOrderDynInst
+isNop	inorder_dyn_inst.hh	/^    bool isNop()          const { return staticInst->isNop(); }$/;"	f	class:InOrderDynInst
+isProcessing	resource.hh	/^    bool isProcessing() { return processing; }$/;"	f	class:ResourceRequest
+isQuiesce	inorder_dyn_inst.hh	/^    bool isQuiesce() const { return staticInst->isQuiesce(); }$/;"	f	class:InOrderDynInst
+isReadySrcRegIdx	inorder_dyn_inst.hh	/^    bool isReadySrcRegIdx(int idx) const$/;"	f	class:InOrderDynInst
+isRegDepEntry	inorder_dyn_inst.hh	/^    bool isRegDepEntry() const { return status[RegDepMapEntry]; }$/;"	f	class:InOrderDynInst
+isRemoveList	inorder_dyn_inst.hh	/^    bool isRemoveList() const { return status[RemoveList]; }$/;"	f	class:InOrderDynInst
+isResultReady	inorder_dyn_inst.hh	/^    bool isResultReady() const { return status[ResultReady]; }$/;"	f	class:InOrderDynInst
+isReturn	inorder_dyn_inst.hh	/^    bool isReturn()       const { return staticInst->isReturn(); }$/;"	f	class:InOrderDynInst
+isSerializeAfter	inorder_dyn_inst.hh	/^    bool isSerializeAfter() const$/;"	f	class:InOrderDynInst
+isSerializeBefore	inorder_dyn_inst.hh	/^    bool isSerializeBefore() const$/;"	f	class:InOrderDynInst
+isSerializeHandled	inorder_dyn_inst.hh	/^    bool isSerializeHandled() { return status[SerializeHandled]; }$/;"	f	class:InOrderDynInst
+isSerializing	inorder_dyn_inst.hh	/^    bool isSerializing()  const { return staticInst->isSerializing(); }$/;"	f	class:InOrderDynInst
+isSquashed	inorder_dyn_inst.hh	/^    bool isSquashed() const { return status[Squashed]; }$/;"	f	class:InOrderDynInst
+isSquashed	resource.hh	/^    bool isSquashed() { return squashed; }$/;"	f	class:ResourceRequest
+isStore	inorder_dyn_inst.hh	/^    bool isStore()        const { return staticInst->isStore(); }$/;"	f	class:InOrderDynInst
+isStoreConditional	inorder_dyn_inst.hh	/^    bool isStoreConditional() const$/;"	f	class:InOrderDynInst
+isSyscall	inorder_dyn_inst.hh	/^    bool isSyscall() const$/;"	f	class:InOrderDynInst
+isTempSerializeAfter	inorder_dyn_inst.hh	/^    bool isTempSerializeAfter() { return status[SerializeAfter]; }$/;"	f	class:InOrderDynInst
+isTempSerializeBefore	inorder_dyn_inst.hh	/^    bool isTempSerializeBefore() { return status[SerializeBefore]; }$/;"	f	class:InOrderDynInst
+isThreadActive	cpu.cc	/^InOrderCPU::isThreadActive(ThreadID tid)$/;"	f	class:InOrderCPU
+isThreadReady	cpu.cc	/^InOrderCPU::isThreadReady(ThreadID tid)$/;"	f	class:InOrderCPU
+isThreadSuspended	cpu.cc	/^InOrderCPU::isThreadSuspended(ThreadID tid)$/;"	f	class:InOrderCPU
+isThreadSync	inorder_dyn_inst.hh	/^    bool isThreadSync()   const { return staticInst->isThreadSync(); }$/;"	f	class:InOrderDynInst
+isUncondCtrl	inorder_dyn_inst.hh	/^    bool isUncondCtrl()   const { return staticInst->isUncondCtrl(); }$/;"	f	class:InOrderDynInst
+isUnverifiable	inorder_dyn_inst.hh	/^    bool isUnverifiable() const { return staticInst->isUnverifiable(); }$/;"	f	class:InOrderDynInst
+isWriteBarrier	inorder_dyn_inst.hh	/^    bool isWriteBarrier() const { return staticInst->isWriteBarrier(); }$/;"	f	class:InOrderDynInst
+isa	cpu.hh	/^    TheISA::ISA isa[ThePipeline::MaxThreads];$/;"	m	class:InOrderCPU
+lastBranchPC	thread_state.hh	/^    TheISA::PCState lastBranchPC;$/;"	m	class:InOrderThreadState
+lastCommittedPC	cpu.hh	/^    TheISA::PCState lastCommittedPC[ThePipeline::MaxThreads];$/;"	m	class:InOrderCPU
+lastControlTick	resources/execution_unit.hh	/^    Tick lastControlTick;$/;"	m	class:ExecutionUnit
+lastCycleGrad	resources/mem_dep_unit.hh	/^    Tick lastCycleGrad;$/;"	m	class:MemDepUnit
+lastDivSize	resources/mult_div_unit.hh	/^    uint32_t lastDivSize;$/;"	m	class:MultDivUnit
+lastExecuteTick	resources/execution_unit.hh	/^    Tick lastExecuteTick;$/;"	m	class:ExecutionUnit
+lastFaultTick	resources/graduation_unit.hh	/^    Tick lastFaultTick[ThePipeline::MaxThreads];$/;"	m	class:GraduationUnit
+lastGradIsBranch	thread_state.hh	/^    bool lastGradIsBranch;$/;"	m	class:InOrderThreadState
+lastInstName	resources/mult_div_unit.hh	/^    std::string lastInstName;$/;"	m	class:MultDivUnit
+lastMDUCycle	resources/mult_div_unit.hh	/^    Tick lastMDUCycle;$/;"	m	class:MultDivUnit
+lastNonSpecTick	resources/graduation_unit.hh	/^    Tick lastNonSpecTick[ThePipeline::MaxThreads];$/;"	m	class:GraduationUnit
+lastOpType	resources/mult_div_unit.hh	/^    OpClass lastOpType;$/;"	m	class:MultDivUnit
+lastRunningCycle	cpu.hh	/^    Tick lastRunningCycle;$/;"	m	class:InOrderCPU
+lastSquashCycle	cpu.hh	/^    Tick lastSquashCycle[ThePipeline::MaxThreads];$/;"	m	class:InOrderCPU
+lastSquashCycle	resources/fetch_seq_unit.hh	/^    Tick lastSquashCycle[ThePipeline::MaxThreads];$/;"	m	class:FetchSeqUnit
+lastStallingStage	pipeline_stage.hh	/^    int lastStallingStage[ThePipeline::MaxThreads];$/;"	m	class:PipelineStage
+latency	resource.hh	/^    const Cycles latency;$/;"	m	class:Resource
+loadData	inorder_dyn_inst.hh	/^    uint64_t loadData;$/;"	m	class:InOrderDynInst
+localBP	resources/bpred_unit.hh	/^    LocalBP *localBP;$/;"	m	class:BPredUnit
+localCtrBits	InOrderCPU.py	/^    localCtrBits = Param.Unsigned(2, "Bits per counter")$/;"	v	class:InOrderCPU
+localCtrBits	params.hh	/^    unsigned localCtrBits;$/;"	m	class:InOrderParams
+localHistoryBits	InOrderCPU.py	/^    localHistoryBits = Param.Unsigned(11, "Bits for the local history")$/;"	v	class:InOrderCPU
+localHistoryBits	params.hh	/^    unsigned localHistoryBits;$/;"	m	class:InOrderParams
+localHistoryTableSize	InOrderCPU.py	/^    localHistoryTableSize = Param.Unsigned(2048, "Size of local history table")$/;"	v	class:InOrderCPU
+localHistoryTableSize	params.hh	/^    unsigned localHistoryTableSize;$/;"	m	class:InOrderParams
+localPredictorSize	InOrderCPU.py	/^    localPredictorSize = Param.Unsigned(2048, "Size of local predictor")$/;"	v	class:InOrderCPU
+localPredictorSize	params.hh	/^    unsigned localPredictorSize;$/;"	m	class:InOrderParams
+lockAddr	cpu.hh	/^    Addr lockAddr;$/;"	m	class:InOrderCPU
+lockFlag	cpu.hh	/^    bool lockFlag;$/;"	m	class:InOrderCPU
+lookupSked	cpu.hh	/^    ThePipeline::RSkedPtr lookupSked(DynInstPtr inst)$/;"	f	class:InOrderCPU
+lookups	resources/bpred_unit.hh	/^    Stats::Scalar lookups;$/;"	m	class:BPredUnit
+lqIdx	inorder_dyn_inst.hh	/^    int16_t lqIdx;$/;"	m	class:InOrderDynInst
+mapNames	reg_dep_map.cc	/^std::string RegDepMap::mapNames[InOrderCPU::NumRegTypes] =$/;"	m	class:RegDepMap	file:
+mapNames	reg_dep_map.hh	/^    static std::string mapNames[];$/;"	m	class:RegDepMap
+markBlockUsed	resources/fetch_unit.cc	/^FetchUnit::markBlockUsed(std::list<FetchBlock*>::iterator block_it)$/;"	f	class:FetchUnit
+markSrcRegReady	inorder_dyn_inst.hh	/^    void markSrcRegReady()$/;"	f	class:InOrderDynInst
+markSrcRegReady	inorder_dyn_inst.hh	/^    void markSrcRegReady(RegIndex src_idx)$/;"	f	class:InOrderDynInst
+maxReqCount	resource.cc	/^int ResourceRequest::maxReqCount = 0;$/;"	m	class:ResourceRequest	file:
+maxReqCount	resource.hh	/^    static int maxReqCount;$/;"	m	class:ResourceRequest
+mduEvent	resources/mult_div_unit.hh	/^    MDUEvent *mduEvent;    $/;"	m	class:MultDivUnit
+memAccComplete	resources/cache_unit.hh	/^    bool memAccComplete;$/;"	m	class:CacheRequest
+memAccPending	resources/cache_unit.hh	/^    bool memAccPending;$/;"	m	class:CacheRequest
+memAccess	inorder_dyn_inst.cc	/^InOrderDynInst::memAccess()$/;"	f	class:InOrderDynInst
+memAddr	inorder_dyn_inst.hh	/^    Addr memAddr;$/;"	m	class:InOrderDynInst
+memAddrReady	inorder_dyn_inst.hh	/^    bool memAddrReady;$/;"	m	class:InOrderDynInst
+memBlockSize	InOrderCPU.py	/^    memBlockSize = Param.Unsigned(64, "Memory Block Size")$/;"	v	class:InOrderCPU
+memBlockSize	params.hh	/^    unsigned memBlockSize;$/;"	m	class:InOrderParams
+memData	inorder_dyn_inst.hh	/^    uint8_t *memData;$/;"	m	class:InOrderDynInst
+memReq	resources/cache_unit.hh	/^    RequestPtr memReq;$/;"	m	class:CacheReqPacket
+memReq	resources/cache_unit.hh	/^    RequestPtr memReq;$/;"	m	class:CacheRequest
+memReq	resources/tlb_unit.hh	/^    RequestPtr memReq;$/;"	m	class:TLBUnitRequest
+memReqFlags	inorder_dyn_inst.hh	/^    unsigned memReqFlags;$/;"	m	class:InOrderDynInst
+memStall	resource.hh	/^    bool memStall;$/;"	m	class:ResourceRequest
+memTime	inorder_dyn_inst.hh	/^    Tick memTime;$/;"	m	class:InOrderDynInst
+microPC	cpu.hh	/^    MicroPC microPC(ThreadID tid) { return pc[tid].microPC(); }$/;"	f	class:InOrderCPU
+microPC	inorder_dyn_inst.hh	/^    const MicroPC microPC() { return pc.microPC(); }$/;"	f	class:InOrderDynInst
+microPC	thread_context.hh	/^    MicroPC microPC()$/;"	f	class:InOrderThreadContext
+mispredictPct	resources/execution_unit.hh	/^    Stats::Formula mispredictPct;$/;"	m	class:ExecutionUnit
+mispredicted	inorder_dyn_inst.hh	/^    mispredicted()$/;"	f	class:InOrderDynInst
+misspeculating	thread_context.hh	/^    bool misspeculating() { return false; }$/;"	f	class:InOrderThreadContext
+multLatency	InOrderCPU.py	/^    multLatency = Param.Cycles(1, "Latency for Multiply Operations")$/;"	v	class:InOrderCPU
+multLatency	params.hh	/^    Cycles multLatency;$/;"	m	class:InOrderParams
+multLatency	resources/mult_div_unit.hh	/^    Cycles multLatency;$/;"	m	class:MultDivUnit
+multRepeatRate	InOrderCPU.py	/^    multRepeatRate = Param.Cycles(1, "Repeat Rate for Multiply Operations")$/;"	v	class:InOrderCPU
+multRepeatRate	params.hh	/^    Cycles multRepeatRate;$/;"	m	class:InOrderParams
+multRepeatRate	resources/mult_div_unit.hh	/^    unsigned multRepeatRate;$/;"	m	class:MultDivUnit
+multiplies	resources/mult_div_unit.hh	/^    Stats::Scalar multiplies;$/;"	m	class:MultDivUnit
+myIt	resource_sked.hh	/^    ResourceSked::SkedIt myIt;$/;"	m	class:RSkedIt
+name	pipeline_stage.cc	/^PipelineStage::name() const$/;"	f	class:PipelineStage
+name	reg_dep_map.cc	/^RegDepMap::name()$/;"	f	class:RegDepMap
+name	resource.cc	/^Resource::name()$/;"	f	class:Resource
+name	resource.cc	/^ResourceRequest::name()$/;"	f	class:ResourceRequest
+name	resource_pool.9stage.cc	/^ResourcePool::name()$/;"	f	class:ResourcePool
+name	resource_pool.cc	/^ResourcePool::name()$/;"	f	class:ResourcePool
+name	resource_pool.hh	/^    std::string name(int res_idx) { return resources[res_idx]->name(); }$/;"	f	class:ResourcePool
+name	resources/bpred_unit.cc	/^BPredUnit::name()$/;"	f	class:BPredUnit
+name	resources/cache_unit.hh	/^    const std::string name() const$/;"	f	class:CacheUnitEvent
+needs	cpu.hh	/^        void needs(int unit, int request) {$/;"	f	class:InOrderCPU::StageScheduler
+needs	cpu.hh	/^        void needs(int unit, int request, int param) {$/;"	f	class:InOrderCPU::StageScheduler
+nextInstAddr	cpu.hh	/^    Addr nextInstAddr(ThreadID tid) { return pc[tid].nextInstAddr(); }$/;"	f	class:InOrderCPU
+nextInstAddr	inorder_dyn_inst.hh	/^    const Addr nextInstAddr() { return pc.nextInstAddr(); }$/;"	f	class:InOrderDynInst
+nextInstAddr	thread_context.hh	/^    Addr nextInstAddr()$/;"	f	class:InOrderThreadContext
+nextInstSeqNum	cpu.hh	/^    InstSeqNum nextInstSeqNum(ThreadID tid)$/;"	f	class:InOrderCPU
+nextResStage	inorder_dyn_inst.hh	/^    int nextResStage()$/;"	f	class:InOrderDynInst
+nextResource	inorder_dyn_inst.hh	/^    int nextResource()$/;"	f	class:InOrderDynInst
+nextStage	inorder_dyn_inst.hh	/^    int nextStage;$/;"	m	class:InOrderDynInst
+nextStage	pipeline_stage.hh	/^    TimeBuffer<InterStageStruct>::wire nextStage;$/;"	m	class:PipelineStage
+nextStageQueue	pipeline_stage.hh	/^    TimeBuffer<InterStageStruct> *nextStageQueue;$/;"	m	class:PipelineStage
+nextStageQueueValid	pipeline_stage.cc	/^PipelineStage::nextStageQueueValid(int stage_num)$/;"	f	class:PipelineStage
+nextStageValid	pipeline_stage.hh	/^    bool nextStageValid;$/;"	m	class:PipelineStage
+nextTaskPriority	cpu.hh	/^        int nextTaskPriority;$/;"	m	class:InOrderCPU::StageScheduler
+nonSpecInstActive	cpu.hh	/^    bool nonSpecInstActive[ThePipeline::MaxThreads];$/;"	m	class:InOrderCPU
+nonSpecInstActive	resources/graduation_unit.hh	/^    bool *nonSpecInstActive[ThePipeline::MaxThreads];$/;"	m	class:GraduationUnit
+nonSpecInstActive	resources/mem_dep_unit.hh	/^   bool *nonSpecInstActive[ThePipeline::MaxThreads];$/;"	m	class:MemDepUnit
+nonSpecInstActive	resources/use_def.hh	/^    bool *nonSpecInstActive[ThePipeline::MaxThreads];$/;"	m	class:UseDefUnit
+nonSpecSeqNum	cpu.hh	/^    InstSeqNum nonSpecSeqNum[ThePipeline::MaxThreads];$/;"	m	class:InOrderCPU
+nonSpecSeqNum	resources/graduation_unit.hh	/^    InstSeqNum *nonSpecSeqNum[ThePipeline::MaxThreads];$/;"	m	class:GraduationUnit
+nonSpecSeqNum	resources/mem_dep_unit.hh	/^    InstSeqNum *nonSpecSeqNum[ThePipeline::MaxThreads];$/;"	m	class:MemDepUnit
+nonSpecSeqNum	resources/use_def.hh	/^    InstSeqNum *nonSpecSeqNum[ThePipeline::MaxThreads];$/;"	m	class:UseDefUnit
+numActiveThreads	cpu.hh	/^    ThreadID numActiveThreads() { return activeThreads.size(); }$/;"	f	class:InOrderCPU
+numCtxtSwitches	cpu.hh	/^    Stats::Scalar numCtxtSwitches;$/;"	m	class:InOrderCPU
+numCycleGrad	resources/mem_dep_unit.hh	/^    int numCycleGrad;$/;"	m	class:MemDepUnit
+numDestRegs	inorder_dyn_inst.hh	/^    int8_t numDestRegs() const { return staticInst->numDestRegs(); }$/;"	f	class:InOrderDynInst
+numFPDestRegs	inorder_dyn_inst.hh	/^    int8_t numFPDestRegs()  const { return staticInst->numFPDestRegs(); }$/;"	f	class:InOrderDynInst
+numFetchingThreads	first_stage.hh	/^    int numFetchingThreads;$/;"	m	class:FirstStage
+numIntDestRegs	inorder_dyn_inst.hh	/^    int8_t numIntDestRegs() const { return staticInst->numIntDestRegs(); }$/;"	f	class:InOrderDynInst
+numSrcRegs	inorder_dyn_inst.hh	/^    int8_t numSrcRegs() const { return staticInst->numSrcRegs(); }$/;"	f	class:InOrderDynInst
+numStages	resource_sked.hh	/^    int numStages;$/;"	m	class:RSkedIt
+numThreads	pipeline_stage.hh	/^    ThreadID numThreads;$/;"	m	class:PipelineStage
+onInstList	inorder_dyn_inst.hh	/^    bool onInstList;$/;"	m	class:InOrderDynInst
+opClass	inorder_dyn_inst.hh	/^    OpClass opClass() const { return staticInst->opClass(); }$/;"	f	class:InOrderDynInst
+operator !=	resource_sked.hh	/^    bool operator!=(RSkedIt const &rhs)$/;"	f	class:RSkedIt
+operator ()	pipeline_traits.5stage.hh	/^        bool operator()(const ScheduleEntry* lhs, const ScheduleEntry* rhs) const$/;"	f	struct:ThePipeline::entryCompare
+operator ()	pipeline_traits.9stage.hh	/^        bool operator()(const ScheduleEntry* lhs, const ScheduleEntry* rhs) const$/;"	f	struct:ThePipeline::entryCompare
+operator ()	pipeline_traits.9stage.smt2.hh	/^        bool operator()(const ScheduleEntry* lhs, const ScheduleEntry* rhs) const$/;"	f	struct:ThePipeline::entryCompare
+operator *	resource_sked.hh	/^    ScheduleEntry* operator*()$/;"	f	class:RSkedIt
+operator ++	resource_sked.hh	/^    RSkedIt &operator++(int unused)$/;"	f	class:RSkedIt
+operator ->	resource_sked.hh	/^    ScheduleEntry* operator->()$/;"	f	class:RSkedIt
+operator =	resource_sked.hh	/^    RSkedIt operator=(ResourceSked::SkedIt const &rhs)$/;"	f	class:RSkedIt
+operator ==	resource_sked.hh	/^    bool operator==(RSkedIt const &rhs)$/;"	f	class:RSkedIt
+pc	cpu.hh	/^    TheISA::PCState pc[ThePipeline::MaxThreads];$/;"	m	class:InOrderCPU
+pc	inorder_dyn_inst.hh	/^    TheISA::PCState pc;$/;"	m	class:InOrderDynInst
+pc	resources/bpred_unit.hh	/^        TheISA::PCState pc;$/;"	m	struct:BPredUnit::PredictorHistory
+pc	resources/fetch_seq_unit.hh	/^    TheISA::PCState pc[ThePipeline::MaxThreads];$/;"	m	class:FetchSeqUnit
+pcBlockStage	resources/fetch_seq_unit.hh	/^    int pcBlockStage[ThePipeline::MaxThreads];$/;"	m	class:FetchSeqUnit
+pcState	cpu.hh	/^    pcState(ThreadID tid)$/;"	f	class:InOrderCPU
+pcState	cpu.hh	/^    pcState(const TheISA::PCState &newPC, ThreadID tid)$/;"	f	class:InOrderCPU
+pcState	inorder_dyn_inst.hh	/^    const TheISA::PCState &pcState() const { return pc; }$/;"	f	class:InOrderDynInst
+pcState	inorder_dyn_inst.hh	/^    void pcState(const TheISA::PCState &_pc) { pc = _pc; }$/;"	f	class:InOrderDynInst
+pcState	thread_context.hh	/^    TheISA::PCState pcState()$/;"	f	class:InOrderThreadContext
+pcState	thread_context.hh	/^    void pcState(const TheISA::PCState &val)$/;"	f	class:InOrderThreadContext
+pcStateNoRecord	thread_context.hh	/^    void pcStateNoRecord(const TheISA::PCState &val)$/;"	f	class:InOrderThreadContext
+pcValid	resources/fetch_seq_unit.hh	/^    bool pcValid[ThePipeline::MaxThreads];$/;"	m	class:FetchSeqUnit
+pendingFetch	resources/fetch_unit.hh	/^    std::list<FetchBlock*> pendingFetch;$/;"	m	class:FetchUnit
+physEffAddr	inorder_dyn_inst.hh	/^    Addr physEffAddr;$/;"	m	class:InOrderDynInst
+pipelineStage	cpu.hh	/^    PipelineStage *pipelineStage[ThePipeline::NumStages];$/;"	m	class:InOrderCPU
+pktCmd	resources/cache_unit.hh	/^    MemCmd::Command pktCmd;$/;"	m	class:CacheRequest
+pop	resource_sked.cc	/^ResourceSked::pop()$/;"	f	class:ResourceSked
+pop	resources/inst_buffer.cc	/^InstBuffer::pop(ThreadID tid)$/;"	f	class:InstBuffer
+predHist	resources/bpred_unit.hh	/^    History predHist[ThePipeline::MaxThreads];$/;"	m	class:BPredUnit
+predInstAddr	inorder_dyn_inst.hh	/^    Addr predInstAddr() { return predPC.instAddr(); }$/;"	f	class:InOrderDynInst
+predNextInstAddr	inorder_dyn_inst.hh	/^    Addr predNextInstAddr() { return predPC.nextInstAddr(); }$/;"	f	class:InOrderDynInst
+predPC	inorder_dyn_inst.hh	/^    TheISA::PCState predPC;$/;"	m	class:InOrderDynInst
+predTaken	inorder_dyn_inst.hh	/^    bool predTaken() { return predictTaken; }$/;"	f	class:InOrderDynInst
+predTaken	resources/bpred_unit.hh	/^        bool predTaken;$/;"	m	struct:BPredUnit::PredictorHistory
+predType	InOrderCPU.py	/^    predType = Param.String("tournament", "Branch predictor type ('local', 'tournament')")$/;"	v	class:InOrderCPU
+predType	params.hh	/^    std::string predType;$/;"	m	class:InOrderParams
+predict	resources/bpred_unit.cc	/^BPredUnit::predict(DynInstPtr &inst, TheISA::PCState &predPC, ThreadID tid)$/;"	f	class:BPredUnit
+predictTaken	inorder_dyn_inst.hh	/^    bool predictTaken;$/;"	m	class:InOrderDynInst
+predictedCorrect	resources/execution_unit.hh	/^    Stats::Scalar predictedCorrect;$/;"	m	class:ExecutionUnit
+predictedIncorrect	resources/execution_unit.hh	/^    Stats::Scalar predictedIncorrect;$/;"	m	class:ExecutionUnit
+predictedNotTaken	resources/branch_predictor.hh	/^    Stats::Scalar predictedNotTaken;$/;"	m	class:BranchPredictor
+predictedNotTakenIncorrect	resources/execution_unit.hh	/^    Stats::Scalar predictedNotTakenIncorrect;$/;"	m	class:ExecutionUnit
+predictedTaken	resources/branch_predictor.hh	/^    Stats::Scalar predictedTaken;$/;"	m	class:BranchPredictor
+predictedTakenIncorrect	resources/execution_unit.hh	/^    Stats::Scalar predictedTakenIncorrect;$/;"	m	class:ExecutionUnit
+predictor	resources/bpred_unit.hh	/^    PredType predictor;$/;"	m	class:BPredUnit
+prevDestRegIdx	inorder_dyn_inst.hh	/^    PhysRegIndex prevDestRegIdx(int idx) const$/;"	f	class:InOrderDynInst
+prevStage	pipeline_stage.hh	/^    TimeBuffer<InterStageStruct>::wire prevStage;$/;"	m	class:PipelineStage
+prevStageInstsValid	pipeline_stage.cc	/^PipelineStage::prevStageInstsValid()$/;"	f	class:PipelineStage
+prevStageQueue	pipeline_stage.hh	/^    TimeBuffer<InterStageStruct> *prevStageQueue;$/;"	m	class:PipelineStage
+prevStageValid	pipeline_stage.hh	/^    bool prevStageValid;$/;"	m	class:PipelineStage
+print	resource_pool.cc	/^ResourcePool::print()$/;"	f	class:ResourcePool
+print	resource_sked.cc	/^ResourceSked::print()$/;"	f	class:ResourceSked
+printMemData	resources/cache_unit.cc	/^printMemData(uint8_t *data, unsigned size)$/;"	f	file:
+printSked	inorder_dyn_inst.hh	/^    void printSked()$/;"	f	class:InOrderDynInst
+priority	pipeline_traits.5stage.hh	/^        int priority;$/;"	m	struct:ThePipeline::ScheduleEntry
+priority	pipeline_traits.9stage.hh	/^        int priority;$/;"	m	struct:ThePipeline::ScheduleEntry
+priority	pipeline_traits.9stage.smt2.hh	/^        int priority;$/;"	m	struct:ThePipeline::ScheduleEntry
+priority	resource_sked.hh	/^    int priority;$/;"	m	class:ScheduleEntry
+procDelaySlotOnMispred	inorder_dyn_inst.hh	/^    bool procDelaySlotOnMispred;$/;"	m	class:InOrderDynInst
+process	cpu.cc	/^InOrderCPU::CPUEvent::process()$/;"	f	class:InOrderCPU::CPUEvent
+process	cpu.cc	/^InOrderCPU::TickEvent::process()$/;"	f	class:InOrderCPU::TickEvent
+process	params.hh	/^    Process *process;$/;"	m	class:InOrderParams
+process	resource.cc	/^ResourceEvent::process()$/;"	f	class:ResourceEvent
+process	resource_pool.9stage.cc	/^ResourcePool::ResPoolEvent::process()$/;"	f	class:ResourcePool::ResPoolEvent
+process	resource_pool.cc	/^ResourcePool::ResPoolEvent::process()$/;"	f	class:ResourcePool::ResPoolEvent
+process	resources/cache_unit.cc	/^CacheUnitEvent::process()$/;"	f	class:CacheUnitEvent
+process	resources/fetch_seq_unit.cc	/^FetchSeqUnit::FetchSeqEvent::process()$/;"	f	class:FetchSeqUnit::FetchSeqEvent
+process	resources/mult_div_unit.cc	/^MDUEvent::process()$/;"	f	class:MDUEvent
+process	resources/tlb_unit.cc	/^TLBUnitEvent::process()$/;"	f	class:TLBUnitEvent
+processCacheCompletion	resources/cache_unit.cc	/^CacheUnit::processCacheCompletion(PacketPtr pkt)$/;"	f	class:CacheUnit
+processCacheCompletion	resources/fetch_unit.cc	/^FetchUnit::processCacheCompletion(PacketPtr pkt)$/;"	f	class:FetchUnit
+processInstSchedule	pipeline_stage.cc	/^PipelineStage::processInstSchedule(DynInstPtr inst,int &reqs_processed)$/;"	f	class:PipelineStage
+processInsts	first_stage.cc	/^FirstStage::processInsts(ThreadID tid)$/;"	f	class:FirstStage
+processInsts	pipeline_stage.cc	/^PipelineStage::processInsts(ThreadID tid)$/;"	f	class:PipelineStage
+processInterrupts	cpu.cc	/^InOrderCPU::processInterrupts(Fault interrupt)$/;"	f	class:InOrderCPU
+processSquash	resources/cache_unit.cc	/^CacheUnit::processSquash(CacheReqPacket *cache_pkt)$/;"	f	class:CacheUnit
+processStage	first_stage.cc	/^FirstStage::processStage(bool &status_change)$/;"	f	class:FirstStage
+processStage	pipeline_stage.cc	/^PipelineStage::processStage(bool &status_change)$/;"	f	class:PipelineStage
+processThread	pipeline_stage.cc	/^PipelineStage::processThread(bool &status_change, ThreadID tid)$/;"	f	class:PipelineStage
+processing	resource.hh	/^    bool processing;$/;"	m	class:ResourceRequest
+profileClear	thread_context.cc	/^InOrderThreadContext::profileClear()$/;"	f	class:InOrderThreadContext
+profileSample	thread_context.cc	/^InOrderThreadContext::profileSample()$/;"	f	class:InOrderThreadContext
+push	resource_sked.cc	/^ResourceSked::push(ScheduleEntry* sked_entry)$/;"	f	class:ResourceSked
+pushBefore	resource_sked.cc	/^ResourceSked::pushBefore(ScheduleEntry* sked_entry, int sked_cmd,$/;"	f	class:ResourceSked
+rasTarget	resources/bpred_unit.hh	/^        TheISA::PCState rasTarget;$/;"	m	struct:BPredUnit::PredictorHistory
+read	cpu.cc	/^InOrderCPU::read(DynInstPtr inst, Addr addr,$/;"	f	class:InOrderCPU
+read	resources/cache_unit.cc	/^CacheUnit::read(DynInstPtr inst, Addr addr,$/;"	f	class:CacheUnit
+readCpuId	cpu.hh	/^    int readCpuId() { return cpu_id; }$/;"	f	class:InOrderCPU
+readDestRegIdx	inorder_dyn_inst.hh	/^    PhysRegIndex readDestRegIdx(int idx)$/;"	f	class:InOrderDynInst
+readFloatBitsResult	inorder_dyn_inst.hh	/^    FloatRegBits readFloatBitsResult(int idx)$/;"	f	class:InOrderDynInst
+readFloatReg	cpu.cc	/^InOrderCPU::readFloatReg(RegIndex reg_idx, ThreadID tid)$/;"	f	class:InOrderCPU
+readFloatReg	thread_context.cc	/^InOrderThreadContext::readFloatReg(int reg_idx)$/;"	f	class:InOrderThreadContext
+readFloatRegBits	cpu.cc	/^InOrderCPU::readFloatRegBits(RegIndex reg_idx, ThreadID tid)$/;"	f	class:InOrderCPU
+readFloatRegBits	thread_context.cc	/^InOrderThreadContext::readFloatRegBits(int reg_idx)$/;"	f	class:InOrderThreadContext
+readFloatRegOperand	inorder_dyn_inst.cc	/^InOrderDynInst::readFloatRegOperand(const StaticInst *si, int idx)$/;"	f	class:InOrderDynInst
+readFloatRegOperandBits	inorder_dyn_inst.cc	/^InOrderDynInst::readFloatRegOperandBits(const StaticInst *si, int idx)$/;"	f	class:InOrderDynInst
+readFloatResult	inorder_dyn_inst.hh	/^    FloatReg readFloatResult(int idx)$/;"	f	class:InOrderDynInst
+readFuncExeInst	thread_context.hh	/^    Counter readFuncExeInst() { return thread->funcExeInst; }$/;"	f	class:InOrderThreadContext
+readIntReg	cpu.cc	/^InOrderCPU::readIntReg(RegIndex reg_idx, ThreadID tid)$/;"	f	class:InOrderCPU
+readIntReg	thread_context.cc	/^InOrderThreadContext::readIntReg(int reg_idx)$/;"	f	class:InOrderThreadContext
+readIntRegOperand	inorder_dyn_inst.cc	/^InOrderDynInst::readIntRegOperand(const StaticInst *si, int idx, ThreadID tid)$/;"	f	class:InOrderDynInst
+readIntResult	inorder_dyn_inst.hh	/^    IntReg readIntResult(int idx)$/;"	f	class:InOrderDynInst
+readIntSrc	inorder_dyn_inst.hh	/^    uint64_t readIntSrc(int idx) { return instSrc[idx].intVal; }$/;"	f	class:InOrderDynInst
+readLastActivate	thread_context.cc	/^InOrderThreadContext::readLastActivate()$/;"	f	class:InOrderThreadContext
+readLastSuspend	thread_context.cc	/^InOrderThreadContext::readLastSuspend()$/;"	f	class:InOrderThreadContext
+readMem	inorder_dyn_inst.cc	/^InOrderDynInst::readMem(Addr addr, uint8_t *data,$/;"	f	class:InOrderDynInst
+readMicroPC	thread_context.hh	/^    uint64_t readMicroPC()$/;"	f	class:InOrderThreadContext
+readMiscReg	cpu.cc	/^InOrderCPU::readMiscReg(int misc_reg, ThreadID tid)$/;"	f	class:InOrderCPU
+readMiscReg	inorder_dyn_inst.cc	/^InOrderDynInst::readMiscReg(int misc_reg)$/;"	f	class:InOrderDynInst
+readMiscReg	thread_context.hh	/^    MiscReg readMiscReg(int misc_reg)$/;"	f	class:InOrderThreadContext
+readMiscRegNoEffect	cpu.cc	/^InOrderCPU::readMiscRegNoEffect(int misc_reg, ThreadID tid)$/;"	f	class:InOrderCPU
+readMiscRegNoEffect	thread_context.hh	/^    MiscReg readMiscRegNoEffect(int misc_reg)$/;"	f	class:InOrderThreadContext
+readMiscRegOperand	inorder_dyn_inst.cc	/^InOrderDynInst::readMiscRegOperand(const StaticInst *si, int idx)$/;"	f	class:InOrderDynInst
+readNextMicroPC	thread_context.hh	/^    uint64_t readNextMicroPC()$/;"	f	class:InOrderThreadContext
+readPredMicroPC	inorder_dyn_inst.hh	/^    Addr readPredMicroPC() { return predPC.microPC(); }$/;"	f	class:InOrderDynInst
+readPredTarg	inorder_dyn_inst.hh	/^    TheISA::PCState readPredTarg() { return predPC; }$/;"	f	class:InOrderDynInst
+readRegOtherThread	cpu.cc	/^InOrderCPU::readRegOtherThread(unsigned reg_idx, ThreadID tid)$/;"	f	class:InOrderCPU
+readRegOtherThread	inorder_dyn_inst.cc	/^InOrderDynInst::readRegOtherThread(unsigned reg_idx, ThreadID tid)$/;"	f	class:InOrderDynInst
+readRegOtherThread	thread_context.cc	/^InOrderThreadContext::readRegOtherThread(int reg_idx, ThreadID tid)$/;"	f	class:InOrderThreadContext
+readResultTime	inorder_dyn_inst.hh	/^    Tick readResultTime(int idx) { return instResult[idx].tick; }$/;"	f	class:InOrderDynInst
+readSrcRegIdx	inorder_dyn_inst.hh	/^    PhysRegIndex readSrcRegIdx(int idx)$/;"	f	class:InOrderDynInst
+readStCondFailures	inorder_dyn_inst.hh	/^    unsigned readStCondFailures()$/;"	f	class:InOrderDynInst
+readStCondFailures	thread_context.hh	/^    unsigned readStCondFailures()$/;"	f	class:InOrderThreadContext
+readStallSignals	pipeline_stage.cc	/^PipelineStage::readStallSignals(ThreadID tid)$/;"	f	class:PipelineStage
+readTid	inorder_dyn_inst.hh	/^    short readTid() { return threadNumber; }$/;"	f	class:InOrderDynInst
+readVpn	inorder_dyn_inst.hh	/^    int readVpn() { return virtProcNumber; }$/;"	f	class:InOrderDynInst
+readyRegs	inorder_dyn_inst.hh	/^    unsigned readyRegs;$/;"	m	class:InOrderDynInst
+readyThreads	cpu.hh	/^    std::list<ThreadID> readyThreads;$/;"	m	class:InOrderCPU
+readyToCommit	inorder_dyn_inst.hh	/^    bool readyToCommit() const { return status[CanCommit]; }$/;"	f	class:InOrderDynInst
+readyToIssue	inorder_dyn_inst.hh	/^    bool readyToIssue() const { return status[CanIssue]; }$/;"	f	class:InOrderDynInst
+recvRetry	cpu.cc	/^InOrderCPU::CachePort::recvRetry()$/;"	f	class:InOrderCPU::CachePort
+recvRetry	resources/cache_unit.cc	/^CacheUnit::recvRetry()$/;"	f	class:CacheUnit
+recvTimingResp	cpu.cc	/^InOrderCPU::CachePort::recvTimingResp(Packet *pkt)$/;"	f	class:InOrderCPU::CachePort
+recvTimingSnoopReq	cpu.hh	/^        void recvTimingSnoopReq(PacketPtr pkt) { }$/;"	f	class:InOrderCPU::CachePort
+regDepMap	resources/decode_unit.hh	/^    RegDepMap *regDepMap[ThePipeline::MaxThreads];$/;"	m	class:DecodeUnit
+regDepMap	resources/use_def.hh	/^    RegDepMap *regDepMap[ThePipeline::MaxThreads];$/;"	m	class:UseDefUnit
+regForwards	resources/use_def.hh	/^    Stats::Scalar regForwards;$/;"	m	class:UseDefUnit
+regMap	reg_dep_map.hh	/^    std::vector<DepMap> regMap;$/;"	m	class:RegDepMap
+regStats	cpu.cc	/^InOrderCPU::regStats()$/;"	f	class:InOrderCPU
+regStats	pipeline_stage.cc	/^PipelineStage::regStats()$/;"	f	class:PipelineStage
+regStats	resource.hh	/^    virtual void regStats() { }$/;"	f	class:Resource
+regStats	resource_pool.9stage.cc	/^ResourcePool::regStats()$/;"	f	class:ResourcePool
+regStats	resource_pool.cc	/^ResourcePool::regStats()$/;"	f	class:ResourcePool
+regStats	resources/agen_unit.cc	/^AGENUnit::regStats()$/;"	f	class:AGENUnit
+regStats	resources/bpred_unit.cc	/^BPredUnit::regStats()$/;"	f	class:BPredUnit
+regStats	resources/branch_predictor.cc	/^BranchPredictor::regStats()$/;"	f	class:BranchPredictor
+regStats	resources/execution_unit.cc	/^ExecutionUnit::regStats()$/;"	f	class:ExecutionUnit
+regStats	resources/inst_buffer.cc	/^InstBuffer::regStats()$/;"	f	class:InstBuffer
+regStats	resources/mult_div_unit.cc	/^MultDivUnit::regStats()$/;"	f	class:MultDivUnit
+regStats	resources/use_def.cc	/^UseDefUnit::regStats()$/;"	f	class:UseDefUnit
+regStats	thread_context.cc	/^InOrderThreadContext::regStats(const std::string &name)$/;"	f	class:InOrderThreadContext
+rejectRequest	resource.cc	/^Resource::rejectRequest(DynInstPtr inst)$/;"	f	class:Resource
+releaseReq	inorder_dyn_inst.cc	/^InOrderDynInst::releaseReq(ResourceRequest* req)$/;"	f	class:InOrderDynInst
+remove	reg_dep_map.cc	/^RegDepMap::remove(DynInstPtr inst)$/;"	f	class:RegDepMap
+remove	reg_dep_map.cc	/^RegDepMap::remove(uint8_t reg_type, RegIndex idx, DynInstPtr inst)$/;"	f	class:RegDepMap
+remove	resources/inst_buffer.cc	/^InstBuffer::remove(DynInstPtr inst)$/;"	f	class:InstBuffer
+removeAddrDependency	resources/cache_unit.cc	/^CacheUnit::removeAddrDependency(DynInstPtr inst)$/;"	f	class:CacheUnit
+removeAddrDependency	resources/fetch_unit.cc	/^FetchUnit::removeAddrDependency(DynInstPtr inst)$/;"	f	class:FetchUnit
+removeFront	reg_dep_map.cc	/^RegDepMap::removeFront(uint8_t reg_type, RegIndex idx, DynInstPtr inst)$/;"	f	class:RegDepMap
+removeInst	cpu.cc	/^InOrderCPU::removeInst(DynInstPtr inst)$/;"	f	class:InOrderCPU
+removeInstsThisCycle	cpu.hh	/^    bool removeInstsThisCycle;$/;"	m	class:InOrderCPU
+removeInstsUntil	cpu.cc	/^InOrderCPU::removeInstsUntil(const InstSeqNum &seq_num, ThreadID tid)$/;"	f	class:InOrderCPU
+removeList	cpu.hh	/^    std::queue<ListIt> removeList;$/;"	m	class:InOrderCPU
+removePipelineStalls	cpu.cc	/^InOrderCPU::removePipelineStalls(ThreadID tid)$/;"	f	class:InOrderCPU
+removeStalls	pipeline_stage.cc	/^PipelineStage::removeStalls(ThreadID tid)$/;"	f	class:PipelineStage
+renameDestReg	inorder_dyn_inst.hh	/^    void renameDestReg(int idx,$/;"	f	class:InOrderDynInst
+renameSrcReg	inorder_dyn_inst.hh	/^    void renameSrcReg(int idx, PhysRegIndex renamed_src)$/;"	f	class:InOrderDynInst
+renamedDestRegIdx	inorder_dyn_inst.hh	/^    PhysRegIndex renamedDestRegIdx(int idx) const$/;"	f	class:InOrderDynInst
+renamedSrcRegIdx	inorder_dyn_inst.hh	/^    PhysRegIndex renamedSrcRegIdx(int idx) const$/;"	f	class:InOrderDynInst
+req	inorder_dyn_inst.hh	/^    Request *req;$/;"	m	class:InOrderDynInst
+reqData	resources/cache_unit.hh	/^    PacketDataPtr reqData;$/;"	m	class:CacheReqPacket
+reqData	resources/cache_unit.hh	/^    PacketDataPtr reqData;$/;"	m	class:CacheRequest
+reqID	resource.hh	/^    int reqID;$/;"	m	class:ResourceRequest
+reqList	inorder_dyn_inst.hh	/^    std::list<ResourceRequest*> reqList;$/;"	m	class:InOrderDynInst
+reqs	resource.hh	/^    std::vector<ResReqPtr> reqs;$/;"	m	class:Resource
+request	resource.cc	/^Resource::request(DynInstPtr inst)$/;"	f	class:Resource
+request	resource_pool.9stage.cc	/^ResourcePool::request(int res_idx, DynInstPtr inst)$/;"	f	class:ResourcePool
+request	resource_pool.cc	/^ResourcePool::request(int res_idx, DynInstPtr inst)$/;"	f	class:ResourcePool
+requestAgain	resource.cc	/^Resource::requestAgain(DynInstPtr inst, bool &do_request)$/;"	f	class:Resource
+requestAgain	resources/cache_unit.cc	/^CacheUnit::requestAgain(DynInstPtr inst, bool &service_request)$/;"	f	class:CacheUnit
+requestAgain	resources/mult_div_unit.cc	/^MultDivUnit::requestAgain(DynInstPtr inst, bool &service_request)$/;"	f	class:MultDivUnit
+res	inorder_dyn_inst.hh	/^        InstValue res;$/;"	m	struct:InOrderDynInst::InstResult
+res	resource.hh	/^    Resource *res;$/;"	m	class:ResourceRequest
+res	resources/bpred_unit.hh	/^    Resource *res;$/;"	m	class:BPredUnit
+resIdx	resource.hh	/^    int resIdx;$/;"	m	class:ResourceRequest
+resName	resource.hh	/^    std::string resName;$/;"	m	class:Resource
+resNum	pipeline_traits.5stage.hh	/^        int resNum;$/;"	m	struct:ThePipeline::ScheduleEntry
+resNum	pipeline_traits.9stage.hh	/^        int resNum;$/;"	m	struct:ThePipeline::ScheduleEntry
+resNum	pipeline_traits.9stage.smt2.hh	/^        int resNum;$/;"	m	struct:ThePipeline::ScheduleEntry
+resNum	resource_sked.hh	/^    int resNum;$/;"	m	class:ScheduleEntry
+resPool	cpu.hh	/^    ResourcePool *resPool;$/;"	m	class:InOrderCPU
+resPool	resource_pool.hh	/^        ResourcePool *resPool;$/;"	m	class:ResourcePool::ResPoolEvent
+resReqCount	cpu.hh	/^    unsigned resReqCount;$/;"	m	class:InOrderCPU
+resReqID	resource.cc	/^int ResourceRequest::resReqID = 0;$/;"	m	class:ResourceRequest	file:
+resReqID	resource.hh	/^    static int resReqID;$/;"	m	class:ResourceRequest
+resetInstCount	inorder_dyn_inst.cc	/^InOrderDynInst::resetInstCount()$/;"	f	class:InOrderDynInst
+resource	resource.hh	/^    Resource *resource;$/;"	m	class:ResourceEvent
+resourceEvent	resource.hh	/^    ResourceEvent *resourceEvent;$/;"	m	class:Resource
+resources	pipeline_stage.hh	/^        std::vector<ResReqPtr> resources;$/;"	m	struct:PipelineStage::Stalls
+resources	resource_pool.hh	/^    std::vector<Resource *> resources;$/;"	m	class:ResourcePool
+resultType	inorder_dyn_inst.hh	/^    ResultType resultType(int idx)$/;"	f	class:InOrderDynInst
+roundRobin	first_stage.cc	/^FirstStage::roundRobin()$/;"	f	class:FirstStage
+rsked	cpu.hh	/^        ThePipeline::RSkedPtr rsked;$/;"	m	class:InOrderCPU::StageScheduler
+runCycles	cpu.hh	/^    Stats::Scalar runCycles;$/;"	m	class:InOrderCPU
+runCycles	pipeline_stage.hh	/^    Stats::Scalar runCycles;$/;"	m	class:PipelineStage
+scheduleCpuEvent	cpu.cc	/^InOrderCPU::scheduleCpuEvent(CPUEventType c_event, Fault fault,$/;"	f	class:InOrderCPU
+scheduleEvent	cpu.cc	/^InOrderCPU::CPUEvent::scheduleEvent(Cycles delay)$/;"	f	class:InOrderCPU::CPUEvent
+scheduleEvent	resource.cc	/^Resource::scheduleEvent(DynInstPtr inst, Cycles delay)$/;"	f	class:Resource
+scheduleEvent	resource.cc	/^Resource::scheduleEvent(int slot_idx, Cycles delay)$/;"	f	class:Resource
+scheduleEvent	resource.cc	/^ResourceEvent::scheduleEvent(Cycles delay)$/;"	f	class:ResourceEvent
+scheduleEvent	resource_pool.9stage.cc	/^ResourcePool::ResPoolEvent::scheduleEvent(int delay)$/;"	f	class:ResourcePool::ResPoolEvent
+scheduleEvent	resource_pool.9stage.cc	/^ResourcePool::scheduleEvent(InOrderCPU::CPUEventType e_type, DynInstPtr inst,$/;"	f	class:ResourcePool
+scheduleEvent	resource_pool.cc	/^ResourcePool::ResPoolEvent::scheduleEvent(Cycles delay)$/;"	f	class:ResourcePool::ResPoolEvent
+scheduleEvent	resource_pool.cc	/^ResourcePool::scheduleEvent(InOrderCPU::CPUEventType e_type, DynInstPtr inst,$/;"	f	class:ResourcePool
+scheduleExecution	resource.cc	/^Resource::scheduleExecution(int slot_num)$/;"	f	class:Resource
+scheduleTickEvent	cpu.hh	/^    void scheduleTickEvent(Cycles delay)$/;"	f	class:InOrderCPU
+sendInstToNextStage	pipeline_stage.cc	/^PipelineStage::sendInstToNextStage(DynInstPtr inst)$/;"	f	class:PipelineStage
+seqNum	inorder_dyn_inst.hh	/^    InstSeqNum seqNum;$/;"	m	class:InOrderDynInst
+seqNum	resource.hh	/^    InstSeqNum seqNum;$/;"	m	class:ResourceRequest
+seqNum	resource_pool.hh	/^        InstSeqNum seqNum;$/;"	m	class:ResourcePool::ResPoolEvent
+seqNum	resources/bpred_unit.hh	/^        InstSeqNum seqNum;$/;"	m	struct:BPredUnit::PredictorHistory
+serialize	thread_context.cc	/^InOrderThreadContext::serialize(std::ostream &os)$/;"	f	class:InOrderThreadContext
+serializeAfterSeqNum	resources/use_def.hh	/^    InstSeqNum serializeAfterSeqNum[ThePipeline::MaxThreads];$/;"	m	class:UseDefUnit
+serializeOnNextInst	resources/use_def.hh	/^    bool serializeOnNextInst[ThePipeline::MaxThreads];$/;"	m	class:UseDefUnit
+setASID	inorder_dyn_inst.hh	/^    void setASID(short addr_space_id) { asid = addr_space_id; }$/;"	f	class:InOrderDynInst
+setActiveThreads	pipeline_stage.cc	/^PipelineStage::setActiveThreads(list<ThreadID> *at_ptr)$/;"	f	class:PipelineStage
+setAddrDependency	resources/cache_unit.cc	/^CacheUnit::setAddrDependency(DynInstPtr inst)$/;"	f	class:CacheUnit
+setAtCommit	inorder_dyn_inst.hh	/^    void setAtCommit() { status.set(AtCommit); }$/;"	f	class:InOrderDynInst
+setBackSked	inorder_dyn_inst.hh	/^    void setBackSked(RSkedPtr back_sked)$/;"	f	class:InOrderDynInst
+setBranchPred	inorder_dyn_inst.hh	/^    void setBranchPred(bool prediction) { predictTaken = prediction; }$/;"	f	class:InOrderDynInst
+setCPU	first_stage.cc	/^FirstStage::setCPU(InOrderCPU *cpu_ptr)$/;"	f	class:FirstStage
+setCPU	pipeline_stage.cc	/^PipelineStage::setCPU(InOrderCPU *cpu_ptr)$/;"	f	class:PipelineStage
+setCPU	reg_dep_map.cc	/^RegDepMap::setCPU(InOrderCPU *_cpu)$/;"	f	class:RegDepMap
+setCanCommit	inorder_dyn_inst.hh	/^    void setCanCommit() { status.set(CanCommit); }$/;"	f	class:InOrderDynInst
+setCanIssue	inorder_dyn_inst.hh	/^    void setCanIssue() { status.set(CanIssue); }$/;"	f	class:InOrderDynInst
+setCommitted	inorder_dyn_inst.hh	/^    void setCommitted() { status.set(Committed); }$/;"	f	class:InOrderDynInst
+setCompleted	inorder_dyn_inst.hh	/^    void setCompleted() { status.set(Completed); }$/;"	f	class:InOrderDynInst
+setCompleted	resource.hh	/^    void setCompleted(bool cond = true) { completed = cond; }$/;"	f	class:ResourceRequest
+setContextId	thread_context.hh	/^    void setContextId(int id) { thread->setContextId(id); }$/;"	f	class:InOrderThreadContext
+setCpuId	cpu.hh	/^    void setCpuId(int val) { cpu_id = val; }$/;"	f	class:InOrderCPU
+setCurResSlot	inorder_dyn_inst.hh	/^    void setCurResSlot(unsigned slot_num) { curResSlot = slot_num; }$/;"	f	class:InOrderDynInst
+setDestRegIdx	inorder_dyn_inst.hh	/^    void setDestRegIdx(int idx, PhysRegIndex dest_idx)$/;"	f	class:InOrderDynInst
+setEA	inorder_dyn_inst.hh	/^    void setEA(Addr &ea) { instEffAddr = ea; eaCalcDone = true; }$/;"	f	class:InOrderDynInst
+setEvent	cpu.hh	/^        void setEvent(CPUEventType e_type, Fault _fault, ThreadID _tid,$/;"	f	class:InOrderCPU::CPUEvent
+setEvent	resource_pool.hh	/^        void setEvent(InOrderCPU::CPUEventType e_type,$/;"	f	class:ResourcePool::ResPoolEvent
+setExecuted	inorder_dyn_inst.hh	/^    void setExecuted() { status.set(Executed); }$/;"	f	class:InOrderDynInst
+setFloatReg	cpu.cc	/^InOrderCPU::setFloatReg(RegIndex reg_idx, FloatReg val, ThreadID tid)$/;"	f	class:InOrderCPU
+setFloatReg	thread_context.cc	/^InOrderThreadContext::setFloatReg(int reg_idx, FloatReg val)$/;"	f	class:InOrderThreadContext
+setFloatRegBits	cpu.cc	/^InOrderCPU::setFloatRegBits(RegIndex reg_idx, FloatRegBits val, ThreadID tid)$/;"	f	class:InOrderCPU
+setFloatRegBits	thread_context.cc	/^InOrderThreadContext::setFloatRegBits(int reg_idx, FloatRegBits val)$/;"	f	class:InOrderThreadContext
+setFloatRegBitsSrc	inorder_dyn_inst.cc	/^InOrderDynInst::setFloatRegBitsSrc(int idx, FloatRegBits val)$/;"	f	class:InOrderDynInst
+setFloatRegOperand	inorder_dyn_inst.cc	/^InOrderDynInst::setFloatRegOperand(const StaticInst *si, int idx, FloatReg val)$/;"	f	class:InOrderDynInst
+setFloatRegOperandBits	inorder_dyn_inst.cc	/^InOrderDynInst::setFloatRegOperandBits(const StaticInst *si, int idx,$/;"	f	class:InOrderDynInst
+setFloatSrc	inorder_dyn_inst.cc	/^InOrderDynInst::setFloatSrc(int idx, FloatReg val)$/;"	f	class:InOrderDynInst
+setFrontSked	inorder_dyn_inst.hh	/^    void setFrontSked(RSkedPtr front_sked)$/;"	f	class:InOrderDynInst
+setInstListIt	inorder_dyn_inst.hh	/^    void setInstListIt(ListIt _instListIt) { onInstList = true; instListIt = _instListIt; }$/;"	f	class:InOrderDynInst
+setInstSeqNum	cpu.hh	/^    void setInstSeqNum(ThreadID tid, InstSeqNum seq_num)$/;"	f	class:InOrderCPU
+setIntReg	cpu.cc	/^InOrderCPU::setIntReg(RegIndex reg_idx, uint64_t val, ThreadID tid)$/;"	f	class:InOrderCPU
+setIntReg	thread_context.cc	/^InOrderThreadContext::setIntReg(int reg_idx, uint64_t val)$/;"	f	class:InOrderThreadContext
+setIntRegOperand	inorder_dyn_inst.cc	/^InOrderDynInst::setIntRegOperand(const StaticInst *si, int idx, IntReg val)$/;"	f	class:InOrderDynInst
+setIntSrc	inorder_dyn_inst.cc	/^InOrderDynInst::setIntSrc(int idx, uint64_t val)$/;"	f	class:InOrderDynInst
+setIssued	inorder_dyn_inst.hh	/^    void setIssued() { status.set(Issued); }$/;"	f	class:InOrderDynInst
+setMemAccCompleted	resources/cache_unit.hh	/^    setMemAccCompleted(bool completed = true)$/;"	f	class:CacheRequest
+setMemAccPending	resources/cache_unit.hh	/^    void setMemAccPending(bool pending = true) { memAccPending = pending; }$/;"	f	class:CacheRequest
+setMemAddr	inorder_dyn_inst.hh	/^    void setMemAddr(Addr addr)$/;"	f	class:InOrderDynInst
+setMemStall	resource.hh	/^    void setMemStall(bool stall = true) { memStall = stall; }$/;"	f	class:ResourceRequest
+setMicroPC	thread_context.hh	/^    void setMicroPC(uint64_t val) { };$/;"	f	class:InOrderThreadContext
+setMiscReg	cpu.cc	/^InOrderCPU::setMiscReg(int misc_reg, const MiscReg &val, ThreadID tid)$/;"	f	class:InOrderCPU
+setMiscReg	inorder_dyn_inst.cc	/^InOrderDynInst::setMiscReg(int misc_reg, const MiscReg &val)$/;"	f	class:InOrderDynInst
+setMiscReg	thread_context.cc	/^InOrderThreadContext::setMiscReg(int misc_reg, const MiscReg &val)$/;"	f	class:InOrderThreadContext
+setMiscRegNoEffect	cpu.cc	/^InOrderCPU::setMiscRegNoEffect(int misc_reg, const MiscReg &val, ThreadID tid)$/;"	f	class:InOrderCPU
+setMiscRegNoEffect	thread_context.cc	/^InOrderThreadContext::setMiscRegNoEffect(int misc_reg, const MiscReg &val)$/;"	f	class:InOrderThreadContext
+setMiscRegOperand	inorder_dyn_inst.cc	/^InOrderDynInst::setMiscRegOperand(const StaticInst *si, int idx,$/;"	f	class:InOrderDynInst
+setNextMicroPC	thread_context.hh	/^    void setNextMicroPC(uint64_t val) { };$/;"	f	class:InOrderThreadContext
+setNextStage	inorder_dyn_inst.hh	/^    void setNextStage(int stage_num) { nextStage = stage_num; }$/;"	f	class:InOrderDynInst
+setNextStageQueue	pipeline_stage.cc	/^PipelineStage::setNextStageQueue(TimeBuffer<InterStageStruct> *next_stage_ptr)$/;"	f	class:PipelineStage
+setPC	inorder_trace.hh	/^    void setPC(TheISA::PCState _pc) { pc = _pc; }$/;"	f	class:Trace::InOrderTraceRecord
+setPredTarg	inorder_dyn_inst.hh	/^    void setPredTarg(const TheISA::PCState &predictedPC)$/;"	f	class:InOrderDynInst
+setPrevStageQueue	pipeline_stage.cc	/^PipelineStage::setPrevStageQueue(TimeBuffer<InterStageStruct> *prev_stage_ptr)$/;"	f	class:PipelineStage
+setProcessing	resource.hh	/^    void setProcessing(bool cond = true) { processing = cond; }$/;"	f	class:ResourceRequest
+setRegDepEntry	inorder_dyn_inst.hh	/^    void setRegDepEntry() { status.set(RegDepMapEntry); }$/;"	f	class:InOrderDynInst
+setRegOtherThread	cpu.cc	/^InOrderCPU::setRegOtherThread(unsigned reg_idx, const MiscReg &val,$/;"	f	class:InOrderCPU
+setRegOtherThread	inorder_dyn_inst.cc	/^InOrderDynInst::setRegOtherThread(unsigned reg_idx, const MiscReg &val,$/;"	f	class:InOrderDynInst
+setRegOtherThread	thread_context.cc	/^InOrderThreadContext::setRegOtherThread(int misc_reg, const MiscReg &val,$/;"	f	class:InOrderThreadContext
+setRemoveList	inorder_dyn_inst.hh	/^    void setRemoveList() { status.set(RemoveList); }$/;"	f	class:InOrderDynInst
+setRequest	resource.cc	/^ResourceRequest::setRequest(DynInstPtr _inst, int stage_num,$/;"	f	class:ResourceRequest
+setRequest	resources/cache_unit.hh	/^    void setRequest(DynInstPtr _inst, int stage_num, int res_idx, int slot_num,$/;"	f	class:CacheRequest
+setRequest	resources/tlb_unit.hh	/^    void setRequest(DynInstPtr inst, int stage_num, int res_idx, int slot_num,$/;"	f	class:TLBUnitRequest
+setRequest	resources/use_def.hh	/^        void setRequest(DynInstPtr _inst, int stage_num, int res_idx,$/;"	f	class:UseDefUnit::UseDefRequest
+setResStall	pipeline_stage.cc	/^PipelineStage::setResStall(ResReqPtr res_req, ThreadID tid)$/;"	f	class:PipelineStage
+setResultReady	inorder_dyn_inst.hh	/^    void setResultReady() { status.set(ResultReady); }$/;"	f	class:InOrderDynInst
+setSeqNum	inorder_dyn_inst.hh	/^    void setSeqNum(InstSeqNum seq_num) { seqNum = seq_num; }$/;"	f	class:InOrderDynInst
+setSerializeAfter	inorder_dyn_inst.hh	/^    void setSerializeAfter() { status.set(SerializeAfter); }$/;"	f	class:InOrderDynInst
+setSerializeBefore	inorder_dyn_inst.hh	/^    void setSerializeBefore() { status.set(SerializeBefore); }$/;"	f	class:InOrderDynInst
+setSerializeHandled	inorder_dyn_inst.hh	/^    void setSerializeHandled() { status.set(SerializeHandled); }$/;"	f	class:InOrderDynInst
+setSlot	resource.hh	/^    void setSlot(int slot) { slotIdx = slot; }$/;"	f	class:ResourceEvent
+setSquashInfo	inorder_dyn_inst.cc	/^InOrderDynInst::setSquashInfo(unsigned stage_num)$/;"	f	class:InOrderDynInst
+setSquashed	inorder_dyn_inst.hh	/^    void setSquashed() { status.set(Squashed); }$/;"	f	class:InOrderDynInst
+setSquashed	resource.hh	/^    void setSquashed() { squashed = true; }$/;"	f	class:ResourceRequest
+setSrcRegIdx	inorder_dyn_inst.hh	/^    void setSrcRegIdx(int idx, PhysRegIndex src_idx)$/;"	f	class:InOrderDynInst
+setStCondFailures	inorder_dyn_inst.hh	/^    void setStCondFailures(unsigned sc_failures)$/;"	f	class:InOrderDynInst
+setStCondFailures	thread_context.hh	/^    void setStCondFailures(unsigned sc_failures)$/;"	f	class:InOrderThreadContext
+setStageCycle	inorder_trace.hh	/^    setStageCycle(int num_stage, Tick cur_cycle)$/;"	f	class:Trace::InOrderTraceRecord
+setStaticInst	inorder_dyn_inst.cc	/^InOrderDynInst::setStaticInst(StaticInstPtr &static_inst)$/;"	f	class:InOrderDynInst
+setStaticInst	inorder_dyn_inst.cc	/^InOrderDynInst::setStaticInst(StaticInstPtr si)$/;"	f	class:InOrderDynInst
+setStaticInst	inorder_trace.hh	/^    setStaticInst(const StaticInstPtr &_staticInst)$/;"	f	class:Trace::InOrderTraceRecord
+setStatus	thread_context.hh	/^    void setStatus(Status new_status)$/;"	f	class:InOrderThreadContext
+setThreadId	thread_context.hh	/^    void setThreadId(int id) { return thread->setThreadId(id); }$/;"	f	class:InOrderThreadContext
+setThreadState	inorder_dyn_inst.hh	/^    void setThreadState(InOrderThreadState *state) { thread = state; }$/;"	f	class:InOrderDynInst
+setTid	inorder_dyn_inst.hh	/^    void setTid(ThreadID tid) { threadNumber = tid; }$/;"	f	class:InOrderDynInst
+setTid	resource.hh	/^    void setTid(ThreadID _tid) { tid = _tid; }$/;"	f	class:ResourceRequest
+setTimeBuffer	pipeline_stage.cc	/^PipelineStage::setTimeBuffer(TimeBuffer<TimeStruct> *tb_ptr)$/;"	f	class:PipelineStage
+setVpn	inorder_dyn_inst.hh	/^    void setVpn(int id) { virtProcNumber = id; }$/;"	f	class:InOrderDynInst
+setupMemRequest	resources/cache_unit.cc	/^CacheUnit::setupMemRequest(DynInstPtr inst, CacheReqPtr cache_req,$/;"	f	class:CacheUnit
+setupMemRequest	resources/fetch_unit.cc	/^FetchUnit::setupMemRequest(DynInstPtr inst, CacheReqPtr cache_req,$/;"	f	class:FetchUnit
+setupSquash	pipeline_stage.cc	/^PipelineStage::setupSquash(DynInstPtr inst, ThreadID tid)$/;"	f	class:PipelineStage
+setupSquash	resource.cc	/^Resource::setupSquash(DynInstPtr inst, int stage_num, ThreadID tid)$/;"	f	class:Resource
+simPalCheck	cpu.cc	/^InOrderCPU::simPalCheck(int palFunc, ThreadID tid)$/;"	f	class:InOrderCPU
+simPalCheck	inorder_dyn_inst.cc	/^InOrderDynInst::simPalCheck(int palFunc)$/;"	f	class:InOrderDynInst
+size	resource_sked.cc	/^ResourceSked::size()$/;"	f	class:ResourceSked
+skedCache	cpu.cc	/^m5::hash_map<InOrderCPU::SkedID, ThePipeline::RSkedPtr> InOrderCPU::skedCache;$/;"	m	class:InOrderCPU	file:
+skedCache	cpu.hh	/^    static m5::hash_map<SkedID, ThePipeline::RSkedPtr> skedCache;$/;"	m	class:InOrderCPU
+skidBuffer	pipeline_stage.hh	/^    std::list<DynInstPtr> skidBuffer[ThePipeline::MaxThreads];$/;"	m	class:PipelineStage
+skidSize	pipeline_stage.cc	/^PipelineStage::skidSize()$/;"	f	class:PipelineStage
+skidsEmpty	pipeline_stage.cc	/^PipelineStage::skidsEmpty()$/;"	f	class:PipelineStage
+slotIdx	resource.hh	/^    int slotIdx;$/;"	m	class:ResourceEvent
+slotNum	resource.hh	/^    int slotNum;$/;"	m	class:ResourceRequest
+slotsAvail	resource.cc	/^Resource::slotsAvail()$/;"	f	class:Resource
+slotsAvail	resource_pool.9stage.cc	/^ResourcePool::slotsAvail(int res_idx)$/;"	f	class:ResourcePool
+slotsAvail	resource_pool.cc	/^ResourcePool::slotsAvail(int res_idx)$/;"	f	class:ResourcePool
+slotsInUse	resource.cc	/^Resource::slotsInUse()$/;"	f	class:Resource
+slotsInUse	resource_pool.9stage.cc	/^ResourcePool::slotsInUse(int res_idx)$/;"	f	class:ResourcePool
+slotsInUse	resource_pool.cc	/^ResourcePool::slotsInUse(int res_idx)$/;"	f	class:ResourcePool
+smtCommittedInsts	cpu.hh	/^    Stats::Vector smtCommittedInsts;$/;"	m	class:InOrderCPU
+smtCpi	cpu.hh	/^    Stats::Formula smtCpi;$/;"	m	class:InOrderCPU
+smtCycles	cpu.hh	/^    Stats::Scalar smtCycles;$/;"	m	class:InOrderCPU
+smtIpc	cpu.hh	/^    Stats::Formula smtIpc;$/;"	m	class:InOrderCPU
+sortInsts	first_stage.hh	/^    void sortInsts() {}$/;"	f	class:FirstStage
+sortInsts	pipeline_stage.cc	/^PipelineStage::sortInsts()$/;"	f	class:PipelineStage
+split2ndAccess	inorder_dyn_inst.hh	/^    bool split2ndAccess;$/;"	m	class:InOrderDynInst
+split2ndAccess	resources/cache_unit.hh	/^    bool split2ndAccess;$/;"	m	class:CacheRequest
+split2ndAddr	inorder_dyn_inst.hh	/^    Addr split2ndAddr;$/;"	m	class:InOrderDynInst
+split2ndData	inorder_dyn_inst.hh	/^    uint8_t split2ndData;$/;"	m	class:InOrderDynInst
+split2ndDataPtr	inorder_dyn_inst.hh	/^    PacketDataPtr split2ndDataPtr;$/;"	m	class:InOrderDynInst
+split2ndFlags	inorder_dyn_inst.hh	/^    unsigned split2ndFlags;$/;"	m	class:InOrderDynInst
+split2ndSize	inorder_dyn_inst.hh	/^    int split2ndSize;$/;"	m	class:InOrderDynInst
+split2ndStoreDataPtr	inorder_dyn_inst.hh	/^    uint64_t *split2ndStoreDataPtr;    $/;"	m	class:InOrderDynInst
+splitAccess	resources/cache_unit.hh	/^    bool splitAccess;$/;"	m	class:CacheRequest
+splitAccessNum	resources/cache_unit.hh	/^    int splitAccessNum;$/;"	m	class:CacheRequest
+splitFinishCnt	inorder_dyn_inst.hh	/^    int splitFinishCnt;$/;"	m	class:InOrderDynInst
+splitInst	inorder_dyn_inst.hh	/^    bool splitInst;$/;"	m	class:InOrderDynInst
+splitInstSked	inorder_dyn_inst.hh	/^    bool splitInstSked;$/;"	m	class:InOrderDynInst
+splitMemData	inorder_dyn_inst.hh	/^    PacketDataPtr splitMemData;$/;"	m	class:InOrderDynInst
+splitMemReq	inorder_dyn_inst.hh	/^    RequestPtr splitMemReq;    $/;"	m	class:InOrderDynInst
+sqIdx	inorder_dyn_inst.hh	/^    int16_t sqIdx;$/;"	m	class:InOrderDynInst
+squash	comm.hh	/^        bool squash;$/;"	m	struct:TimeStruct::StageComm
+squash	first_stage.cc	/^FirstStage::squash(InstSeqNum squash_seq_num, ThreadID tid)$/;"	f	class:FirstStage
+squash	pipeline_stage.cc	/^PipelineStage::squash(InstSeqNum squash_seq_num, ThreadID tid)$/;"	f	class:PipelineStage
+squash	resource.cc	/^Resource::squash(DynInstPtr inst, int stage_num, InstSeqNum squash_seq_num,$/;"	f	class:Resource
+squash	resource_pool.9stage.cc	/^ResourcePool::squash(DynInstPtr inst, int res_idx, InstSeqNum done_seq_num,$/;"	f	class:ResourcePool
+squash	resource_pool.cc	/^ResourcePool::squash(DynInstPtr inst, int res_idx, InstSeqNum done_seq_num,$/;"	f	class:ResourcePool
+squash	resources/bpred_unit.cc	/^BPredUnit::squash(const InstSeqNum &squashed_sn, ThreadID tid, ThreadID asid)$/;"	f	class:BPredUnit
+squash	resources/bpred_unit.cc	/^BPredUnit::squash(const InstSeqNum &squashed_sn,$/;"	f	class:BPredUnit
+squash	resources/branch_predictor.cc	/^BranchPredictor::squash(DynInstPtr inst, int squash_stage,$/;"	f	class:BranchPredictor
+squash	resources/cache_unit.cc	/^CacheUnit::squash(DynInstPtr inst, int stage_num,$/;"	f	class:CacheUnit
+squash	resources/fetch_seq_unit.cc	/^FetchSeqUnit::squash(DynInstPtr inst, int squash_stage,$/;"	f	class:FetchSeqUnit
+squash	resources/inst_buffer.cc	/^InstBuffer::squash(DynInstPtr inst, int stage_num,$/;"	f	class:InstBuffer
+squash	resources/mult_div_unit.cc	/^MultDivUnit::squash(DynInstPtr inst, int stage_num, InstSeqNum squash_seq_num,$/;"	f	class:MultDivUnit
+squash	resources/tlb_unit.cc	/^TLBUnit::squash(DynInstPtr inst, int stage_num,$/;"	f	class:TLBUnit
+squashAfterDelaySlot	pipeline_stage.hh	/^    bool squashAfterDelaySlot[ThePipeline::MaxThreads];$/;"	m	class:PipelineStage
+squashAll	resource_pool.9stage.cc	/^ResourcePool::squashAll(DynInstPtr inst, int stage_num,$/;"	f	class:ResourcePool
+squashAll	resource_pool.cc	/^ResourcePool::squashAll(DynInstPtr inst, int stage_num,$/;"	f	class:ResourcePool
+squashCacheRequest	resources/cache_unit.cc	/^CacheUnit::squashCacheRequest(CacheReqPtr req_ptr)$/;"	f	class:CacheUnit
+squashCacheRequest	resources/fetch_unit.cc	/^FetchUnit::squashCacheRequest(CacheReqPtr req_ptr)$/;"	f	class:FetchUnit
+squashDueToMemStall	cpu.cc	/^InOrderCPU::squashDueToMemStall(int stage_num, InstSeqNum seq_num,$/;"	f	class:InOrderCPU
+squashDueToMemStall	first_stage.cc	/^FirstStage::squashDueToMemStall(InstSeqNum seq_num, ThreadID tid)$/;"	f	class:FirstStage
+squashDueToMemStall	pipeline_stage.cc	/^PipelineStage::squashDueToMemStall(InstSeqNum seq_num, ThreadID tid)$/;"	f	class:PipelineStage
+squashDueToMemStall	resource.cc	/^Resource::squashDueToMemStall(DynInstPtr inst, int stage_num,$/;"	f	class:Resource
+squashDueToMemStall	resource_pool.cc	/^ResourcePool::squashDueToMemStall(DynInstPtr inst, int stage_num,$/;"	f	class:ResourcePool
+squashDueToMemStall	resources/cache_unit.cc	/^CacheUnit::squashDueToMemStall(DynInstPtr inst, int stage_num,$/;"	f	class:CacheUnit
+squashFromMemStall	cpu.cc	/^InOrderCPU::squashFromMemStall(DynInstPtr inst, ThreadID tid,$/;"	f	class:InOrderCPU
+squashInst	pipeline_stage.hh	/^    DynInstPtr squashInst[ThePipeline::MaxThreads];$/;"	m	class:PipelineStage
+squashInstIt	cpu.cc	/^InOrderCPU::squashInstIt(const ListIt inst_it, ThreadID tid)$/;"	f	class:InOrderCPU
+squashPrevStageInsts	pipeline_stage.cc	/^PipelineStage::squashPrevStageInsts(InstSeqNum squash_seq_num, ThreadID tid)$/;"	f	class:PipelineStage
+squashSeqNum	cpu.hh	/^    InstSeqNum squashSeqNum[ThePipeline::MaxThreads];$/;"	m	class:InOrderCPU
+squashSeqNum	inorder_dyn_inst.hh	/^    InstSeqNum squashSeqNum;$/;"	m	class:InOrderDynInst
+squashSeqNum	resources/fetch_seq_unit.hh	/^    InstSeqNum squashSeqNum[ThePipeline::MaxThreads];$/;"	m	class:FetchSeqUnit
+squashThenTrap	resource.cc	/^Resource::squashThenTrap(int stage_num, DynInstPtr inst)$/;"	f	class:Resource
+squashThreadInPipeline	cpu.cc	/^InOrderCPU::squashThreadInPipeline(ThreadID tid)$/;"	f	class:InOrderCPU
+squashed	resource.hh	/^    bool squashed;$/;"	m	class:ResourceRequest
+squashingStage	inorder_dyn_inst.hh	/^    int squashingStage;$/;"	m	class:InOrderDynInst
+srcRegIdx	inorder_dyn_inst.hh	/^    RegIndex srcRegIdx(int i) const { return staticInst->srcRegIdx(i); }$/;"	f	class:InOrderDynInst
+stage	pipeline_stage.hh	/^        bool stage[ThePipeline::NumStages];$/;"	m	struct:PipelineStage::Stalls
+stageBlock	comm.hh	/^    bool stageBlock[ThePipeline::NumStages][ThePipeline::MaxThreads];$/;"	m	struct:TimeStruct
+stageBufferAvail	pipeline_stage.cc	/^PipelineStage::stageBufferAvail()$/;"	f	class:PipelineStage
+stageBufferMax	pipeline_stage.hh	/^    unsigned stageBufferMax;$/;"	m	class:PipelineStage
+stageBufferSizes	pipeline_traits.9stage.hh	/^    static std::map<unsigned, unsigned> stageBufferSizes;$/;"	m	namespace:ThePipeline
+stageBufferSizes	pipeline_traits.9stage.smt2.hh	/^    static std::map<unsigned, unsigned> stageBufferSizes;$/;"	m	namespace:ThePipeline
+stageCycle	inorder_trace.hh	/^    std::vector<Tick> stageCycle;$/;"	m	class:Trace::InOrderTraceRecord
+stageInfo	comm.hh	/^    StageComm stageInfo[ThePipeline::NumStages][ThePipeline::MaxThreads];$/;"	m	struct:TimeStruct
+stageNum	cpu.hh	/^        int stageNum;$/;"	m	class:InOrderCPU::StageScheduler
+stageNum	pipeline_stage.hh	/^    unsigned stageNum;$/;"	m	class:PipelineStage
+stageNum	pipeline_traits.5stage.hh	/^        int stageNum;$/;"	m	struct:ThePipeline::ScheduleEntry
+stageNum	pipeline_traits.9stage.hh	/^        int stageNum;$/;"	m	struct:ThePipeline::ScheduleEntry
+stageNum	pipeline_traits.9stage.smt2.hh	/^        int stageNum;$/;"	m	struct:ThePipeline::ScheduleEntry
+stageNum	resource.hh	/^    int stageNum;$/;"	m	class:ResourceRequest
+stageNum	resource_pool.hh	/^        int stageNum;$/;"	m	class:ResourcePool::ResPoolEvent
+stageNum	resource_sked.hh	/^    int stageNum;$/;"	m	class:ScheduleEntry
+stagePasses	resource.hh	/^    short stagePasses;$/;"	m	class:ResourceRequest
+stageQueue	cpu.hh	/^    StageQueue *stageQueue[ThePipeline::NumStages-1];$/;"	m	class:InOrderCPU
+stageStatus	pipeline_stage.hh	/^    ThreadStatus stageStatus[ThePipeline::MaxThreads];$/;"	m	class:PipelineStage
+stageTrace	inorder_trace.hh	/^    bool stageTrace;$/;"	m	class:Trace::InOrderTraceRecord
+stageTracing	InOrderCPU.py	/^    stageTracing = Param.Bool(False, "Enable tracing of each stage in CPU")$/;"	v	class:InOrderCPU
+stageTracing	cpu.hh	/^    bool stageTracing;$/;"	m	class:InOrderCPU
+stageUnblock	comm.hh	/^    bool stageUnblock[ThePipeline::NumStages][ThePipeline::MaxThreads];$/;"	m	struct:TimeStruct
+stageWidth	InOrderCPU.py	/^    stageWidth = Param.Unsigned(4, "Stage width")$/;"	v	class:InOrderCPU
+stageWidth	cpu.hh	/^    int stageWidth;$/;"	m	class:InOrderCPU
+stageWidth	params.hh	/^    unsigned stageWidth;$/;"	m	class:InOrderParams
+stageWidth	pipeline_stage.hh	/^    unsigned stageWidth;$/;"	m	class:PipelineStage
+stages	resource_sked.hh	/^    ResourceSked::StageList *stages;$/;"	m	class:RSkedIt
+stages	resource_sked.hh	/^    StageList stages;$/;"	m	class:ResourceSked
+stalls	pipeline_stage.hh	/^    Stalls stalls[ThePipeline::MaxThreads];$/;"	m	class:PipelineStage
+startup	resource_pool.hh	/^    virtual void startup() { }$/;"	f	class:ResourcePool
+staticInst	inorder_dyn_inst.hh	/^    StaticInstPtr staticInst;$/;"	m	class:InOrderDynInst
+status	inorder_dyn_inst.hh	/^    std::bitset<NumStatus> status;$/;"	m	class:InOrderDynInst
+status	thread_context.hh	/^    Status status() const { return thread->status(); }$/;"	f	class:InOrderThreadContext
+storeData	inorder_dyn_inst.hh	/^    uint64_t storeData;$/;"	m	class:InOrderDynInst
+suspend	thread_context.cc	/^InOrderThreadContext::suspend(Cycles delay)$/;"	f	class:InOrderThreadContext
+suspendContext	cpu.cc	/^InOrderCPU::suspendContext(ThreadID tid)$/;"	f	class:InOrderCPU
+suspendThread	cpu.cc	/^InOrderCPU::suspendThread(ThreadID tid)$/;"	f	class:InOrderCPU
+suspendThread	resource.hh	/^    virtual void suspendThread(ThreadID tid) { }$/;"	f	class:Resource
+suspendThread	resource_pool.cc	/^ResourcePool::suspendThread(ThreadID tid)$/;"	f	class:ResourcePool
+suspendThread	resources/fetch_seq_unit.cc	/^FetchSeqUnit::suspendThread(ThreadID tid)$/;"	f	class:FetchSeqUnit
+suspendedThreads	cpu.hh	/^    std::list<ThreadID> suspendedThreads;$/;"	m	class:InOrderCPU
+switchOut	pipeline_stage.cc	/^PipelineStage::switchOut()$/;"	f	class:PipelineStage
+switchOut	resources/bpred_unit.cc	/^BPredUnit::switchOut()$/;"	f	class:BPredUnit
+switchToActive	cpu.hh	/^    void switchToActive(int stage_idx)$/;"	f	class:InOrderCPU
+switchedOutBuffer	pipeline_stage.hh	/^    std::vector<DynInstPtr> switchedOutBuffer;$/;"	m	class:PipelineStage
+switchedOutValid	pipeline_stage.hh	/^    std::vector<bool> switchedOutValid;$/;"	m	class:PipelineStage
+syscall	cpu.cc	/^InOrderCPU::syscall(int64_t callnum, ThreadID tid)$/;"	f	class:InOrderCPU
+syscall	inorder_dyn_inst.cc	/^InOrderDynInst::syscall(int64_t callnum)$/;"	f	class:InOrderDynInst
+syscall	thread_context.hh	/^    void syscall(int64_t callnum)$/;"	f	class:InOrderThreadContext
+syscall	thread_state.hh	/^    void syscall(int64_t callnum) { process->syscall(callnum, tc); }$/;"	f	class:InOrderThreadState
+syscallContext	cpu.cc	/^InOrderCPU::syscallContext(Fault fault, ThreadID tid, DynInstPtr inst,$/;"	f	class:InOrderCPU
+syscallNum	inorder_dyn_inst.hh	/^    short syscallNum;$/;"	m	class:InOrderDynInst
+syscall_num	cpu.hh	/^        short syscall_num;$/;"	m	class:InOrderCPU::CPUEvent
+system	cpu.hh	/^    System *system;$/;"	m	class:InOrderCPU
+takeOverFrom	pipeline_stage.cc	/^PipelineStage::takeOverFrom()$/;"	f	class:PipelineStage
+takeOverFrom	resources/bpred_unit.cc	/^BPredUnit::takeOverFrom()$/;"	f	class:BPredUnit
+takeOverFrom	thread_context.cc	/^InOrderThreadContext::takeOverFrom(ThreadContext *old_context)$/;"	f	class:InOrderThreadContext
+tc	thread_state.hh	/^    ThreadContext *tc;$/;"	m	class:InOrderThreadState
+tcBase	cpu.hh	/^    ThreadContext *tcBase(ThreadID tid = 0)$/;"	f	class:InOrderCPU
+tcBase	inorder_dyn_inst.hh	/^    ThreadContext *tcBase() { return thread->getTC(); }$/;"	f	class:InOrderDynInst
+thread	cpu.hh	/^    std::vector<Thread *> thread;$/;"	m	class:InOrderCPU
+thread	inorder_dyn_inst.hh	/^    InOrderThreadState *thread;$/;"	m	class:InOrderDynInst
+thread	thread_context.hh	/^    InOrderThreadState *thread;$/;"	m	class:InOrderThreadContext
+threadCycles	cpu.hh	/^    Stats::Vector threadCycles;$/;"	m	class:InOrderCPU
+threadId	thread_context.hh	/^    int threadId() { return thread->threadId(); }$/;"	f	class:InOrderThreadContext
+threadModel	InOrderCPU.py	/^    threadModel = Param.ThreadModel('SMT', "Multithreading model (SE-MODE only)")$/;"	v	class:InOrderCPU
+threadModel	cpu.hh	/^    ThreadModel threadModel;$/;"	m	class:InOrderCPU
+threadNumber	inorder_dyn_inst.hh	/^    short threadNumber;$/;"	m	class:InOrderDynInst
+tick	cpu.cc	/^InOrderCPU::tick()$/;"	f	class:InOrderCPU
+tick	inorder_dyn_inst.hh	/^        Tick tick;$/;"	m	struct:InOrderDynInst::InstResult
+tick	pipeline_stage.cc	/^PipelineStage::tick()$/;"	f	class:PipelineStage
+tickEvent	cpu.hh	/^    TickEvent tickEvent;$/;"	m	class:InOrderCPU
+tickThreadStats	cpu.cc	/^InOrderCPU::tickThreadStats()$/;"	f	class:InOrderCPU
+tid	cpu.hh	/^        ThreadID tid;$/;"	m	class:InOrderCPU::CPUEvent
+tid	resource.hh	/^    ThreadID tid;$/;"	m	class:ResourceRequest
+tid	resource_pool.hh	/^        ThreadID tid;$/;"	m	class:ResourcePool::ResPoolEvent
+tid	resources/bpred_unit.hh	/^        ThreadID tid;$/;"	m	struct:BPredUnit::PredictorHistory
+timeBuffer	cpu.hh	/^    TimeBuffer<TimeStruct> timeBuffer;$/;"	m	class:InOrderCPU
+timeBuffer	pipeline_stage.hh	/^    TimeBuffer<TimeStruct> *timeBuffer;$/;"	m	class:PipelineStage
+timesIdled	cpu.hh	/^    Stats::Scalar timesIdled;$/;"	m	class:InOrderCPU
+tlb	resources/cache_unit.cc	/^CacheUnit::tlb()$/;"	f	class:CacheUnit
+tlb	resources/tlb_unit.cc	/^TLBUnit::tlb()$/;"	f	class:TLBUnit
+tlbBlockSeqNum	resources/cache_unit.hh	/^    InstSeqNum tlbBlockSeqNum[ThePipeline::MaxThreads];$/;"	m	class:CacheUnit
+tlbBlocked	resources/cache_unit.hh	/^    bool tlbBlocked[ThePipeline::MaxThreads];$/;"	m	class:CacheUnit
+tlbBlocked	resources/tlb_unit.hh	/^    bool tlbBlocked[ThePipeline::MaxThreads];$/;"	m	class:TLBUnit
+tlbStall	resources/cache_unit.hh	/^    bool tlbStall;$/;"	m	class:CacheRequest
+toNextStageIndex	pipeline_stage.hh	/^    unsigned toNextStageIndex;$/;"	m	class:PipelineStage
+toPrevStages	pipeline_stage.hh	/^    TimeBuffer<TimeStruct>::wire toPrevStages;$/;"	m	class:PipelineStage
+top	resource_sked.cc	/^ResourceSked::top()$/;"	f	class:ResourceSked
+top	resources/inst_buffer.cc	/^InstBuffer::top(ThreadID tid)$/;"	f	class:InstBuffer
+totalCommittedInsts	cpu.hh	/^    Stats::Scalar totalCommittedInsts;$/;"	m	class:InOrderCPU
+totalCpi	cpu.hh	/^    Stats::Formula totalCpi;$/;"	m	class:InOrderCPU
+totalInsts	cpu.hh	/^    virtual Counter totalInsts() const$/;"	f	class:InOrderCPU
+totalIpc	cpu.hh	/^    Stats::Formula totalIpc;$/;"	m	class:InOrderCPU
+totalOps	cpu.hh	/^    virtual Counter totalOps() const$/;"	f	class:InOrderCPU
+totalSize	inorder_dyn_inst.hh	/^    int totalSize;$/;"	m	class:InOrderDynInst
+tournamentBP	resources/bpred_unit.hh	/^    TournamentBP *tournamentBP;$/;"	m	class:BPredUnit
+traceData	inorder_dyn_inst.hh	/^    Trace::InOrderTraceRecord *traceData;$/;"	m	class:InOrderDynInst
+tracer	pipeline_stage.hh	/^    Trace::InOrderTrace *tracer;$/;"	m	class:PipelineStage
+trap	cpu.cc	/^InOrderCPU::trap(Fault fault, ThreadID tid, DynInstPtr inst)$/;"	f	class:InOrderCPU
+trap	inorder_dyn_inst.cc	/^InOrderDynInst::trap(Fault fault)$/;"	f	class:InOrderDynInst
+trap	resource.hh	/^    virtual void trap(Fault fault, ThreadID tid, DynInstPtr inst) { }$/;"	f	class:Resource
+trap	resource_pool.cc	/^ResourcePool::trap(Fault fault, ThreadID tid, DynInstPtr inst)$/;"	f	class:ResourcePool
+trap	resources/cache_unit.cc	/^CacheUnit::trap(Fault fault, ThreadID tid, DynInstPtr inst)$/;"	f	class:CacheUnit
+trap	resources/fetch_seq_unit.cc	/^FetchSeqUnit::trap(Fault fault, ThreadID tid, DynInstPtr inst)$/;"	f	class:FetchSeqUnit
+trap	resources/fetch_unit.cc	/^FetchUnit::trap(Fault fault, ThreadID tid, DynInstPtr inst)$/;"	f	class:FetchUnit
+trapContext	cpu.cc	/^InOrderCPU::trapContext(Fault fault, ThreadID tid, DynInstPtr inst,$/;"	f	class:InOrderCPU
+trapPending	cpu.hh	/^    bool trapPending[ThePipeline::MaxThreads];$/;"	m	class:InOrderCPU
+trapPending	thread_state.hh	/^    bool trapPending;$/;"	m	class:InOrderThreadState
+type	InOrderCPU.py	/^    type = 'InOrderCPU'$/;"	v	class:InOrderCPU
+type	InOrderTrace.py	/^    type = 'InOrderTrace'$/;"	v	class:InOrderTrace
+type	inorder_dyn_inst.hh	/^        ResultType type;$/;"	m	struct:InOrderDynInst::InstResult
+unblock	pipeline_stage.cc	/^PipelineStage::unblock(ThreadID tid)$/;"	f	class:PipelineStage
+uncached	comm.hh	/^        bool uncached;$/;"	m	struct:TimeStruct::StageComm
+uncachedLoad	comm.hh	/^        ThePipeline::DynInstPtr uncachedLoad;$/;"	m	struct:TimeStruct::StageComm
+uniqueFloatRegMap	resources/use_def.hh	/^    std::map<RegIndex, bool> uniqueFloatRegMap;$/;"	m	class:UseDefUnit
+uniqueIntRegMap	resources/use_def.hh	/^    std::map<RegIndex, bool> uniqueIntRegMap;$/;"	m	class:UseDefUnit
+uniqueMiscRegMap	resources/use_def.hh	/^    std::map<RegIndex, bool> uniqueMiscRegMap;$/;"	m	class:UseDefUnit
+uniqueRegsPerSwitch	resources/use_def.hh	/^    Stats::Average uniqueRegsPerSwitch;$/;"	m	class:UseDefUnit
+unscheduleEvent	cpu.cc	/^InOrderCPU::CPUEvent::unscheduleEvent()$/;"	f	class:InOrderCPU::CPUEvent
+unscheduleEvent	resource.cc	/^Resource::unscheduleEvent(DynInstPtr inst)$/;"	f	class:Resource
+unscheduleEvent	resource.cc	/^Resource::unscheduleEvent(int slot_idx)$/;"	f	class:Resource
+unscheduleEvent	resource.hh	/^    void unscheduleEvent()$/;"	f	class:ResourceEvent
+unscheduleEvent	resource_pool.9stage.cc	/^ResourcePool::ResPoolEvent::unscheduleEvent()$/;"	f	class:ResourcePool::ResPoolEvent
+unscheduleEvent	resource_pool.9stage.cc	/^ResourcePool::unscheduleEvent(int res_idx, DynInstPtr inst)$/;"	f	class:ResourcePool
+unscheduleEvent	resource_pool.cc	/^ResourcePool::ResPoolEvent::unscheduleEvent()$/;"	f	class:ResourcePool::ResPoolEvent
+unscheduleEvent	resource_pool.cc	/^ResourcePool::unscheduleEvent(int res_idx, DynInstPtr inst)$/;"	f	class:ResourcePool
+unscheduleTickEvent	cpu.hh	/^    void unscheduleTickEvent()$/;"	f	class:InOrderCPU
+unserialize	thread_context.cc	/^InOrderThreadContext::unserialize(Checkpoint *cp, const std::string &section)$/;"	f	class:InOrderThreadContext
+unsetMemAddr	inorder_dyn_inst.hh	/^    void unsetMemAddr()$/;"	f	class:InOrderDynInst
+unsetResStall	pipeline_stage.cc	/^PipelineStage::unsetResStall(ResReqPtr res_req, ThreadID tid)$/;"	f	class:PipelineStage
+update	resources/bpred_unit.cc	/^BPredUnit::update(const InstSeqNum &done_sn, ThreadID tid)$/;"	f	class:BPredUnit
+updateAfterContextSwitch	resource.hh	/^    virtual void updateAfterContextSwitch(DynInstPtr inst, ThreadID tid) { }    $/;"	f	class:Resource
+updateAfterContextSwitch	resource_pool.cc	/^ResourcePool::updateAfterContextSwitch(DynInstPtr inst, ThreadID tid)$/;"	f	class:ResourcePool
+updateAfterContextSwitch	resources/fetch_seq_unit.cc	/^FetchSeqUnit::updateAfterContextSwitch(DynInstPtr inst, ThreadID tid)$/;"	f	class:FetchSeqUnit
+updateAfterContextSwitch	resources/use_def.cc	/^UseDefUnit::updateAfterContextSwitch(DynInstPtr inst, ThreadID tid)$/;"	f	class:UseDefUnit
+updateContextSwitchStats	cpu.cc	/^InOrderCPU::updateContextSwitchStats()$/;"	f	class:InOrderCPU
+updateStatus	pipeline_stage.cc	/^PipelineStage::updateStatus()$/;"	f	class:PipelineStage
+updateThreadPriority	cpu.cc	/^InOrderCPU::updateThreadPriority()$/;"	f	class:InOrderCPU
+useDefIdx	resources/use_def.hh	/^        int useDefIdx;$/;"	m	class:UseDefUnit::UseDefRequest
+usedRAS	resources/bpred_unit.hh	/^        bool usedRAS;$/;"	m	struct:BPredUnit::PredictorHistory
+usedRAS	resources/bpred_unit.hh	/^    Stats::Scalar usedRAS;$/;"	m	class:BPredUnit
+utilization	pipeline_stage.hh	/^    Stats::Formula utilization;$/;"	m	class:PipelineStage
+valid	resource.hh	/^    bool valid;$/;"	m	class:ResourceRequest
+valid	resources/fetch_unit.hh	/^        bool valid;$/;"	m	struct:FetchUnit::FetchBlock
+validDataAddr	cpu.hh	/^    bool validDataAddr(Addr addr) { return true; }$/;"	f	class:InOrderCPU
+validInstAddr	cpu.hh	/^    bool validInstAddr(Addr addr) { return true; }$/;"	f	class:InOrderCPU
+validMemAddr	inorder_dyn_inst.hh	/^    bool validMemAddr()$/;"	f	class:InOrderDynInst
+vals	InOrderCPU.py	/^    vals = ['Single', 'SMT', 'SwitchOnCacheMiss']$/;"	v	class:ThreadModel
+virtProcNumber	inorder_dyn_inst.hh	/^    short virtProcNumber;$/;"	m	class:InOrderDynInst
+vpe	cpu.hh	/^        unsigned vpe;$/;"	m	class:InOrderCPU::CPUEvent
+wakeCPU	cpu.cc	/^InOrderCPU::wakeCPU()$/;"	f	class:InOrderCPU
+wakeup	cpu.cc	/^InOrderCPU::wakeup()$/;"	f	class:InOrderCPU
+wasCall	resources/bpred_unit.hh	/^        bool wasCall;$/;"	m	struct:BPredUnit::PredictorHistory
+width	resource.hh	/^    int width;$/;"	m	class:Resource
+workload	params.hh	/^    std::vector<Process *> workload;$/;"	m	class:InOrderParams
+write	cpu.cc	/^InOrderCPU::write(DynInstPtr inst, uint8_t *data, unsigned size,$/;"	f	class:InOrderCPU
+write	resources/cache_unit.cc	/^CacheUnit::write(DynInstPtr inst, uint8_t *data, unsigned size,$/;"	f	class:CacheUnit
+writeMem	inorder_dyn_inst.cc	/^InOrderDynInst::writeMem(uint8_t *data, unsigned size,$/;"	f	class:InOrderDynInst
+wroteToTimeBuffer	pipeline_stage.hh	/^    bool wroteToTimeBuffer;$/;"	m	class:PipelineStage
+~CacheRequest	resources/cache_unit.hh	/^    virtual ~CacheRequest()$/;"	f	class:CacheRequest
+~CacheUnitEvent	resources/cache_unit.hh	/^    virtual ~CacheUnitEvent() {}$/;"	f	class:CacheUnitEvent
+~FetchSeqEvent	resources/fetch_seq_unit.hh	/^        ~FetchSeqEvent() {}$/;"	f	class:FetchSeqUnit::FetchSeqEvent
+~FetchSeqUnit	resources/fetch_seq_unit.cc	/^FetchSeqUnit::~FetchSeqUnit()$/;"	f	class:FetchSeqUnit
+~FetchUnit	resources/fetch_unit.cc	/^FetchUnit::~FetchUnit()$/;"	f	class:FetchUnit
+~InOrderCPU	cpu.cc	/^InOrderCPU::~InOrderCPU()$/;"	f	class:InOrderCPU
+~InOrderDynInst	inorder_dyn_inst.cc	/^InOrderDynInst::~InOrderDynInst()$/;"	f	class:InOrderDynInst
+~MDUEvent	resources/mult_div_unit.hh	/^    ~MDUEvent() { }$/;"	f	class:MDUEvent
+~MemDepUnit	resources/mem_dep_unit.hh	/^    virtual ~MemDepUnit() {}$/;"	f	class:MemDepUnit
+~PipelineStage	pipeline_stage.cc	/^PipelineStage::~PipelineStage()$/;"	f	class:PipelineStage
+~RegDepMap	reg_dep_map.cc	/^RegDepMap::~RegDepMap()$/;"	f	class:RegDepMap
+~Resource	resource.cc	/^Resource::~Resource()$/;"	f	class:Resource
+~ResourceEvent	resource.hh	/^    virtual ~ResourceEvent() { }$/;"	f	class:ResourceEvent
+~ResourcePool	resource_pool.cc	/^ResourcePool::~ResourcePool()$/;"	f	class:ResourcePool
+~ResourceRequest	resource.cc	/^ResourceRequest::~ResourceRequest()$/;"	f	class:ResourceRequest
+~ScheduleEntry	pipeline_traits.5stage.hh	/^        virtual ~ScheduleEntry(){}$/;"	f	struct:ThePipeline::ScheduleEntry
+~ScheduleEntry	pipeline_traits.9stage.hh	/^        virtual ~ScheduleEntry(){}$/;"	f	struct:ThePipeline::ScheduleEntry
+~ScheduleEntry	pipeline_traits.9stage.smt2.hh	/^        virtual ~ScheduleEntry(){}$/;"	f	struct:ThePipeline::ScheduleEntry
+~TLBUnit	resources/tlb_unit.hh	/^    virtual ~TLBUnit() {}$/;"	f	class:TLBUnit
+~TLBUnitEvent	resources/tlb_unit.hh	/^    virtual ~TLBUnitEvent() {}$/;"	f	class:TLBUnitEvent
