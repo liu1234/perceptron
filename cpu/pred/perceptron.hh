@@ -37,32 +37,83 @@ public:
 
 protected:
 	unsigned int calHistIdx(Addr& addr);
-	void updateGlobalHistoryTaken();
-	void updateGlobalHistoryNotTaken();
+	void updateGlobalHistoryTaken(Addr&);
+	void updateGlobalHistoryNotTaken(Addr&);
 	
-	typedef std::vector<bool> PerceptronUnit;
+	typedef std::deque<bool> HistRegister;
 	typedef std::vector<int> WeightVector;
 
 	struct BPHistory {
-		PerceptronUnit globalHistory;
+		HistRegister globalHistory;
 		int perceptronOutput;
 		bool perceptronPredTaken;
 	};
-	
-	PerceptronUnit globalHistory;
-	PerceptronUnit globalHistoryMask;
 
+	HistRegister globalHistory;
 	std::vector<WeightVector> perceptronTable;
+
 	unsigned perceptronPredictorSize;
 	unsigned perceptronHistoryBits;
 
 	unsigned int threshold;
 	unsigned int instShiftAmt;
 
-	std::deque<Addr> globalHistAddr;
-
 	std::map<Addr, unsigned int> addrMap;
 	std::map<unsigned int, std::set<Addr>> idxMap;
+
+	// This is for debugging
+	typedef struct
+	{
+		unsigned int count;
+
+		unsigned int threshold;
+		
+		unsigned int hit;
+		// total weight when branch predicts correct, this value should be high
+		unsigned int hitTaken;
+		int hitTakenWeight;
+		unsigned int hitNotTaken;
+		int hitNotTakenWeight;
+
+		// These three value could potentially reveal the reason for the misprediction
+		unsigned int miss;
+		// total weight when branch predicts wrong
+		unsigned int missTaken;
+		// total weight when branch predicts wrong(should be taken) 
+		int missTakenWeight;
+		unsigned int missNotTaken;
+		// total weight when branch predicts wrong(should be not taken) 		
+		int missNotTakenWeight;
+
+		unsigned int taken;
+		int takenWeight;
+		unsigned int notTaken;
+		int notTakenWeight;
+
+		unsigned int coflict;
+		std::set<Addr> conflictSet;
+
+		bool unCondBr;
+
+		bool stablized;
+
+	}DebugInfo;
+
+	std::map<Addr, DebugInfo> debugMap;
+
+	void printoutStats(Addr&, DebugInfo&);
+
+	typedef std::deque<Addr> HistAddress;
+	typedef struct
+	{
+		HistRegister globalHistory;
+		HistAddress historyAddr;
+
+//		unsigned int size() {return globalHistory.size()};
+//		bool operator[](int idx) {return globalHistory[idx];}
+	}DebugGlobalHist;
+
+	DebugGlobalHist debugGlobalHist;
 //	unsigned int weightBits;
 
 };
