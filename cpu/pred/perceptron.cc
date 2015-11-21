@@ -1,8 +1,12 @@
+#include "base/callback.hh"
 #include "base/intmath.hh"
 #include "cpu/pred/perceptron.hh"
 #include "debug/Predictor.hh"
+#include "debug/FreeList.hh"
+#include "debug/DebugInfo.hh"
 #include "base/trace.hh"
 #include <cmath>
+#include <fstream>
 
 PerceptronBP::PerceptronBP(unsigned _perceptronPredictorSize,
 						   unsigned _perceptronHistoryBits)
@@ -19,6 +23,9 @@ PerceptronBP::PerceptronBP(unsigned _perceptronPredictorSize,
 	threshold = 1.93*perceptronHistoryBits+14;
 
 	DPRINTF(Predictor, "Perceptron branch predictor threshold: %i\n", threshold);
+
+	Callback* cb = new MakeCallback<PerceptronBP, &PerceptronBP::writeDebugInfo>(this);
+	registerExitCallback(cb);
 }
 
 inline
@@ -89,23 +96,11 @@ bool PerceptronBP::lookup(Addr& branch_addr, void*& bp_history)
 		//{
 			//DPRINTF(Predictor, "Conflict Addr %s also in the history, bad things can happen\n", debugGlobalHist.historyAddr[histLen-i-1]);
 		//}
-		/*DPRINTF(Predictor, "Correlation factor with #%i history %i is: %i\n", histLen-i-1, globalHistory[histLen-i-1], weightVec[i+1]);*/
+		DPRINTF(Predictor, "Correlation factor with #%i history %i is: %i\n", histLen-i-1, globalHistory[histLen-i-1], weightVec[i+1]);
 	}
 
 //	DPRINTF(Predictor, "Branch bias itself is %i\n", weightVec[0]);
 	bool predTaken = (result > 0) ? true : false;
-
-	if(predTaken)	
-	{
-		record.taken++;
-		record.takenWeight += result;
-	}
-	else			
-	{
-		record.notTaken++;
-		record.notTakenWeight += result;
-	}
-
 //	DPRINTF(Predictor, "PerceptronBP result: %i, predict: %i\n", result, predTaken);
 	BPHistory* history = new BPHistory();
 	history->globalHistory = globalHistory;
@@ -128,7 +123,8 @@ void PerceptronBP::uncondBr(void*& bp_history)
 }
 
 void PerceptronBP::BTBUpdate(Addr& branch_addr, void*& bp_history)
-{}
+{
+}
 
 void PerceptronBP::update(Addr& branch_addr, bool taken, void*& bp_history, bool squashed)
 {
@@ -136,16 +132,9 @@ void PerceptronBP::update(Addr& branch_addr, bool taken, void*& bp_history, bool
 	
 	if(!bp_history)		return;
 
-	if(debugMap.find(branch_addr) == debugMap.end())
-	{
-		auto& record = debugMap[branch_addr];
-		record.count = 1;
-		record.unCondBr = true;
-		//panic("non-existing address needs update\n");
-		//return;
-	}
+	// update debug info
 	
-	auto& record = debugMap[branch_addr];
+	updateDebugInfo(branch_addr, taken, bp_history);
 
 	unsigned int perceptronTableIdx = calHistIdx(branch_addr);
 
@@ -156,50 +145,17 @@ void PerceptronBP::update(Addr& branch_addr, bool taken, void*& bp_history, bool
 
 	if(taken != history->perceptronPredTaken || abs(history->perceptronOutput) <= threshold)
 	{
-		bool mispredict = false;
 		if(taken != history->perceptronPredTaken)
 		{
-//			DPRINTF(Predictor, "update due to misprediction\n");
-			record.miss++;
-			mispredict = true;
-			if(record.stablized)
-			{
-				DPRINTF(Predictor, "%s is an unstable branch\n", branch_addr);
-			}
+			DPRINTF(Predictor, "update due to misprediction\n");
 		}
 		else
 		{
-			record.hit++;
-//			DPRINTF(Predictor, "update due to threshold\n");
+			DPRINTF(Predictor, "update due to threshold\n");
 		}
-		if(taken)		
-		{
-			weightVec[0] += 1;
-			if(mispredict)
-			{
-				record.missTaken++;
-				record.missTakenWeight += history->perceptronOutput;
-			}
-			else
-			{
-				record.hitTaken++;
-				record.hitTakenWeight += history->perceptronOutput;
-			}
-		}
-		else			
-		{
-			weightVec[0] -= 1;
-			if(mispredict)
-			{
-				record.missNotTaken++;
-				record.missNotTakenWeight += history->perceptronOutput;
-			}
-			else
-			{
-				record.hitNotTaken++;
-				record.hitNotTakenWeight += history->perceptronOutput;
-			}
-		}
+		if(taken)		weightVec[0] += 1;
+		else			weightVec[0] -= 1;
+
 		auto histLen = globalHistory.size();
 		for(int i = 0; i < histLen; i++)
 		{
@@ -213,11 +169,11 @@ void PerceptronBP::update(Addr& branch_addr, bool taken, void*& bp_history, bool
 	{
 //		DPRINTF(Predictor, "%s looks like stablized\n", branch_addr);
 		/* TODO: can still mispredict after stablized */
-		if(!record.stablized)
-		{
-			printoutStats(branch_addr, record);
-			record.stablized = true;
-		}
+		//if(!record.stablized)
+		//{
+			//printoutStats(branch_addr, record);
+			//record.stablized = true;
+		//}
 	}
 	/* TODO: this can be done speculatively when looking up */
 
@@ -240,12 +196,71 @@ void PerceptronBP::update(Addr& branch_addr, bool taken, void*& bp_history, bool
 
 void PerceptronBP::squash(void*& bp_history)
 {
+	if(!bp_history)		return;
+
+	DPRINTF(FreeList, "In flight branch is squashed due to last branch misprediction\n");
 	BPHistory* history = (BPHistory*)bp_history;
 	delete history;
 
 	/* TODO: if speculatively update history, we need to recover history */
 }
 
+void PerceptronBP::updateDebugInfo(Addr& addr, bool taken, void*& bp_history)
+{
+	BPHistory* history = (BPHistory*)bp_history;
+
+	if(debugMap.find(addr) == debugMap.end())
+	{
+		auto& record = debugMap[addr];
+		record.unCondBr = true;
+	}
+	
+	auto& record = debugMap[addr];
+	if(record.unCondBr)		record.count++;
+	record.histPattern[history->globalHistory]++;	
+
+	if(taken == history->perceptronPredTaken)
+	{
+		record.hit++;
+		if(taken)
+		{
+			record.hitTaken++;
+			record.hitTakenWeight += history->perceptronOutput;
+		}
+		else
+		{
+			record.hitNotTaken++;
+			record.hitNotTakenWeight += history->perceptronOutput;
+		}
+	}
+	else
+	{
+		record.miss++;
+		if(taken)
+		{
+			record.missTaken++;
+			record.missTakenWeight += history->perceptronOutput;
+		}
+		else
+		{
+			record.missNotTaken++;
+			record.missNotTakenWeight += history->perceptronOutput;
+		}
+	}
+
+	if(taken)
+	{
+		record.taken++;
+		record.takenWeight++;
+	}
+	else
+	{
+		record.notTaken++;
+		record.notTakenWeight++;
+	}
+}
+
+/*
 void PerceptronBP::printoutStats(Addr& addr, DebugInfo& record)
 {
 	if(record.unCondBr)
@@ -274,4 +289,41 @@ void PerceptronBP::printoutStats(Addr& addr, DebugInfo& record)
 	DPRINTF(Predictor, "Branch taken %i times avg weight: %i; not taken %i times avg weight: %i\n", record.taken, record.takenWeight/(int)(record.taken+1), record.notTaken, record.notTakenWeight/(int)(record.notTaken+1));
 
 	DPRINTF(Predictor, "-------------------record end-----------------\n");
+}
+*/
+
+void PerceptronBP::writeDebugInfo()
+{
+	for(auto it = debugMap.begin(); it != debugMap.end(); it++)
+	{
+		auto& addr = it->first;
+		auto& record = it->second;
+		if(record.unCondBr || record.count < 10 || (double)(record.hit)/(double)(record.count) > 0.8)	continue;
+
+		DPRINTF(DebugInfo, "-------------------new record-----------------\n");
+
+		DPRINTF(DebugInfo, "Branch Addr(%i): \t\t\t\t\t%s\n", record.unCondBr, addr);
+		DPRINTF(DebugInfo, "Execution times: \t\t\t\t\t%i\n", record.count);
+		DPRINTF(DebugInfo, "Branch Missprediction rate: \t\t\t%f\n", (double)record.miss/(double)record.count);
+		DPRINTF(DebugInfo, "Branch Hit times: \t\t\t\t\t%i\n", record.hit);
+		DPRINTF(DebugInfo, "Correct prediction(taken): \t\t\t\t%i\n", record.hitTaken);
+		DPRINTF(DebugInfo, "Correct prediction(taken) Avg weight: \t\t%i\n", record.hitTakenWeight/(int)(record.hitTaken+1));
+		DPRINTF(DebugInfo, "Correct prediction(not taken): \t\t\t%i\n", record.hitNotTaken);
+		DPRINTF(DebugInfo, "Correct prediction(not taken) Avg weight: \t\t%i\n", record.hitNotTakenWeight/(int)(record.hitNotTaken+1));
+
+		DPRINTF(DebugInfo, "Branch Miss times: \t\t\t\t\t%i\n", record.miss);
+		DPRINTF(DebugInfo, "Miss prediction(taken): \t\t\t\t%i\n", record.missTaken);
+		DPRINTF(DebugInfo, "Miss prediction(taken) Avg weight: \t\t\t%i\n", record.missTakenWeight/(int)(record.missTaken+1));
+		DPRINTF(DebugInfo, "Miss prediction(not taken): \t\t\t%i\n", record.missNotTaken);
+		DPRINTF(DebugInfo, "Miss prediction(not taken) Avg weight: \t\t%i\n", record.missNotTakenWeight/(int)(record.missNotTaken+1));
+
+		DPRINTF(DebugInfo, "Branch Taken times: \t\t\t\t%i\n", record.taken);
+		DPRINTF(DebugInfo, "Branch Taken Avg weight: \t\t\t\t%i\n", record.takenWeight/(int)(record.taken+1));
+		DPRINTF(DebugInfo, "Branch Not Taken times: \t\t\t\t%i\n", record.notTaken);
+		DPRINTF(DebugInfo, "Branch Not Taken Avg weight: \t\t\t%i\n", record.notTakenWeight/(int)(record.notTaken+1));
+
+		DPRINTF(DebugInfo, "Branch history pattern #: \t\t\t\t%i\n", record.histPattern.size());
+		DPRINTF(DebugInfo, "Branch conflicts \t\t\t\t%i\n", record.conflictSet.size());
+		DPRINTF(DebugInfo, "-------------------record end-----------------\n");
+	}
 }

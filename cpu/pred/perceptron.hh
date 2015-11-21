@@ -67,6 +67,8 @@ protected:
 		unsigned int count;
 
 		unsigned int threshold;
+
+		unsigned int squashed;
 		
 		unsigned int hit;
 		// total weight when branch predicts correct, this value should be high
@@ -90,6 +92,7 @@ protected:
 		unsigned int notTaken;
 		int notTakenWeight;
 
+		std::map<std::deque<bool>, int> histPattern;
 		unsigned int coflict;
 		std::set<Addr> conflictSet;
 
@@ -101,7 +104,9 @@ protected:
 
 	std::map<Addr, DebugInfo> debugMap;
 
+	void updateDebugInfo(Addr&, bool, void*&);
 	void printoutStats(Addr&, DebugInfo&);
+	void writeDebugInfo();
 
 	typedef std::deque<Addr> HistAddress;
 	typedef struct
