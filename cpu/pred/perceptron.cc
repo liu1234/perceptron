@@ -251,12 +251,12 @@ void PerceptronBP::updateDebugInfo(Addr& addr, bool taken, void*& bp_history)
 	if(taken)
 	{
 		record.taken++;
-		record.takenWeight++;
+		record.takenWeight += history->perceptronOutput;
 	}
 	else
 	{
 		record.notTaken++;
-		record.notTakenWeight++;
+		record.notTakenWeight += history->perceptronOutput;
 	}
 }
 
@@ -323,7 +323,7 @@ void PerceptronBP::writeDebugInfo()
 		DPRINTF(DebugInfo, "Branch Not Taken Avg weight: \t\t\t%i\n", record.notTakenWeight/(int)(record.notTaken+1));
 
 		DPRINTF(DebugInfo, "Branch history pattern #: \t\t\t\t%i\n", record.histPattern.size());
-		DPRINTF(DebugInfo, "Branch conflicts \t\t\t\t%i\n", record.conflictSet.size());
+		DPRINTF(DebugInfo, "Branch conflicts \t\t\t\t\t%i\n", record.conflictSet.size());
 		DPRINTF(DebugInfo, "-------------------record end-----------------\n");
 	}
 }
