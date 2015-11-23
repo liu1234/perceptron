@@ -67,6 +67,10 @@ BPredUnit::BPredUnit(Resource *_res, ThePipeline::Params *params)
 		perceptronBP = new PerceptronBP(params->perceptronPredictorSize, params->perceptronHistoryBits);
 
 		predictor = Perceptron;
+	} else if (params->predType == "gshare") {
+		gshareBP = new GshareBP(params->gshareHistoryBits, params->gshareHistoryTableSize, params->gshareCtrBits);
+
+		predictor = Gshare;
 	} else {
         fatal("Invalid BP selected!");
     }
@@ -410,6 +414,9 @@ BPredUnit::BPUncond(void * &bp_history)
 	else if(predictor == Perceptron) {
 		perceptronBP->uncondBr(bp_history);
 	}
+	else if(predictor == Gshare) {
+		gshareBP->uncondBr(bp_history);
+	}
 }
 
 
@@ -422,6 +429,8 @@ BPredUnit::BPSquash(void *bp_history)
         tournamentBP->squash(bp_history);
     } else if (predictor == Perceptron) {
 		perceptronBP->squash(bp_history);
+	} else if (predictor == Gshare) {
+		gshareBP->squash(bp_history);
 	} else {
         panic("Predictor type is unexpected value!");
     }    
@@ -437,6 +446,8 @@ BPredUnit::BPLookup(Addr inst_PC, void * &bp_history)
         return tournamentBP->lookup(inst_PC, bp_history);
     } else if (predictor == Perceptron) {
 		return perceptronBP->lookup(inst_PC, bp_history);
+	} else if (predictor == Gshare) {
+		return gshareBP->lookup(inst_PC, bp_history);
 	} else {
         panic("Predictor type is unexpected value!");
     }
@@ -452,6 +463,8 @@ BPredUnit::BPBTBUpdate(Addr inst_PC, void* &bp_history)
 		tournamentBP->BTBUpdate(inst_PC, bp_history);
 	} else if(predictor == Perceptron) {
 		perceptronBP->BTBUpdate(inst_PC, bp_history);
+	} else if(predictor == Gshare) {
+		gshareBP->BTBUpdate(inst_PC, bp_history);
 	} else {
 		panic("Predictor type is unexpected value!");
 	}	
@@ -466,6 +479,8 @@ BPredUnit::BPUpdate(Addr inst_PC, bool taken, void *bp_history, bool squashed)
         tournamentBP->update(inst_PC, taken, bp_history, squashed);
     } else if (predictor == Perceptron) {
 		perceptronBP->update(inst_PC, taken, bp_history, squashed);
+	} else if (predictor == Gshare) {
+		gshareBP->update(inst_PC, taken, bp_history, squashed);
 	} else {
         panic("Predictor type is unexpected value!");
     }

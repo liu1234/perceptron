@@ -61,6 +61,10 @@ class InOrderCPU(BaseCPU):
     perceptronPredictorSize = Param.Unsigned(2048, "Size of perceptron table")
     perceptronHistoryBits = Param.Unsigned(10, "Perceptron history length")
 
+    gshareHistoryTableSize = Param.Unsigned(8192, "Size of gshare history table")
+    gshareCtrBits = Param.Unsigned(2, "Bits per counter")
+    gshareHistoryBits = Param.Unsigned(13, "Bits of history")
+
     BTBEntries = Param.Unsigned(4096, "Number of BTB entries")
     BTBTagSize = Param.Unsigned(16, "Size of the BTB tags, in bits")
 

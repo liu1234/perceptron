@@ -6,7 +6,6 @@
 #include "debug/DebugInfo.hh"
 #include "base/trace.hh"
 #include <cmath>
-#include <fstream>
 
 PerceptronBP::PerceptronBP(unsigned _perceptronPredictorSize,
 						   unsigned _perceptronHistoryBits)
@@ -217,7 +216,7 @@ void PerceptronBP::updateDebugInfo(Addr& addr, bool taken, void*& bp_history)
 	
 	auto& record = debugMap[addr];
 	if(record.unCondBr)		record.count++;
-	record.histPattern[history->globalHistory]++;	
+	record.histPattern[history->globalHistory]++;
 
 	if(taken == history->perceptronPredTaken)
 	{
@@ -301,7 +300,9 @@ void PerceptronBP::writeDebugInfo()
 		if(record.unCondBr || record.count < 10 || (double)(record.hit)/(double)(record.count) > 0.8)	continue;
 
 		DPRINTF(DebugInfo, "-------------------new record-----------------\n");
-
+		
+		record.printDebugInfo(addr);
+/*
 		DPRINTF(DebugInfo, "Branch Addr(%i): \t\t\t\t\t%s\n", record.unCondBr, addr);
 		DPRINTF(DebugInfo, "Execution times: \t\t\t\t\t%i\n", record.count);
 		DPRINTF(DebugInfo, "Branch Missprediction rate: \t\t\t%f\n", (double)record.miss/(double)record.count);
@@ -324,6 +325,7 @@ void PerceptronBP::writeDebugInfo()
 
 		DPRINTF(DebugInfo, "Branch history pattern #: \t\t\t\t%i\n", record.histPattern.size());
 		DPRINTF(DebugInfo, "Branch conflicts \t\t\t\t\t%i\n", record.conflictSet.size());
+*/		
 		DPRINTF(DebugInfo, "-------------------record end-----------------\n");
 	}
 }

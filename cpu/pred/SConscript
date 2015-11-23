@@ -34,8 +34,10 @@ if 'InOrderCPU' in env['CPU_MODELS'] or 'O3CPU' in env['CPU_MODELS']:
     Source('2bit_local.cc')
     Source('btb.cc')
     Source('ras.cc')
+    Source('bpdebugger.cc')
     Source('tournament.cc')
     Source('perceptron.cc')
+    Source('gshare.cc')
 
     DebugFlag('FreeList')
     DebugFlag('Predictor')

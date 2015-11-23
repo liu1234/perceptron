@@ -58,7 +58,8 @@ class BPredUnit
     enum PredType {
         Local,
         Tournament,
-		Perceptron
+		Perceptron,
+		Gshare
     };
 
     PredType predictor;
@@ -244,6 +245,9 @@ class BPredUnit
 
 	/** Perceptron branch predictor. */
 	PerceptronBP *perceptronBP;
+
+	/** Gshare branch predictor. */
+	GshareBP *gshareBP;
 
     /** The BTB. */
     DefaultBTB BTB;

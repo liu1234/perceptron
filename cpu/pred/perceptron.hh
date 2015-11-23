@@ -7,7 +7,7 @@
 #include <set>
 
 #include "base/types.hh"
-#include "cpu/o3/sat_counter.hh"
+#include "cpu/pred/bpdebugger.hh"
 
 /*
 class PerceptronBPBase
@@ -21,6 +21,8 @@ public:
 
 };
 */
+
+class DebugInfo;
 
 class PerceptronBP {
 
@@ -62,7 +64,7 @@ protected:
 	std::map<unsigned int, std::set<Addr>> idxMap;
 
 	// This is for debugging
-	typedef struct
+/*	typedef struct
 	{
 		unsigned int count;
 
@@ -101,7 +103,7 @@ protected:
 		bool stablized;
 
 	}DebugInfo;
-
+*/
 	std::map<Addr, DebugInfo> debugMap;
 
 	void updateDebugInfo(Addr&, bool, void*&);
