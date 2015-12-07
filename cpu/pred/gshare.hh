@@ -9,12 +9,10 @@
 #include "cpu/o3/sat_counter.hh"
 #include "cpu/pred/bpdebugger.hh"
 
-class DebugInfo;
-
 class GshareBP
 {
 public:
-	GshareBP(unsigned int _gshareHistoryBits, unsigned int _gshareHistoryTableSize, unsigned int _gshareGlobalCtrBits);
+	GshareBP(unsigned int _gshareHistoryBits, unsigned int _gshareHistoryTableSize, unsigned int _gshareGlobalCtrBits, unsigned int _instShiftAmt);
 
 	bool lookup(Addr& branch_addr, void*& bp_history);
 	void update(Addr& branch_addr, bool taken, void*& bp_history, bool squashed);
@@ -47,7 +45,7 @@ protected:
 
 	std::map<unsigned int, std::set<Addr>> idxMap;
 	
-	std::map<Addr, DebugInfo> debugMap;
+	std::map<Addr, DebugInfo<unsigned int>> debugMap;
 	
 	void updateDebugInfo(Addr&, bool, void*&);
 	void writeDebugInfo();

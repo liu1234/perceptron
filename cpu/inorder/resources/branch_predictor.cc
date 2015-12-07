@@ -98,7 +98,7 @@ BranchPredictor::execute(int slot_num)
                         "skipping prediction \n", tid, inst->seqNum);
             } else {
                 TheISA::PCState pred_PC = inst->pcState();
-                TheISA::advancePC(pred_PC, inst->staticInst);
+                //TheISA::advancePC(pred_PC, inst->staticInst);
 
                 if (inst->isControl()) {
                     // If not, the pred_PC be updated to pc+8

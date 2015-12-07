@@ -44,20 +44,20 @@ class DerivO3CPU(BaseCPU):
     iewToFetchDelay = Param.Cycles(1, "Issue/Execute/Writeback to fetch "
                                    "delay")
     commitToFetchDelay = Param.Cycles(1, "Commit to fetch delay")
-    fetchWidth = Param.Unsigned(8, "Fetch width")
+    fetchWidth = Param.Unsigned(1, "Fetch width")
 
     renameToDecodeDelay = Param.Cycles(1, "Rename to decode delay")
     iewToDecodeDelay = Param.Cycles(1, "Issue/Execute/Writeback to decode "
                                     "delay")
     commitToDecodeDelay = Param.Cycles(1, "Commit to decode delay")
     fetchToDecodeDelay = Param.Cycles(1, "Fetch to decode delay")
-    decodeWidth = Param.Unsigned(8, "Decode width")
+    decodeWidth = Param.Unsigned(1, "Decode width")
 
     iewToRenameDelay = Param.Cycles(1, "Issue/Execute/Writeback to rename "
                                     "delay")
     commitToRenameDelay = Param.Cycles(1, "Commit to rename delay")
     decodeToRenameDelay = Param.Cycles(1, "Decode to rename delay")
-    renameWidth = Param.Unsigned(8, "Rename width")
+    renameWidth = Param.Unsigned(1, "Rename width")
 
     commitToIEWDelay = Param.Cycles(1, "Commit to "
                "Issue/Execute/Writeback delay")
@@ -65,17 +65,17 @@ class DerivO3CPU(BaseCPU):
                "Issue/Execute/Writeback delay")
     issueToExecuteDelay = Param.Cycles(1, "Issue to execute delay (internal "
               "to the IEW stage)")
-    dispatchWidth = Param.Unsigned(8, "Dispatch width")
-    issueWidth = Param.Unsigned(8, "Issue width")
-    wbWidth = Param.Unsigned(8, "Writeback width")
+    dispatchWidth = Param.Unsigned(1, "Dispatch width")
+    issueWidth = Param.Unsigned(1, "Issue width")
+    wbWidth = Param.Unsigned(1, "Writeback width")
     wbDepth = Param.Unsigned(1, "Writeback depth")
     fuPool = Param.FUPool(DefaultFUPool(), "Functional Unit pool")
 
     iewToCommitDelay = Param.Cycles(1, "Issue/Execute/Writeback to commit "
                "delay")
     renameToROBDelay = Param.Cycles(1, "Rename to reorder buffer delay")
-    commitWidth = Param.Unsigned(8, "Commit width")
-    squashWidth = Param.Unsigned(8, "Squash width")
+    commitWidth = Param.Unsigned(1, "Commit width")
+    squashWidth = Param.Unsigned(1, "Squash width")
     trapLatency = Param.Cycles(13, "Trap latency")
     fetchTrapLatency = Param.Cycles(1, "Fetch trap latency")
 
@@ -92,6 +92,16 @@ class DerivO3CPU(BaseCPU):
     globalHistoryBits = Param.Unsigned(13, "Bits of history")
     choicePredictorSize = Param.Unsigned(8192, "Size of choice predictor")
     choiceCtrBits = Param.Unsigned(2, "Bits of choice counters")
+
+    perceptronPredictorSize = Param.Unsigned(2048, "Size of perceptron table")
+    perceptronHistoryBits = Param.Unsigned(10, "Perceptron history length")
+
+#this is for debug use
+    branchAddr = Param.Addr(0, "Branch addr you want to trace")
+
+    gshareHistoryTableSize = Param.Unsigned(8192, "Size of gshare history table")
+    gshareCtrBits = Param.Unsigned(2, "Bits per counter")
+    gshareHistoryBits = Param.Unsigned(13, "Bits of history")
 
     BTBEntries = Param.Unsigned(4096, "Number of BTB entries")
     BTBTagSize = Param.Unsigned(16, "Size of the BTB tags, in bits")

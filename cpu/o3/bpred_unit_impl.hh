@@ -76,7 +76,15 @@ BPredUnit<Impl>::BPredUnit(DerivO3CPUParams *params)
                                         params->choiceCtrBits,
                                         params->instShiftAmt);
         predictor = Tournament;
-    } else {
+    }  else if (params->predType == "perceptron") {
+		perceptronBP = new PerceptronBP(params->perceptronPredictorSize, params->perceptronHistoryBits, params->instShiftAmt, params->branchAddr);
+
+		predictor = Perceptron;
+	} else if (params->predType == "gshare") {
+		gshareBP = new GshareBP(params->gshareHistoryBits, params->gshareHistoryTableSize, params->gshareCtrBits, params->instShiftAmt);
+
+		predictor = Gshare;
+	} else {
         fatal("Invalid BP selected!");
     }
 
@@ -434,6 +442,12 @@ BPredUnit<Impl>::BPUncond(void * &bp_history)
     if (predictor == Tournament) {
         tournamentBP->uncondBr(bp_history);
     }
+	else if(predictor == Perceptron) {
+		perceptronBP->uncondBr(bp_history);
+	}
+	else if(predictor == Gshare) {
+		gshareBP->uncondBr(bp_history);
+	}
 }
 
 template <class Impl>
@@ -444,7 +458,11 @@ BPredUnit<Impl>::BPSquash(void *bp_history)
         localBP->squash(bp_history);
     } else if (predictor == Tournament) {
         tournamentBP->squash(bp_history);
-    } else {
+    } else if (predictor == Perceptron) {
+		perceptronBP->squash(bp_history);
+	} else if (predictor == Gshare) {
+		gshareBP->squash(bp_history);
+	} else {
         panic("Predictor type is unexpected value!");
     }
 }
@@ -457,7 +475,11 @@ BPredUnit<Impl>::BPLookup(Addr instPC, void * &bp_history)
         return localBP->lookup(instPC, bp_history);
     } else if (predictor == Tournament) {
         return tournamentBP->lookup(instPC, bp_history);
-    } else {
+    } else if (predictor == Perceptron) {
+		return perceptronBP->lookup(instPC, bp_history);
+	} else if (predictor == Gshare) {
+		return gshareBP->lookup(instPC, bp_history);
+	} else {
         panic("Predictor type is unexpected value!");
     }
 }
@@ -470,7 +492,11 @@ BPredUnit<Impl>::BPBTBUpdate(Addr instPC, void * &bp_history)
         return localBP->BTBUpdate(instPC, bp_history);
     } else if (predictor == Tournament) {
         return tournamentBP->BTBUpdate(instPC, bp_history);
-    } else {
+    } else if(predictor == Perceptron) {
+		perceptronBP->BTBUpdate(instPC, bp_history);
+	} else if(predictor == Gshare) {
+		gshareBP->BTBUpdate(instPC, bp_history);
+	} else {
         panic("Predictor type is unexpected value!");
     }
 }
@@ -484,7 +510,11 @@ BPredUnit<Impl>::BPUpdate(Addr instPC, bool taken, void *bp_history,
         localBP->update(instPC, taken, bp_history);
     } else if (predictor == Tournament) {
         tournamentBP->update(instPC, taken, bp_history, squashed);
-    } else {
+    } else if (predictor == Perceptron) {
+		perceptronBP->update(instPC, taken, bp_history, squashed);
+	} else if (predictor == Gshare) {
+		gshareBP->update(instPC, taken, bp_history, squashed);
+	} else {
         panic("Predictor type is unexpected value!");
     }
 }

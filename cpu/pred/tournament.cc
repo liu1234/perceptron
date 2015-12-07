@@ -44,6 +44,10 @@
 #include "cpu/pred/tournament.hh"
 #include "debug/Predictor.hh"
 #include "base/trace.hh"
+#include "base/callback.hh"
+#include "debug/DebugInfo.hh"
+#include <fstream>
+
 
 TournamentBP::TournamentBP(unsigned _localPredictorSize,
                            unsigned _localCtrBits,
@@ -118,6 +122,9 @@ TournamentBP::TournamentBP(unsigned _localPredictorSize,
 
     // @todo: Allow for different thresholds between the predictors.
     threshold = (1 << (localCtrBits - 1)) - 1;
+
+	Callback* cb = new MakeCallback<TournamentBP, &TournamentBP::writeDebugInfo>(this);
+	registerExitCallback(cb);
 }
 
 inline
@@ -175,6 +182,9 @@ TournamentBP::BTBUpdate(Addr &branch_addr, void * &bp_history)
 bool
 TournamentBP::lookup(Addr &branch_addr, void * &bp_history)
 {
+	auto& record = debugMap[branch_addr];
+	record.count++;
+
     bool local_prediction;
     unsigned local_history_idx;
     unsigned local_predictor_idx;
@@ -260,6 +270,8 @@ TournamentBP::update(Addr &branch_addr, bool taken, void *bp_history,
     unsigned local_history_idx;
     unsigned local_predictor_idx M5_VAR_USED;
     unsigned local_predictor_hist;
+
+	updateDebugInfo(branch_addr, taken, bp_history);
 
     // Get the local predictor's current prediction
     local_history_idx = calcLocHistIdx(branch_addr);
@@ -349,6 +361,105 @@ TournamentBP::squash(void *bp_history)
 
     // Delete this BPHistory now that we're done with it.
     delete history;
+}
+void TournamentBP::updateDebugInfo(Addr& addr, bool taken, void*& bp_history)
+{
+	if(!bp_history)	return;
+	BPHistory* history = (BPHistory*)bp_history;
+
+	if(debugMap.find(addr) == debugMap.end())
+	{
+		auto& record = debugMap[addr];
+		record.unCondBr = true;
+	}
+	
+	auto& record = debugMap[addr];
+	if(record.unCondBr)		record.count++;
+
+	if(history->globalUsed)
+	{
+		record.globalCount++;
+		if(taken == history->globalPredTaken)
+		{
+			record.hit++;
+			if(taken)
+			{
+				record.hitTaken++;
+			}
+			else
+			{
+				record.hitNotTaken++;
+			}
+		}
+		else
+		{
+			record.miss++;
+			if(taken)
+			{
+				record.missTaken++;
+			}
+			else
+			{
+				record.missNotTaken++;
+			}
+		}
+	}
+
+	else
+	{
+		record.localCount++;
+		if(taken == history->localPredTaken)
+		{
+			record.hit++;
+			if(taken)
+			{
+				record.hitTaken++;
+			}
+			else
+			{
+				record.hitNotTaken++;
+			}
+		}
+		else
+		{
+			record.miss++;
+			if(taken)
+			{
+				record.missTaken++;
+			}
+			else
+			{
+				record.missNotTaken++;
+			}
+		}
+	}
+	if(taken)
+	{
+		record.taken++;
+	}
+	else
+	{
+		record.notTaken++;
+	}	
+}
+
+void TournamentBP::writeDebugInfo()
+{
+	std::ofstream file("/home/min/a/liu1234/gem5/log.txt");
+
+	for(auto it = debugMap.begin(); it != debugMap.end(); it++)
+	{
+		auto& addr = it->first;
+		auto& record = it->second;
+		if(record.unCondBr || record.count < 10 || (double)(record.hit)/(double)(record.count) > 0.8)	continue;
+		//if(record.unCondBr || record.count < 10)	continue;
+		DPRINTF(DebugInfo, "-------------------new record-----------------\n");
+		
+		record.printDebugInfo(file, addr);
+
+		DPRINTF(DebugInfo, "-------------------record end-----------------\n");
+	}
+	file.close();
 }
 
 #ifdef DEBUG

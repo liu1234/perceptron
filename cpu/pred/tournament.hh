@@ -44,9 +44,11 @@
 #define __CPU_O3_TOURNAMENT_PRED_HH__
 
 #include <vector>
+#include <map>
 
 #include "base/types.hh"
 #include "cpu/o3/sat_counter.hh"
+#include "cpu/pred/bpdebugger.hh"
 
 /**
  * Implements a tournament branch predictor, hopefully identical to the one
@@ -57,6 +59,7 @@
  * is speculatively updated, the rest are updated upon branches committing
  * or misspeculating.
  */
+
 class TournamentBP
 {
   public:
@@ -240,6 +243,10 @@ class TournamentBP
      *  equal to or below the threshold is not taken.
      */
     unsigned threshold;
+
+	std::map<Addr, DebugInfo<unsigned int>> debugMap;
+	void updateDebugInfo(Addr&, bool, void*&);	
+	void writeDebugInfo();
 };
 
 #endif // __CPU_O3_TOURNAMENT_PRED_HH__

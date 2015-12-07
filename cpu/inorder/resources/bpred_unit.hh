@@ -44,6 +44,7 @@
 #include "cpu/pred/ras.hh"
 #include "cpu/pred/tournament.hh"
 #include "cpu/pred/perceptron.hh"
+#include "cpu/pred/gshare.hh"
 #include "cpu/inst_seq.hh"
 #include "params/InOrderCPU.hh"
 

@@ -6,11 +6,16 @@
 #include "debug/DebugInfo.hh"
 #include "base/trace.hh"
 #include <cmath>
+#include <fstream>
 
 PerceptronBP::PerceptronBP(unsigned _perceptronPredictorSize,
-						   unsigned _perceptronHistoryBits)
+						   unsigned _perceptronHistoryBits,
+						   unsigned _instShiftAmt,
+						   unsigned long _branchAddr)
 : perceptronPredictorSize(_perceptronPredictorSize),
-  perceptronHistoryBits(_perceptronHistoryBits)
+  perceptronHistoryBits(_perceptronHistoryBits),
+  instShiftAmt(_instShiftAmt),
+  debugAddr(_branchAddr)
 {
 	perceptronTable.resize(perceptronPredictorSize);
 
@@ -22,6 +27,7 @@ PerceptronBP::PerceptronBP(unsigned _perceptronPredictorSize,
 	threshold = 1.93*perceptronHistoryBits+14;
 
 	DPRINTF(Predictor, "Perceptron branch predictor threshold: %i\n", threshold);
+	DPRINTF(Predictor, "Tracking branch: %x\n", debugAddr);
 
 	Callback* cb = new MakeCallback<PerceptronBP, &PerceptronBP::writeDebugInfo>(this);
 	registerExitCallback(cb);
@@ -95,11 +101,21 @@ bool PerceptronBP::lookup(Addr& branch_addr, void*& bp_history)
 		//{
 			//DPRINTF(Predictor, "Conflict Addr %s also in the history, bad things can happen\n", debugGlobalHist.historyAddr[histLen-i-1]);
 		//}
-		DPRINTF(Predictor, "Correlation factor with #%i history %i is: %i\n", histLen-i-1, globalHistory[histLen-i-1], weightVec[i+1]);
+		//DPRINTF(Predictor, "Correlation factor with #%i history %i is: %i\n", histLen-i-1, globalHistory[histLen-i-1], weightVec[i+1]);
 	}
 
-//	DPRINTF(Predictor, "Branch bias itself is %i\n", weightVec[0]);
 	bool predTaken = (result > 0) ? true : false;
+
+	DebugInfo<HistRegister>::Correlation* cptr = new DebugInfo<HistRegister>::Correlation();
+	for(int i = 1; i < histLen+1; i++)
+	{
+		cptr->histVec.emplace_back(debugGlobalHist.historyAddr[histLen-i], weightVec[i], globalHistory[histLen-i]);
+	}
+	cptr->pattern = globalHistory;
+	cptr->result = predTaken;
+	record.correlator.push_back(cptr);
+
+//	DPRINTF(Predictor, "Branch bias itself is %i\n", weightVec[0]);
 //	DPRINTF(Predictor, "PerceptronBP result: %i, predict: %i\n", result, predTaken);
 	BPHistory* history = new BPHistory();
 	history->globalHistory = globalHistory;
@@ -141,6 +157,7 @@ void PerceptronBP::update(Addr& branch_addr, bool taken, void*& bp_history, bool
 	WeightVector& weightVec = perceptronTable[perceptronTableIdx];
 
 	BPHistory* history = (BPHistory*)bp_history;
+	auto& histQueue = history->globalHistory;
 
 	if(taken != history->perceptronPredTaken || abs(history->perceptronOutput) <= threshold)
 	{
@@ -158,8 +175,8 @@ void PerceptronBP::update(Addr& branch_addr, bool taken, void*& bp_history, bool
 		auto histLen = globalHistory.size();
 		for(int i = 0; i < histLen; i++)
 		{
-			if(taken == globalHistory[histLen-i-1])		weightVec[i+1] += 1;
-			else										weightVec[i+1] -= 1;
+			if(taken == histQueue[histLen-i-1])		weightVec[i+1] += 1;
+			else									weightVec[i+1] -= 1;
 		}
 		
 	}
@@ -217,6 +234,7 @@ void PerceptronBP::updateDebugInfo(Addr& addr, bool taken, void*& bp_history)
 	auto& record = debugMap[addr];
 	if(record.unCondBr)		record.count++;
 	record.histPattern[history->globalHistory]++;
+	record.globalCount++;
 
 	if(taken == history->perceptronPredTaken)
 	{
@@ -251,6 +269,8 @@ void PerceptronBP::updateDebugInfo(Addr& addr, bool taken, void*& bp_history)
 	{
 		record.taken++;
 		record.takenWeight += history->perceptronOutput;
+		record.histTaken[history->globalHistory]++;
+		
 	}
 	else
 	{
@@ -293,39 +313,29 @@ void PerceptronBP::printoutStats(Addr& addr, DebugInfo& record)
 
 void PerceptronBP::writeDebugInfo()
 {
+	std::ofstream file_all("/home/min/a/liu1234/gem5/log.txt");
+	std::ofstream file_single("/home/min/a/liu1234/gem5/single.txt");
+	
 	for(auto it = debugMap.begin(); it != debugMap.end(); it++)
 	{
 		auto& addr = it->first;
 		auto& record = it->second;
+		if(addr == debugAddr)
+		{
+			DPRINTF(DebugInfo, "-------Traced One-------\n");
+			record.printCorrelationInfo(file_single, addr);
+		}
 		if(record.unCondBr || record.count < 10 || (double)(record.hit)/(double)(record.count) > 0.8)	continue;
-
+		//if(record.unCondBr || record.count < 10)	continue;
 		DPRINTF(DebugInfo, "-------------------new record-----------------\n");
 		
-		record.printDebugInfo(addr);
-/*
-		DPRINTF(DebugInfo, "Branch Addr(%i): \t\t\t\t\t%s\n", record.unCondBr, addr);
-		DPRINTF(DebugInfo, "Execution times: \t\t\t\t\t%i\n", record.count);
-		DPRINTF(DebugInfo, "Branch Missprediction rate: \t\t\t%f\n", (double)record.miss/(double)record.count);
-		DPRINTF(DebugInfo, "Branch Hit times: \t\t\t\t\t%i\n", record.hit);
-		DPRINTF(DebugInfo, "Correct prediction(taken): \t\t\t\t%i\n", record.hitTaken);
-		DPRINTF(DebugInfo, "Correct prediction(taken) Avg weight: \t\t%i\n", record.hitTakenWeight/(int)(record.hitTaken+1));
-		DPRINTF(DebugInfo, "Correct prediction(not taken): \t\t\t%i\n", record.hitNotTaken);
-		DPRINTF(DebugInfo, "Correct prediction(not taken) Avg weight: \t\t%i\n", record.hitNotTakenWeight/(int)(record.hitNotTaken+1));
-
-		DPRINTF(DebugInfo, "Branch Miss times: \t\t\t\t\t%i\n", record.miss);
-		DPRINTF(DebugInfo, "Miss prediction(taken): \t\t\t\t%i\n", record.missTaken);
-		DPRINTF(DebugInfo, "Miss prediction(taken) Avg weight: \t\t\t%i\n", record.missTakenWeight/(int)(record.missTaken+1));
-		DPRINTF(DebugInfo, "Miss prediction(not taken): \t\t\t%i\n", record.missNotTaken);
-		DPRINTF(DebugInfo, "Miss prediction(not taken) Avg weight: \t\t%i\n", record.missNotTakenWeight/(int)(record.missNotTaken+1));
-
-		DPRINTF(DebugInfo, "Branch Taken times: \t\t\t\t%i\n", record.taken);
-		DPRINTF(DebugInfo, "Branch Taken Avg weight: \t\t\t\t%i\n", record.takenWeight/(int)(record.taken+1));
-		DPRINTF(DebugInfo, "Branch Not Taken times: \t\t\t\t%i\n", record.notTaken);
-		DPRINTF(DebugInfo, "Branch Not Taken Avg weight: \t\t\t%i\n", record.notTakenWeight/(int)(record.notTaken+1));
-
-		DPRINTF(DebugInfo, "Branch history pattern #: \t\t\t\t%i\n", record.histPattern.size());
-		DPRINTF(DebugInfo, "Branch conflicts \t\t\t\t\t%i\n", record.conflictSet.size());
-*/		
+		file_all << "Addr: " << addr << " hist pattern" << '\n';
+		record.printDebugInfo(file_all, addr);
+		
 		DPRINTF(DebugInfo, "-------------------record end-----------------\n");
+		file_all << '\n';
 	}
+
+	file_single.close();
+	file_all.close();
 }

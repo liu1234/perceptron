@@ -61,6 +61,9 @@ class InOrderCPU(BaseCPU):
     perceptronPredictorSize = Param.Unsigned(2048, "Size of perceptron table")
     perceptronHistoryBits = Param.Unsigned(10, "Perceptron history length")
 
+#this is for debug use
+    branchAddr = Param.Addr(0, "Branch addr you want to trace")
+
     gshareHistoryTableSize = Param.Unsigned(8192, "Size of gshare history table")
     gshareCtrBits = Param.Unsigned(2, "Bits per counter")
     gshareHistoryBits = Param.Unsigned(13, "Bits of history")

@@ -22,13 +22,13 @@ public:
 };
 */
 
-class DebugInfo;
-
 class PerceptronBP {
 
 public:
-	PerceptronBP(unsigned perceptronPredictorSize,
-				 unsigned perceptronHistoryBits);
+	PerceptronBP(unsigned _perceptronPredictorSize,
+				 unsigned _perceptronHistoryBits,
+				 unsigned _instShiftAmt,
+				 unsigned long _branchAddr);
 
 	bool lookup(Addr& branch_addr, void*& bp_history);
 	void update(Addr& branch_addr, bool taken, void*& bp_history, bool squashed);
@@ -104,10 +104,12 @@ protected:
 
 	}DebugInfo;
 */
-	std::map<Addr, DebugInfo> debugMap;
+
+	Addr debugAddr;
+	std::map<Addr, DebugInfo<HistRegister>> debugMap;
 
 	void updateDebugInfo(Addr&, bool, void*&);
-	void printoutStats(Addr&, DebugInfo&);
+//	void printoutStats(Addr&, DebugInfo<HistRegister>&);
 	void writeDebugInfo();
 
 	typedef std::deque<Addr> HistAddress;

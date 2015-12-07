@@ -5,13 +5,16 @@
 #include "debug/DebugInfo.hh"
 #include "base/trace.hh"
 #include "cpu/pred/gshare.hh"
+#include <fstream>
 
 GshareBP::GshareBP(unsigned int _gshareHistoryBits, 
 				   unsigned int _gshareHistoryTableSize,
-				   unsigned int _gshareGlobalCtrBits)
+				   unsigned int _gshareGlobalCtrBits,
+				   unsigned int _instShiftAmt)
 		:		   gshareHistoryBits(_gshareHistoryBits),
 				   gshareHistoryTableSize(_gshareHistoryTableSize),
-				   gshareGlobalCtrBits(_gshareGlobalCtrBits)
+				   gshareGlobalCtrBits(_gshareGlobalCtrBits),
+				   instShiftAmt(_instShiftAmt)
 {
 	globalCtrsTable.resize(gshareHistoryTableSize);
 
@@ -113,6 +116,7 @@ void GshareBP::updateDebugInfo(Addr& addr, bool taken, void*& bp_history)
 	
 	auto& record = debugMap[addr];
 	if(record.unCondBr)		record.count++;
+	record.globalCount++;
 
 	if(taken == history->gsharePred)
 	{
@@ -162,16 +166,19 @@ void GshareBP::squash(void*& bp_history)
 
 void GshareBP::writeDebugInfo()
 {
+	std::ofstream file("/home/min/a/liu1234/gem5/log.txt");
+	
 	for(auto it = debugMap.begin(); it != debugMap.end(); it++)
 	{
 		auto& addr = it->first;
 		auto& record = it->second;
 		if(record.unCondBr || record.count < 10 || (double)(record.hit)/(double)(record.count) > 0.8)	continue;
-
+		//if(record.unCondBr || record.count < 10)	continue;
 		DPRINTF(DebugInfo, "-------------------new record-----------------\n");
 		
-		record.printDebugInfo(addr);
+		record.printDebugInfo(file, addr);
 
 		DPRINTF(DebugInfo, "-------------------record end-----------------\n");
 	}
+	file.close();
 }

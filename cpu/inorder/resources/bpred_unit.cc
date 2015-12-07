@@ -64,11 +64,11 @@ BPredUnit::BPredUnit(Resource *_res, ThePipeline::Params *params)
                                         params->instShiftAmt);
         predictor = Tournament;
     } else if (params->predType == "perceptron") {
-		perceptronBP = new PerceptronBP(params->perceptronPredictorSize, params->perceptronHistoryBits);
+		perceptronBP = new PerceptronBP(params->perceptronPredictorSize, params->perceptronHistoryBits, params->instShiftAmt, params->branchAddr);
 
 		predictor = Perceptron;
 	} else if (params->predType == "gshare") {
-		gshareBP = new GshareBP(params->gshareHistoryBits, params->gshareHistoryTableSize, params->gshareCtrBits);
+		gshareBP = new GshareBP(params->gshareHistoryBits, params->gshareHistoryTableSize, params->gshareCtrBits, params->instShiftAmt);
 
 		predictor = Gshare;
 	} else {
@@ -173,11 +173,10 @@ BPredUnit::predict(DynInstPtr &inst, TheISA::PCState &predPC, ThreadID tid)
     TheISA::PCState target;
 
     ++lookups;
-    DPRINTF(InOrderBPred, "[tid:%i] [sn:%i] %s ... PC %s doing branch "
+    DPRINTF(InOrderBPred, "[tid:%i] [sn:%i] %s(%s) ... PC %s doing branch "
             "prediction\n", tid, inst->seqNum,
-            inst->staticInst->disassemble(inst->instAddr()),
+            inst->staticInst->disassemble(inst->instAddr()), predPC.instAddr(),
             inst->pcState());
-
 
     void *bp_history = NULL;
 
@@ -221,7 +220,6 @@ BPredUnit::predict(DynInstPtr &inst, TheISA::PCState &predPC, ThreadID tid)
             assert(predict_record.RASIndex < 16);
 
             RAS[tid].pop();
-
             DPRINTF(InOrderBPred, "[tid:%i]: Instruction %s is a return, "
                     "RAS predicted target: %s, RAS index: %i.\n",
                     tid, inst->pcState(), target,
@@ -257,10 +255,11 @@ BPredUnit::predict(DynInstPtr &inst, TheISA::PCState &predPC, ThreadID tid)
                         "predicted target is %s.\n",
                         tid, asid, inst->pcState(), target);
             } else {
+
                 DPRINTF(InOrderBPred, "[tid:%i]: BTB doesn't have a "
                         "valid entry, predicting false.\n",tid);
                 pred_taken = false;
-
+				predict_record.predTaken = false;
 
 				if(!inst->isCall() && !inst->isReturn()) {
 					BPBTBUpdate(predPC.instAddr(), bp_history);
@@ -274,8 +273,10 @@ BPredUnit::predict(DynInstPtr &inst, TheISA::PCState &predPC, ThreadID tid)
     if (pred_taken) {
         // Set the PC and the instruction's predicted target.
         predPC = target;
-		TheISA::advancePC(predPC, inst->staticInst);
+		//TheISA::advancePC(predPC, inst->staticInst);
     }
+	TheISA::advancePC(predPC, inst->staticInst);
+
     DPRINTF(InOrderBPred, "[tid:%i]: [sn:%i]: Setting Predicted PC to %s.\n",
             tid, inst->seqNum, predPC);
 

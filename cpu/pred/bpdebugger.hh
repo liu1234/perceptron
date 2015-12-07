@@ -4,18 +4,30 @@
 #include <map>
 #include <vector>
 #include <set>
+#include <deque>
+#include <fstream>
+#include <memory>
 
 #include "base/types.hh"
-#include "cpu/pred/perceptron.hh"
-#include "cpu/pred/gshare.hh"
+//#include "cpu/pred/perceptron.hh"
+//#include "cpu/pred/gshare.hh"
+//#include "cpu/pred/tournament.hh"
 
+class PerceptronBP;
+class GshareBP;
+class TournamentBP;
 
+template<typename A, typename B>
+std::pair<B,A> flipPair(const std::pair<A,B>& ele);
+
+template<typename History>
 class DebugInfo
 {
 	friend class PerceptronBP;
 	friend class GshareBP;
+	friend class TournamentBP;
 
-	void printDebugInfo(const Addr&);
+	void printDebugInfo(std::ofstream&, const Addr&);
 private:
 	unsigned int count;
 
@@ -45,7 +57,32 @@ private:
 	unsigned int notTaken;
 	int notTakenWeight;
 
-	std::map<std::deque<bool>, unsigned int> histPattern;
+	unsigned int globalCount;
+	unsigned int localCount;
+	
+	std::map<History, unsigned int> histPattern;
+	
+	// If linear separable
+	std::map<History, unsigned int> histTaken;
+	
+public:
+	struct Correlation
+	{
+		struct RelatedBr
+		{
+			RelatedBr() {}
+			RelatedBr(const Addr& _addr, const int& _weights, const bool& _taken) : addr(_addr), weights(_weights), taken(_taken) {}
+			Addr addr;
+			int weights;
+			bool taken;
+		};
+		Correlation() {}
+		std::vector<RelatedBr> histVec;
+		History pattern;
+		bool result;
+	};
+private:
+	std::vector<Correlation*> correlator;
 
 	unsigned int coflict;
 	std::set<Addr> conflictSet;
@@ -54,6 +91,10 @@ private:
 
 	bool stablized;
 
+	void printPatternInfo(std::ofstream&, int maxCount);
+	void printHistoryPattern(std::ofstream&, History);
+	void printCorrelationInfo(std::ofstream&, const Addr&);
+	void printConflictInfo(std::ofstream&, const Addr&);
 };
 
 #endif

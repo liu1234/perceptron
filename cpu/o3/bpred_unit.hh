@@ -51,6 +51,8 @@
 #include "cpu/pred/btb.hh"
 #include "cpu/pred/ras.hh"
 #include "cpu/pred/tournament.hh"
+#include "cpu/pred/perceptron.hh"
+#include "cpu/pred/gshare.hh"
 #include "cpu/inst_seq.hh"
 
 struct DerivO3CPUParams;
@@ -67,7 +69,9 @@ class BPredUnit
 
     enum PredType {
         Local,
-        Tournament
+        Tournament,
+		Perceptron,
+		Gshare
     };
 
     PredType predictor;
@@ -269,6 +273,12 @@ class BPredUnit
 
     /** The tournament branch predictor. */
     TournamentBP *tournamentBP;
+
+	/** Perceptron branch predictor. */
+	PerceptronBP *perceptronBP;
+
+	/** Gshare branch predictor. */
+	GshareBP *gshareBP;
 
     /** The BTB. */
     DefaultBTB BTB;

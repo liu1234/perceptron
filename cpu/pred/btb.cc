@@ -124,6 +124,7 @@ DefaultBTB::lookup(Addr instPC, ThreadID tid)
 void
 DefaultBTB::update(Addr instPC, const TheISA::PCState &target, ThreadID tid)
 {
+	DPRINTF(Fetch, "BTB updated for addr %s\n", instPC);
     unsigned btb_idx = getIndex(instPC);
 
     assert(btb_idx < numEntries);

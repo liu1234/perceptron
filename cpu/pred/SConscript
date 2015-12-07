@@ -42,3 +42,4 @@ if 'InOrderCPU' in env['CPU_MODELS'] or 'O3CPU' in env['CPU_MODELS']:
     DebugFlag('FreeList')
     DebugFlag('Predictor')
     DebugFlag('DebugInfo')
+    DebugFlag('Pattern')
